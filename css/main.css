@@ -1,0 +1,145 @@
+body {
+  font-family: "Courier", Helvetica, sans-serif;
+  font-size: 15px;
+  padding-top: 50px;
+}
+
+h1 {
+  font-size: 1.5em;
+  line-height: 2em;
+  margin-bottom: 30px;
+}
+
+p {
+  line-height: 1.7em;
+}
+
+a {
+  font-size: .9em;
+}
+
+footer {
+  text-align: center;
+  padding: 60px 0 20px;
+
+}
+#main-wrapper {
+  padding-left: 80px;
+}
+
+#main-nav {
+  margin-top: 30px;
+  margin-bottom: 70px;
+}
+
+.grid-item {
+  padding: 10px;
+}
+
+.grid-item img {
+  width: 100%;
+}
+
+
+/****************************
+ **** OVERRIDE BOOTSTRAP ****
+ ****************************/
+
+.nav {
+  margin-left: -14px;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+  text-decoration: none;
+  background-color: transparent;
+}
+
+/**********************
+ *** PROJECTS GRID ****
+ **********************/
+
+.projects-grid .grid-item {
+  width: 50%;
+  position: relative;
+}
+
+.projects-grid .grid-item-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 30px;
+  height: 100%;
+  visibility: hidden;
+}
+
+.projects-grid .grid-item:hover .grid-item-content {
+  background-color: #FFF;
+  opacity: .8;
+  visibility: visible;
+}
+
+.projects-grid h3 a {
+  font-family: Helvetica, Tahoma, Arial, sans-serif;
+  font-size: .8em;
+  line-height: 1.7em;
+  background-color: #282828;
+  color: #FFF;
+  font-weight: bold;
+  padding: 6px 10px;
+}
+
+.projects-grid h3 a:hover {
+  text-decoration: none;
+}
+
+
+/**************************
+ ******* TEAM GRID ********
+ **************************/
+
+.team-grid .grid-item {
+  width: 20%;
+  margin-bottom: 25px;
+}
+
+@media only screen and (max-width : 900px) {
+
+  body {
+    text-align: center;
+  }
+
+  #main-nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+  }
+
+  #main-nav {
+    text-align: center;
+  }
+
+  #main-wrapper {
+    padding-left: 0;
+  }
+
+  .team-grid .grid-item {
+    width: 30%;
+    margin-bottom: 25px;
+  }
+
+}
+
+@media only screen and (max-width : 750px) {
+
+  .team-grid .grid-item {
+    width: 50%;
+    margin-bottom: 25px;
+  }
+
+  .projects-grid .grid-item {
+    width: auto;
+    position: relative;
+  }
+
+}
+
