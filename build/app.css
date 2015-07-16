@@ -40,10 +40,18 @@ footer {
   width: 100%;
 }
 
+.grid img { 
+  -webkit-filter: grayscale(100%); 
+  filter: grayscale(100%);
+}
 
 /****************************
  **** OVERRIDE BOOTSTRAP ****
  ****************************/
+
+a, a:active {
+  color: #333;
+}
 
 .nav {
   margin-left: -14px;
@@ -61,7 +69,7 @@ footer {
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
   color: #333;
   background-color: transparent;
-  border: 1px solid #000;
+  border: 1px solid #333;
   border-radius: 0;
 }
 
