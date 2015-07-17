@@ -14,15 +14,15 @@ module.exports = {
 
   team: [
     {
-      fullName: "Conrado Cimino",
-      desc: "This is a product short description here",
-      img: "/img/team/conan.jpg",
-      href: ""
-    },
-    {
       fullName: "Carlos De Venezia",
       desc: "This is a product short description here",
       img: "/img/team/charly.jpg",
+      href: ""
+    },
+    {
+      fullName: "Conrado Cimino",
+      desc: "This is a product short description here",
+      img: "/img/team/conan.jpg",
       href: ""
     },
     {
@@ -97,15 +97,15 @@ module.exports = {
 
   team: [
     {
-      fullName: "Conrado Cimino",
-      desc: "This is a product short description here",
-      img: "/img/team/conan.jpg",
-      href: ""
-    },
-    {
       fullName: "Carlos De Venezia",
       desc: "This is a product short description here",
       img: "/img/team/charly.jpg",
+      href: ""
+    },
+    {
+      fullName: "Conrado Cimino",
+      desc: "This is a product short description here",
+      img: "/img/team/conan.jpg",
       href: ""
     },
     {
@@ -176,8 +176,22 @@ var Route = Router.Route;
 var Link = Router.Link;
 var TeamHandler = require('./team-handler.jsx');
 var ProjectsHandler = require('./projects-handler.jsx');
-var esData = require('../../es');
-var enData = require('../../en');
+
+/**
+ * Page data per lang
+ */
+
+var pageData = {
+  'es': require('../../es'),
+  'en': require('../../en')
+};
+
+/**
+ * Browser lang
+ */
+
+var defaultLanguage = 'en';
+var language = (localStorage.getItem('lang') || navigator.userLanguage || navigator.language).split('-')[0] || defaultLanguage;
 
 /**
  * Nav item component
@@ -251,7 +265,10 @@ var App = React.createClass({displayName: "App",
   mixins: [ Router.State ],
 
   getInitialState: function() {
-    return esData; 
+    var data = pageData[language];
+    data.lang = language;
+
+    return data; 
   },
 
   getActiveRouteName: function() {
@@ -292,11 +309,14 @@ var App = React.createClass({displayName: "App",
 
     switch(lang) {
       case 'es':
-        data = esData;
+        data = pageData.es;
         break;
       case 'en':
-        data = enData;
+        data = pageData.en;
     }
+
+    localStorage.setItem('lang', lang);
+    data.lang = lang;
 
     this.setState(data);
 
@@ -305,6 +325,8 @@ var App = React.createClass({displayName: "App",
 
   render: function() {
     var handlerProps = this.getHandlerProps();
+    var esClass = this.state.lang === 'es' ? 'active' : null;
+    var enClass = this.state.lang === 'en' ? 'active' : null;
 
     return (
     React.createElement("div", {className: "container"}, 
@@ -312,9 +334,9 @@ var App = React.createClass({displayName: "App",
 
         React.createElement("div", {className: "row"}, 
           React.createElement("div", {className: "col-md-12"}, 
-            React.createElement("div", {style: {float: 'right'}}, 
-              React.createElement("a", {href: "", onClick: this.changeLanguage}, "ES"), " | ", 
-              React.createElement("a", {href: "", onClick: this.changeLanguage}, "EN")
+            React.createElement("ul", {className: "lang-selector pull-right"}, 
+              React.createElement("a", {className: esClass, href: "", onClick: this.changeLanguage}, "ES"), " | ", 
+              React.createElement("a", {className: enClass, href: "", onClick: this.changeLanguage}, "EN")
             )
           )
         ), 
@@ -345,7 +367,12 @@ var App = React.createClass({displayName: "App",
       React.createElement(RouteHandler, {data: handlerProps}), 
 
       React.createElement("footer", null, 
-        React.createElement("p", null, "© 2015 ", React.createElement("a", {href: "http://dift.co"}, "Dift.co"))
+        React.createElement("p", null, "© 2015 ", React.createElement("a", {href: "http://dift.co"}, "Dift.co")), 
+        React.createElement("p", null, 
+          React.createElement("a", {href: "https://www.linkedin.com/company/dift-collective/", target: "_blank"}, "LINKEDIN"), " ", 
+          React.createElement("a", {href: "https://www.facebook.com/DiftCollective/", target: "_blank"}, "FACEBOOK"), " ", 
+          React.createElement("a", {href: "https://twitter.com/diftcollective", target: "_blank"}, "TWITTER")
+        )
       )
     )
     )

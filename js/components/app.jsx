@@ -9,8 +9,22 @@ var Route = Router.Route;
 var Link = Router.Link;
 var TeamHandler = require('./team-handler.jsx');
 var ProjectsHandler = require('./projects-handler.jsx');
-var esData = require('../../es');
-var enData = require('../../en');
+
+/**
+ * Page data per lang
+ */
+
+var pageData = {
+  'es': require('../../es'),
+  'en': require('../../en')
+};
+
+/**
+ * Browser lang
+ */
+
+var defaultLanguage = 'en';
+var language = (localStorage.getItem('lang') || navigator.userLanguage || navigator.language).split('-')[0] || defaultLanguage;
 
 /**
  * Nav item component
@@ -84,7 +98,10 @@ var App = React.createClass({
   mixins: [ Router.State ],
 
   getInitialState: function() {
-    return esData; 
+    var data = pageData[language];
+    data.lang = language;
+
+    return data; 
   },
 
   getActiveRouteName: function() {
@@ -125,11 +142,14 @@ var App = React.createClass({
 
     switch(lang) {
       case 'es':
-        data = esData;
+        data = pageData.es;
         break;
       case 'en':
-        data = enData;
+        data = pageData.en;
     }
+
+    localStorage.setItem('lang', lang);
+    data.lang = lang;
 
     this.setState(data);
 
@@ -138,6 +158,8 @@ var App = React.createClass({
 
   render: function() {
     var handlerProps = this.getHandlerProps();
+    var esClass = this.state.lang === 'es' ? 'active' : null;
+    var enClass = this.state.lang === 'en' ? 'active' : null;
 
     return (
     <div className="container">
@@ -145,10 +167,10 @@ var App = React.createClass({
 
         <div className="row">
           <div className="col-md-12">
-            <div style={{float: 'right'}}>
-              <a href="" onClick={this.changeLanguage}>ES</a> |&nbsp;
-              <a href="" onClick={this.changeLanguage}>EN</a>
-            </div>
+            <ul className="lang-selector pull-right">
+              <a className={esClass} href="" onClick={this.changeLanguage}>ES</a> |&nbsp;
+              <a className={enClass} href="" onClick={this.changeLanguage}>EN</a>
+            </ul>
           </div>
         </div>
 
@@ -179,6 +201,11 @@ var App = React.createClass({
 
       <footer>
         <p>© 2015 <a href="http://dift.co">Dift.co</a></p>
+        <p>
+          <a href="https://www.linkedin.com/company/dift-collective/" target="_blank">LINKEDIN</a>&nbsp;
+          <a href="https://www.facebook.com/DiftCollective/" target="_blank">FACEBOOK</a>&nbsp;
+          <a href="https://twitter.com/diftcollective" target="_blank">TWITTER</a>
+        </p>
       </footer>
     </div>
     )

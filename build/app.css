@@ -20,9 +20,13 @@ a {
 
 footer {
   text-align: center;
-  padding: 60px 0 20px;
-
+  padding: 120px 0 20px;
 }
+
+footer a {
+  margin-left:10px;
+}
+
 #main-wrapper {
   padding-left: 80px;
 }
@@ -49,7 +53,7 @@ footer {
  **** OVERRIDE BOOTSTRAP ****
  ****************************/
 
-a, a:active {
+a, a:active, a:hover, a:focus {
   color: #333;
 }
 
@@ -147,6 +151,22 @@ a, a:active {
   }
 
 }
+
+/***************************
+ ****** LANG SELECTOR ******
+ ***************************/
+
+.lang-selector a {
+
+}
+
+.lang-selector a.active {
+  text-decoration: underline;
+}
+
+/**************************
+ ****** SCREEN SIZES ******
+ **************************/
 
 @media only screen and (max-width : 750px) {
 

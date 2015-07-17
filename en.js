@@ -13,15 +13,15 @@ module.exports = {
 
   team: [
     {
-      fullName: "Conrado Cimino",
-      desc: "This is a product short description here",
-      img: "/img/team/conan.jpg",
-      href: ""
-    },
-    {
       fullName: "Carlos De Venezia",
       desc: "This is a product short description here",
       img: "/img/team/charly.jpg",
+      href: ""
+    },
+    {
+      fullName: "Conrado Cimino",
+      desc: "This is a product short description here",
+      img: "/img/team/conan.jpg",
       href: ""
     },
     {
