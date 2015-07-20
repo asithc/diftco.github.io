@@ -28,7 +28,7 @@ var build_dir = 'build';
  */
 
 var files = {
-  app_js: 'js/index.js'
+  app_js: 'js/app.jsx'
 };
 
 /**

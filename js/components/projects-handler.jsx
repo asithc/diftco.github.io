@@ -3,7 +3,9 @@
  * Module dependecies
  */
 
+var Reflux = require('reflux');
 var MasonryMixin = require('./masonry-mixin.jsx');
+var store = require('../store');
 
 /**
  * Projects Handler
@@ -11,15 +13,10 @@ var MasonryMixin = require('./masonry-mixin.jsx');
 
 var ProjectsHandler = React.createClass({
 
-  mixins: [MasonryMixin()],
-
-  getInitialProps: function() {
-    return { 
-      data: {
-        items: []
-      }
-    };
-  },
+  mixins: [
+    Reflux.connect(store),
+    MasonryMixin()
+  ],
 
   render: function() {
     console.log('props', this.props);
@@ -40,7 +37,7 @@ var ProjectsHandler = React.createClass({
 
     return (
       <div ref="masonryContainer" className="grid projects-grid">
-        {this.props.data.items.map(createItem)}
+        {this.state.projects.map(createItem)}
       </div>
     );
   }

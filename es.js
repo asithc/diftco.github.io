@@ -1,5 +1,6 @@
 
 module.exports = {
+  lang: 'es',
   nav: [
     { uid: 'work', title: 'PRODUCTOS' },
     { uid: 'team', title: 'EQUIPO' }
