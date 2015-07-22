@@ -1,16 +1,17 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 
 module.exports = {
-  lang: 'en',
+  lang: "en",
   nav: [
-    { uid: 'work', title: 'WORK' },
-    { uid: 'team', title: 'TEAM' }
+    { uid: "work", title: "HOME" },
+    { uid: "team", title: "TEAM" },
+    { uid: "products", title: "PRODUCTS" }
   ],
 
   content: {
-    title: 'COLLECTIVE DIGITAL CRAFT',
-    p1: 'Dift Collective it’s a multidisciplinary team led by Strategist, Designers, Technologist and Producers that believe in innovation-led work.',
-    p2: 'We love to create products and design powerful user experiences.'
+    title: "COLLECTIVE DIGITAL CRAFT",
+    p1: "Dift Collective it’s a multidisciplinary team led by Strategist, Designers, Technologist and Producers that believe in innovation-led work.",
+    p2: "We love to create products and design powerful user experiences."
   },
 
   team: [
@@ -18,66 +19,79 @@ module.exports = {
       fullName: "Carlos De Venezia",
       desc: "This is a product short description here",
       img: "/img/team/charly.jpg",
-      href: ""
+      href: "",
+      projects: ["alantu", "dift"]
     },
     {
       fullName: "Conrado Cimino",
       desc: "This is a product short description here",
       img: "/img/team/conan.jpg",
-      href: ""
+      href: "",
+      projects: ["ingame"]
     },
     {
       fullName: "Gonzalo Aguirre",
       desc: "This is a product short description here",
       img: "/img/team/gon.jpg",
-      href: ""
+      href: "",
+      projects: ["ingame"]
     },
     {
       fullName: "Victor Calvello",
       desc: "This is a product short description here",
       img: "/img/team/vic.jpg",
-      href: ""
+      href: "",
+      projects: ["alantu", "ingame"]
     },
     {
       fullName: "Matias Medina",
       desc: "This is a product short description here",
       img: "/img/team/mati.jpg",
-      href: ""
+      href: "",
+      projects: ["alantu"]
     },
     {
       fullName: "Juan Pablo Garcia",
       desc: "This is a product short description here",
       img: "/img/team/jpg.jpg",
-      href: ""
+      href: "",
+      projects: ["ingame"]
     },
     {
       fullName: "Ignacio Olaciregui",
       desc: "This is a product short description here",
       img: "/img/team/mono.jpg",
-      href: ""
+      href: "",
+      projects: ["alantu", "dift"]
     }
   ],
 
   projects: [
     {
+      name: "ingame",
       title: "Ingame",
       desc: "Ingame is a new way to interact with your favourite brands, get cool rewards and have fun during the ride.",
       img: "http://demothemebeanscom.c.presscdn.com/spaces/wp-content/uploads/sites/9/2014/07/heydays_blokk_01.jpg",
-      href: "http://ingame.io"
+      href: "/products/ingame/",
+      links: ['http://ingame.io']
     },
 
     {
+      name: "alantu",
       title: "Alantu",
       desc: "Alantu is a game which aims to create the biggest computer ever made. By donating your smartphone's idle capacity, you will be able to complete missions that will help to solve complex problems related to medicine, biology, mathematics and other disciplines.",
       img: "http://demothemebeanscom.c.presscdn.com/spaces/wp-content/uploads/sites/9/2014/07/071.jpg",
-      href: "http://alantu.io"
+      href: "/products/alantu/",
+      links: ['http://alantu.io']
     },
 
     {
+      name: "dift",
       title: "Dift.io",
       desc: "Dift.io it’s a simple mobile solution that allows users to track social performance. the mobile first social analytics tool that enables leaders to take decisions at any time.",
       img: "http://demothemebeanscom.c.presscdn.com/spaces/wp-content/uploads/sites/9/2014/07/heydays_intu_feat.jpg",
-      href: "http://dift.io"
+      href: "/products/dift/",
+      links: ['http://dift.io']
     }
   ]
 };
@@ -85,83 +99,96 @@ module.exports = {
 },{}],2:[function(require,module,exports){
 
 module.exports = {
-  lang: 'es',
+  lang: "es",
   nav: [
-    { uid: 'work', title: 'PRODUCTOS' },
-    { uid: 'team', title: 'EQUIPO' }
-
+    { uid: "work", title: "HOME" },
+    { uid: "team", title: "EQUIPO" },
+    { uid: "products", title: "PRODUCTOS" }
   ],
   content: {
-    title: 'COLLECTIVE DIGITAL CRAFT',
-    p1: 'Dift Collective es un equipo multidisciplinario liderado por Estrategas, Disenadores, Tecnologos y Productores que piensan en un mundo guiado por la tecnologia.',
-    p2: 'Amamos crear productos y crear experiencias poderosas.'
+    title: "COLLECTIVE DIGITAL CRAFT",
+    p1: "Dift Collective es un equipo multidisciplinario liderado por Estrategas, Disenadores, Tecnologos y Productores que piensan en un mundo guiado por la tecnologia.",
+    p2: "Amamos crear productos y crear experiencias poderosas."
   },
 
   team: [
     {
       fullName: "Carlos De Venezia",
-      desc: "This is a product short description here",
+      desc: "Esta es una descripcion corta",
       img: "/img/team/charly.jpg",
-      href: ""
+      href: "",
+      projects: ["alantu", "dift"]
     },
     {
       fullName: "Conrado Cimino",
-      desc: "This is a product short description here",
+      desc: "Esta es una descripcion corta",
       img: "/img/team/conan.jpg",
-      href: ""
+      href: "",
+      projects: ["ingame"]
     },
     {
       fullName: "Gonzalo Aguirre",
-      desc: "This is a product short description here",
+      desc: "Esta es una descripcion corta",
       img: "/img/team/gon.jpg",
-      href: ""
+      href: "",
+      projects: ["ingame"]
     },
     {
       fullName: "Victor Calvello",
-      desc: "This is a product short description here",
+      desc: "Esta es una descripcion corta",
       img: "/img/team/vic.jpg",
-      href: ""
+      href: "",
+      projects: ["alantu", "ingame"]
     },
     {
       fullName: "Matias Medina",
-      desc: "This is a product short description here",
+      desc: "Esta es una descripcion corta",
       img: "/img/team/mati.jpg",
-      href: ""
+      href: "",
+      projects: ["alantu"]
     },
     {
       fullName: "Juan Pablo Garcia",
-      desc: "This is a product short description here",
+      desc: "Esta es una descripcion corta",
       img: "/img/team/jpg.jpg",
-      href: ""
+      href: "",
+      projects: ["ingame"]
     },
     {
       fullName: "Ignacio Olaciregui",
-      desc: "This is a product short description here",
+      desc: "Esta es una descripcion corta",
       img: "/img/team/mono.jpg",
-      href: ""
+      href: "",
+      projects: ["alantu", "dift"]
     }
   ],
 
   projects: [
     {
+      name: "ingame",
       title: "Ingame",
       desc: "Ingame is a new way to interact with your favourite brands, get cool rewards and have fun during the ride.",
       img: "http://demothemebeanscom.c.presscdn.com/spaces/wp-content/uploads/sites/9/2014/07/heydays_blokk_01.jpg",
-      href: "http://ingame.io"
+      href: "/products/ingame/",
+      links: ['http://ingame.io']
     },
 
     {
+      name: "alantu",
       title: "Alantu",
       desc: "Alantu is a game which aims to create the biggest computer ever made. By donating your smartphone's idle capacity, you will be able to complete missions that will help to solve complex problems related to medicine, biology, mathematics and other disciplines.",
       img: "http://demothemebeanscom.c.presscdn.com/spaces/wp-content/uploads/sites/9/2014/07/071.jpg",
-      href: "http://alantu.io"
+      href: "/products/alantu/",
+      links: ['http://alantu.io']
     },
 
     {
+      name: "dift",
       title: "Dift.io",
       desc: "Dift.io it’s a simple mobile solution that allows users to track social performance. the mobile first social analytics tool that enables leaders to take decisions at any time.",
       img: "http://demothemebeanscom.c.presscdn.com/spaces/wp-content/uploads/sites/9/2014/07/heydays_intu_feat.jpg",
-      href: "http://dift.io"
+      href: "/products/dift/",
+      links: ['http://dift.io']
     }
   ]
 };
@@ -170,10 +197,13 @@ module.exports = {
 var Reflux = require('reflux');
 
 module.exports = Reflux.createActions(
-  ['changeLang']
+  [
+    'changeLang', 
+    'setItemName'
+  ]
 );
 
-},{"reflux":24}],4:[function(require,module,exports){
+},{"reflux":28}],4:[function(require,module,exports){
 
 /**
  * Module dependencies
@@ -184,11 +214,11 @@ var RouteHandler = Router.RouteHandler;
 var Route = Router.Route;
 var Link = Router.Link;
 var Reflux = require('reflux');
-var store = require('./store');
+var AppStore = require('./stores/app-store');
 var actions = require('./actions');
-var TeamHandler = require('./components/team-handler.jsx');
-var ProjectsHandler = require('./components/projects-handler.jsx');
-
+var TeamView = require('./views/team.jsx');
+var ProjectsView = require('./views/projects.jsx');
+var DetailsView = require('./views/details.jsx');
 
 /**
  * Nav item component
@@ -202,8 +232,19 @@ var NavItem = React.createClass({displayName: "NavItem",
     this.props.onSelected(this.props.uid);
   },
 
+  isRouteActive: function(uid) {
+    var name = uid;
+    var pth = this.getPathname();
+
+    if (~pth.indexOf(uid)) {
+      return true;
+    }
+
+    return this.isActive(name);
+  },
+
   render: function() {
-    var className = this.isActive(this.props.uid) ? 'active' : null;
+    var className = this.isRouteActive(this.props.uid) ? 'active' : null;
 
     return (
       React.createElement("li", {className: className}, 
@@ -260,7 +301,7 @@ var Nav = React.createClass({displayName: "Nav",
 
 var App = React.createClass({displayName: "App",
 
-  mixins: [ Reflux.connect(store) ],
+  mixins: [ Reflux.connect(AppStore) ],
 
   changeLanguage: function(e) {
     e.preventDefault();
@@ -326,8 +367,10 @@ var App = React.createClass({displayName: "App",
 
 var routes = (
   React.createElement(Route, {name: "app", path: "/", handler: App}, 
-    React.createElement(Route, {name: "work", path: "/", handler: ProjectsHandler}), 
-    React.createElement(Route, {name: "team", path: "/team/", handler: TeamHandler})
+    React.createElement(Route, {name: "work", path: "/", handler: ProjectsView}), 
+    React.createElement(Route, {name: "team", path: "/team/", handler: TeamView}), 
+    React.createElement(Route, {name: "products", path: "/products/", handler: ProjectsView}), 
+    React.createElement(Route, {name: "product_details", path: "/products/:name/", handler: DetailsView})
   )
 );
 
@@ -336,7 +379,7 @@ Router.run(routes, Router.HistoryLocation, function (Handler) {
   React.render(React.createElement(Handler, null), document.getElementById('app'));
 });
 
-},{"./actions":3,"./components/projects-handler.jsx":6,"./components/team-handler.jsx":7,"./store":8,"reflux":24}],5:[function(require,module,exports){
+},{"./actions":3,"./stores/app-store":7,"./views/details.jsx":10,"./views/projects.jsx":11,"./views/team.jsx":12,"reflux":28}],5:[function(require,module,exports){
 /** @jsx React.DOM */
  
 var React = window.React;
@@ -389,15 +432,256 @@ var MasonryMixin = function(options) {
  
 module.exports = MasonryMixin;
 
-},{"imagesloaded":9,"masonry-layout":12}],6:[function(require,module,exports){
+},{"imagesloaded":13,"masonry-layout":16}],6:[function(require,module,exports){
+
+/**
+ * Browser lang
+ */
+
+var defaultLanguage = 'en';
+
+module.exports = function() {
+  return (localStorage.getItem('lang') || navigator.userLanguage || navigator.language).split('-')[0] || defaultLanguage;
+};
+
+},{}],7:[function(require,module,exports){
+
+/**
+ * Module dependencies
+ */
+
+var Reflux = require('reflux');
+var actions = require('../actions');
+var language = require('../lib/lang')();
+
+var data = {
+  'es': require('../../es'),
+  'en': require('../../en')
+};
+
+/**
+ * App store
+ */
+
+module.exports = Reflux.createStore({
+
+  listenables: [ actions ],
+
+  init: function() {
+    this.lang = language;
+  },
+
+  changeLang: function(lang) {
+    localStorage.setItem('lang', lang);
+
+    this.lang = lang;
+    this.trigger(data[lang]);
+  },
+
+  getInitialState: function() {
+    var d = data[this.lang];
+
+    return d;
+  }
+});
+
+},{"../../en":1,"../../es":2,"../actions":3,"../lib/lang":6,"reflux":28}],8:[function(require,module,exports){
+
+
+/**
+ * Module dependencies
+ */
+
+var Reflux = require('reflux');
+var actions = require('../actions');
+var language = require('../lib/lang')();
+
+var data = {
+  'es': require('../../es'),
+  'en': require('../../en')
+};
+
+/**
+ * Product store
+ */
+
+module.exports = Reflux.createStore({
+  listenables: [ actions ],
+
+  init: function() {
+    this.lang = language;
+    this.itemName = null;
+  },
+
+  setItemName: function(name) {
+    console.log('set item name', name);
+    this.itemName = name;
+
+    //this.trigger(this.getItem());
+  },
+
+  changeLang: function(lang) {
+    this.lang = lang;
+
+    this.trigger(this.getItem());
+  },
+
+  getItem: function(name) {
+    var n = this.itemName || name;
+    var d = data[this.lang];
+
+    var project = d.projects.filter(function(p) {
+      return p.name == n;
+    })[0];
+
+    return project;
+  },
+
+  //getInitialState: function() {
+  //  console.log('get initial state = product');
+  //  return {};
+  //}
+});
+
+},{"../../en":1,"../../es":2,"../actions":3,"../lib/lang":6,"reflux":28}],9:[function(require,module,exports){
+
+/**
+ * Module dependencies
+ */
+
+var Reflux = require('reflux');
+var actions = require('../actions');
+var language = require('../lib/lang')();
+
+var data = {
+  'es': require('../../es'),
+  'en': require('../../en')
+};
+
+/**
+ * Team store
+ */
+
+module.exports = Reflux.createStore({
+  listenables: [ actions ],
+
+  init: function() {
+    this.lang = language;
+  },
+
+  changeLang: function(lang) {
+    this.lang = lang;
+
+    this.trigger({ team: this.getFullTeam() });
+  },
+
+  getFullTeam: function() {
+    return data[this.lang].team;
+  },
+
+  getTeamByProject: function(projectName) {
+    return this.getFullTeam().filter(function(member) {
+      return ~member.projects.indexOf(projectName);
+    });
+  }
+
+});
+
+},{"../../en":1,"../../es":2,"../actions":3,"../lib/lang":6,"reflux":28}],10:[function(require,module,exports){
 
 /**
  * Module dependecies
  */
 
 var Reflux = require('reflux');
-var MasonryMixin = require('./masonry-mixin.jsx');
-var store = require('../store');
+var ProductStore = require('../stores/product-store');
+var TeamStore = require('../stores/team-store');
+var Actions = require('../actions');
+var MasonryMixin = require('../components/masonry-mixin.jsx');
+
+/**
+ * Details Handler
+ */
+
+var DetailsHandler = React.createClass({displayName: "DetailsHandler",
+
+  mixins: [
+    Reflux.connect(ProductStore),
+    Reflux.connect(TeamStore),
+    MasonryMixin()
+  ],
+
+  getInitialState: function() {
+    var name = this.props.params.name;
+
+    return {
+      team: TeamStore.getTeamByProject(name),
+      project: ProductStore.getItem(name)
+    };
+  },
+
+  componentDidMount: function() {
+    var name = this.props.params.name;
+
+    console.log('component did mount', name);
+
+    Actions.setItemName(name);
+  },
+
+  render: function() {
+    var createTeamItem = function(data) {
+      return (
+        React.createElement("div", {className: "grid-item"}, 
+          React.createElement("img", {src: data.img})
+        )
+      );
+    };
+
+    return (
+      React.createElement("div", {className: "details-view"}, 
+        React.createElement("div", {className: "row"}, 
+          React.createElement("div", {className: "col-md-7"}, 
+            React.createElement("img", {src: this.state.project.img})
+          ), 
+          React.createElement("div", {className: "col-md-5"}, 
+            React.createElement("h3", null, this.state.project.title), 
+            React.createElement("p", null, this.state.project.desc)
+          )
+        ), 
+        React.createElement("div", {className: "row"}, 
+
+          React.createElement("div", {className: "col-md-7"}, 
+            React.createElement("h4", null, "Links"), 
+            React.createElement("ul", {className: "links"}, 
+              this.state.project.links.map(function(link) {
+                return (React.createElement("li", null, React.createElement("a", {href: link}, link)));
+              })
+            )
+          ), 
+          React.createElement("div", {className: "col-md-5"}, 
+            React.createElement("h4", null, "Team"), 
+            React.createElement("div", {ref: "masonryContainer", className: "grid team-grid"}, 
+              this.state.team.map(createTeamItem)
+            )
+          )
+        )
+      )
+    );
+  }
+});
+
+module.exports = DetailsHandler;
+
+},{"../actions":3,"../components/masonry-mixin.jsx":5,"../stores/product-store":8,"../stores/team-store":9,"reflux":28}],11:[function(require,module,exports){
+
+/**
+ * Module dependecies
+ */
+
+var Link = ReactRouter.Link;
+var Reflux = require('reflux');
+var MasonryMixin = require('../components/masonry-mixin.jsx');
+var store = require('../stores/app-store');
 
 /**
  * Projects Handler
@@ -411,15 +695,13 @@ var ProjectsHandler = React.createClass({displayName: "ProjectsHandler",
   ],
 
   render: function() {
-    console.log('props', this.props);
-
     var createItem = function(item, i) {
       return (
         React.createElement("div", {className: "grid-item"}, 
           React.createElement("img", {src: item.img}), 
           React.createElement("div", {className: "grid-item-content"}, 
             React.createElement("h3", null, 
-              React.createElement("a", {href: item.href, target: "_blank"}, item.title)
+              React.createElement(Link, {to: item.href}, item.title)
             ), 
             React.createElement("p", null, item.desc)
           )
@@ -437,31 +719,34 @@ var ProjectsHandler = React.createClass({displayName: "ProjectsHandler",
 
 module.exports = ProjectsHandler;
 
-},{"../store":8,"./masonry-mixin.jsx":5,"reflux":24}],7:[function(require,module,exports){
+},{"../components/masonry-mixin.jsx":5,"../stores/app-store":7,"reflux":28}],12:[function(require,module,exports){
 
 /**
  * Module dependecies
  */
 
 var Reflux = require('reflux');
-var store = require('../store');
-var MasonryMixin = require('./masonry-mixin.jsx');
-
+var TeamStore = require('../stores/team-store');
+var MasonryMixin = require('../components/masonry-mixin.jsx');
 
 /**
- * Team Handler
+ * Team View
  */
 
-var TeamHandler = React.createClass({displayName: "TeamHandler",
+var TeamView = React.createClass({displayName: "TeamView",
 
   mixins: [
-    Reflux.connect(store),
+    Reflux.connect(TeamStore),
     MasonryMixin()
   ],
 
-  render: function() {
-    console.log(this.state, this.props);
+  getInitialState: function() {
+    return {
+      team: TeamStore.getFullTeam()
+    };
+  },
 
+  render: function() {
     var createItem = function(item, i) {
       return (
         React.createElement("div", {className: "grid-item text-center"}, 
@@ -482,59 +767,9 @@ var TeamHandler = React.createClass({displayName: "TeamHandler",
   }
 });
 
-module.exports = TeamHandler;
+module.exports = TeamView;
 
-},{"../store":8,"./masonry-mixin.jsx":5,"reflux":24}],8:[function(require,module,exports){
-
-/**
- * Module dependencies
- */
-
-var Reflux = require('reflux');
-var actions = require('./actions');
-
-var data = {
-  'es': require('../es'),
-  'en': require('../en')
-};
-
-/**
- * Browser lang
- */
-
-var defaultLanguage = 'en';
-var language = (localStorage.getItem('lang') || navigator.userLanguage || navigator.language).split('-')[0] || defaultLanguage;
-
-/**
- *
- */
-
-module.exports = Reflux.createStore({
-
-  listenables: [actions],
-
-  init: function() {
-    console.log('initializing store with %s as lang', language);
-    this.lang = language;
-  },
-
-  changeLang: function(lang) {
-    console.log('store.onChangeLang');
-
-    localStorage.setItem('lang', lang);
-
-    this.lang = lang;
-    this.trigger(data[lang]);
-  },
-
-  getInitialState: function() {
-    var d = data[this.lang];
-
-    return d;
-  }
-});
-
-},{"../en":1,"../es":2,"./actions":3,"reflux":24}],9:[function(require,module,exports){
+},{"../components/masonry-mixin.jsx":5,"../stores/team-store":9,"reflux":28}],13:[function(require,module,exports){
 /*!
  * imagesLoaded v3.1.8
  * JavaScript is all like "You images are done yet or what?"
@@ -871,7 +1106,7 @@ function makeArray( obj ) {
 
 });
 
-},{"eventie":10,"wolfy87-eventemitter":11}],10:[function(require,module,exports){
+},{"eventie":14,"wolfy87-eventemitter":15}],14:[function(require,module,exports){
 /*!
  * eventie v1.0.6
  * event binding helper
@@ -955,7 +1190,7 @@ if ( typeof define === 'function' && define.amd ) {
 
 })( window );
 
-},{}],11:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 /*!
  * EventEmitter v4.2.11 - git.io/ee
  * Unlicense - http://unlicense.org/
@@ -1429,7 +1664,7 @@ if ( typeof define === 'function' && define.amd ) {
     }
 }.call(this));
 
-},{}],12:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 /*!
  * Masonry v3.3.1
  * Cascading grid layout library
@@ -1634,7 +1869,7 @@ if ( typeof define === 'function' && define.amd ) {
 
 }));
 
-},{"fizzy-ui-utils":16,"get-size":17,"outlayer":23}],13:[function(require,module,exports){
+},{"fizzy-ui-utils":20,"get-size":21,"outlayer":27}],17:[function(require,module,exports){
 /**
  * matchesSelector v1.0.3
  * matchesSelector( element, '.selector' )
@@ -1743,7 +1978,7 @@ if ( typeof define === 'function' && define.amd ) {
 
 })( Element.prototype );
 
-},{}],14:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 /*!
  * docReady v1.0.3
  * Cross browser DOMContentLoaded event emitter
@@ -1817,9 +2052,9 @@ if ( typeof define === 'function' && define.amd ) {
 
 })( window );
 
-},{"eventie":15}],15:[function(require,module,exports){
-arguments[4][10][0].apply(exports,arguments)
-},{"dup":10}],16:[function(require,module,exports){
+},{"eventie":19}],19:[function(require,module,exports){
+arguments[4][14][0].apply(exports,arguments)
+},{"dup":14}],20:[function(require,module,exports){
 /**
  * Fizzy UI utils v1.0.1
  * MIT license
@@ -2091,7 +2326,7 @@ return utils;
 
 }));
 
-},{"desandro-matches-selector":13,"doc-ready":14}],17:[function(require,module,exports){
+},{"desandro-matches-selector":17,"doc-ready":18}],21:[function(require,module,exports){
 /*!
  * getSize v1.2.2
  * measure size of elements
@@ -2343,7 +2578,7 @@ if ( typeof define === 'function' && define.amd ) {
 
 })( window );
 
-},{"desandro-get-style-property":18}],18:[function(require,module,exports){
+},{"desandro-get-style-property":22}],22:[function(require,module,exports){
 /*!
  * getStyleProperty v1.0.4
  * original by kangax
@@ -2400,7 +2635,7 @@ if ( typeof define === 'function' && define.amd ) {
 
 })( window );
 
-},{}],19:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 /**
  * Outlayer Item
  */
@@ -2988,13 +3223,13 @@ return Item;
 
 }));
 
-},{"desandro-get-style-property":20,"fizzy-ui-utils":16,"get-size":17,"wolfy87-eventemitter":22}],20:[function(require,module,exports){
-arguments[4][18][0].apply(exports,arguments)
-},{"dup":18}],21:[function(require,module,exports){
-arguments[4][10][0].apply(exports,arguments)
-},{"dup":10}],22:[function(require,module,exports){
-arguments[4][11][0].apply(exports,arguments)
-},{"dup":11}],23:[function(require,module,exports){
+},{"desandro-get-style-property":24,"fizzy-ui-utils":20,"get-size":21,"wolfy87-eventemitter":26}],24:[function(require,module,exports){
+arguments[4][22][0].apply(exports,arguments)
+},{"dup":22}],25:[function(require,module,exports){
+arguments[4][14][0].apply(exports,arguments)
+},{"dup":14}],26:[function(require,module,exports){
+arguments[4][15][0].apply(exports,arguments)
+},{"dup":15}],27:[function(require,module,exports){
 /*!
  * Outlayer v1.4.1
  * the brains and guts of a layout library
@@ -3922,10 +4157,10 @@ return Outlayer;
 }));
 
 
-},{"./item":19,"eventie":21,"fizzy-ui-utils":16,"get-size":17,"wolfy87-eventemitter":22}],24:[function(require,module,exports){
+},{"./item":23,"eventie":25,"fizzy-ui-utils":20,"get-size":21,"wolfy87-eventemitter":26}],28:[function(require,module,exports){
 module.exports = require('./src');
 
-},{"./src":38}],25:[function(require,module,exports){
+},{"./src":42}],29:[function(require,module,exports){
 'use strict';
 
 /**
@@ -4156,7 +4391,7 @@ EventEmitter.EventEmitter3 = EventEmitter;
 //
 module.exports = EventEmitter;
 
-},{}],26:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 (function (global){
 /*! Native Promise Only
     v0.7.8-a (c) Kyle Simpson
@@ -4165,7 +4400,7 @@ module.exports = EventEmitter;
 !function(t,n,e){n[t]=n[t]||e(),"undefined"!=typeof module&&module.exports?module.exports=n[t]:"function"==typeof define&&define.amd&&define(function(){return n[t]})}("Promise","undefined"!=typeof global?global:this,function(){"use strict";function t(t,n){l.add(t,n),h||(h=y(l.drain))}function n(t){var n,e=typeof t;return null==t||"object"!=e&&"function"!=e||(n=t.then),"function"==typeof n?n:!1}function e(){for(var t=0;t<this.chain.length;t++)o(this,1===this.state?this.chain[t].success:this.chain[t].failure,this.chain[t]);this.chain.length=0}function o(t,e,o){var r,i;try{e===!1?o.reject(t.msg):(r=e===!0?t.msg:e.call(void 0,t.msg),r===o.promise?o.reject(TypeError("Promise-chain cycle")):(i=n(r))?i.call(r,o.resolve,o.reject):o.resolve(r))}catch(c){o.reject(c)}}function r(o){var c,u,a=this;if(!a.triggered){a.triggered=!0,a.def&&(a=a.def);try{(c=n(o))?(u=new f(a),c.call(o,function(){r.apply(u,arguments)},function(){i.apply(u,arguments)})):(a.msg=o,a.state=1,a.chain.length>0&&t(e,a))}catch(s){i.call(u||new f(a),s)}}}function i(n){var o=this;o.triggered||(o.triggered=!0,o.def&&(o=o.def),o.msg=n,o.state=2,o.chain.length>0&&t(e,o))}function c(t,n,e,o){for(var r=0;r<n.length;r++)!function(r){t.resolve(n[r]).then(function(t){e(r,t)},o)}(r)}function f(t){this.def=t,this.triggered=!1}function u(t){this.promise=t,this.state=0,this.triggered=!1,this.chain=[],this.msg=void 0}function a(n){if("function"!=typeof n)throw TypeError("Not a function");if(0!==this.__NPO__)throw TypeError("Not a promise");this.__NPO__=1;var o=new u(this);this.then=function(n,r){var i={success:"function"==typeof n?n:!0,failure:"function"==typeof r?r:!1};return i.promise=new this.constructor(function(t,n){if("function"!=typeof t||"function"!=typeof n)throw TypeError("Not a function");i.resolve=t,i.reject=n}),o.chain.push(i),0!==o.state&&t(e,o),i.promise},this["catch"]=function(t){return this.then(void 0,t)};try{n.call(void 0,function(t){r.call(o,t)},function(t){i.call(o,t)})}catch(c){i.call(o,c)}}var s,h,l,p=Object.prototype.toString,y="undefined"!=typeof setImmediate?function(t){return setImmediate(t)}:setTimeout;try{Object.defineProperty({},"x",{}),s=function(t,n,e,o){return Object.defineProperty(t,n,{value:e,writable:!0,configurable:o!==!1})}}catch(d){s=function(t,n,e){return t[n]=e,t}}l=function(){function t(t,n){this.fn=t,this.self=n,this.next=void 0}var n,e,o;return{add:function(r,i){o=new t(r,i),e?e.next=o:n=o,e=o,o=void 0},drain:function(){var t=n;for(n=e=h=void 0;t;)t.fn.call(t.self),t=t.next}}}();var g=s({},"constructor",a,!1);return a.prototype=g,s(g,"__NPO__",0,!1),s(a,"resolve",function(t){var n=this;return t&&"object"==typeof t&&1===t.__NPO__?t:new n(function(n,e){if("function"!=typeof n||"function"!=typeof e)throw TypeError("Not a function");n(t)})}),s(a,"reject",function(t){return new this(function(n,e){if("function"!=typeof n||"function"!=typeof e)throw TypeError("Not a function");e(t)})}),s(a,"all",function(t){var n=this;return"[object Array]"!=p.call(t)?n.reject(TypeError("Not an array")):0===t.length?n.resolve([]):new n(function(e,o){if("function"!=typeof e||"function"!=typeof o)throw TypeError("Not a function");var r=t.length,i=Array(r),f=0;c(n,t,function(t,n){i[t]=n,++f===r&&e(i)},o)})}),s(a,"race",function(t){var n=this;return"[object Array]"!=p.call(t)?n.reject(TypeError("Not an array")):new n(function(e,o){if("function"!=typeof e||"function"!=typeof o)throw TypeError("Not a function");c(n,t,function(t,n){e(n)},o)})}),a});
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],27:[function(require,module,exports){
+},{}],31:[function(require,module,exports){
 /**
  * A module of methods that you want to include in all actions.
  * This module is consumed by `createAction`.
@@ -4173,7 +4408,7 @@ module.exports = EventEmitter;
 module.exports = {
 };
 
-},{}],28:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 exports.createdStores = [];
 
 exports.createdActions = [];
@@ -4187,7 +4422,7 @@ exports.reset = function() {
     }
 };
 
-},{}],29:[function(require,module,exports){
+},{}],33:[function(require,module,exports){
 var _ = require('./utils'),
     maker = require('./joins').instanceJoinCreator;
 
@@ -4409,7 +4644,7 @@ module.exports = {
     joinStrict: maker("strict")
 };
 
-},{"./joins":39,"./utils":43}],30:[function(require,module,exports){
+},{"./joins":43,"./utils":47}],34:[function(require,module,exports){
 var _ = require('./utils'),
     ListenerMethods = require('./ListenerMethods');
 
@@ -4428,7 +4663,7 @@ module.exports = _.extend({
 
 }, ListenerMethods);
 
-},{"./ListenerMethods":29,"./utils":43}],31:[function(require,module,exports){
+},{"./ListenerMethods":33,"./utils":47}],35:[function(require,module,exports){
 var _ = require('./utils');
 
 /**
@@ -4611,7 +4846,7 @@ module.exports = {
     }
 };
 
-},{"./utils":43}],32:[function(require,module,exports){
+},{"./utils":47}],36:[function(require,module,exports){
 /**
  * A module of methods that you want to include in all stores.
  * This module is consumed by `createStore`.
@@ -4619,7 +4854,7 @@ module.exports = {
 module.exports = {
 };
 
-},{}],33:[function(require,module,exports){
+},{}],37:[function(require,module,exports){
 module.exports = function(store, definition) {
   for (var name in definition) {
     if (Object.getOwnPropertyDescriptor && Object.defineProperty) {
@@ -4644,7 +4879,7 @@ module.exports = function(store, definition) {
   return store;
 };
 
-},{}],34:[function(require,module,exports){
+},{}],38:[function(require,module,exports){
 var Reflux = require('./index'),
     _ = require('./utils');
 
@@ -4672,7 +4907,7 @@ module.exports = function(listenable,key){
     };
 };
 
-},{"./index":38,"./utils":43}],35:[function(require,module,exports){
+},{"./index":42,"./utils":47}],39:[function(require,module,exports){
 var Reflux = require('./index'),
   _ = require('./utils');
 
@@ -4713,7 +4948,7 @@ module.exports = function(listenable, key, filterFunc) {
 };
 
 
-},{"./index":38,"./utils":43}],36:[function(require,module,exports){
+},{"./index":42,"./utils":47}],40:[function(require,module,exports){
 var _ = require('./utils'),
     Reflux = require('./index'),
     Keep = require('./Keep'),
@@ -4780,7 +5015,7 @@ var createAction = function(definition) {
 
 module.exports = createAction;
 
-},{"./Keep":28,"./index":38,"./utils":43}],37:[function(require,module,exports){
+},{"./Keep":32,"./index":42,"./utils":47}],41:[function(require,module,exports){
 var _ = require('./utils'),
     Reflux = require('./index'),
     Keep = require('./Keep'),
@@ -4843,7 +5078,7 @@ module.exports = function(definition) {
     return store;
 };
 
-},{"./Keep":28,"./bindMethods":33,"./index":38,"./mixer":42,"./utils":43}],38:[function(require,module,exports){
+},{"./Keep":32,"./bindMethods":37,"./index":42,"./mixer":46,"./utils":47}],42:[function(require,module,exports){
 exports.ActionMethods = require('./ActionMethods');
 
 exports.ListenerMethods = require('./ListenerMethods');
@@ -4954,7 +5189,7 @@ if (!Function.prototype.bind) {
   );
 }
 
-},{"./ActionMethods":27,"./Keep":28,"./ListenerMethods":29,"./ListenerMixin":30,"./PublisherMethods":31,"./StoreMethods":32,"./connect":34,"./connectFilter":35,"./createAction":36,"./createStore":37,"./joins":39,"./listenTo":40,"./listenToMany":41,"./utils":43}],39:[function(require,module,exports){
+},{"./ActionMethods":31,"./Keep":32,"./ListenerMethods":33,"./ListenerMixin":34,"./PublisherMethods":35,"./StoreMethods":36,"./connect":38,"./connectFilter":39,"./createAction":40,"./createStore":41,"./joins":43,"./listenTo":44,"./listenToMany":45,"./utils":47}],43:[function(require,module,exports){
 /**
  * Internal module used to create static and instance join methods
  */
@@ -5062,7 +5297,7 @@ function emitIfAllListenablesEmitted(join) {
     reset(join);
 }
 
-},{"./createStore":37,"./utils":43}],40:[function(require,module,exports){
+},{"./createStore":41,"./utils":47}],44:[function(require,module,exports){
 var Reflux = require('./index');
 
 
@@ -5100,7 +5335,7 @@ module.exports = function(listenable,callback,initial){
     };
 };
 
-},{"./index":38}],41:[function(require,module,exports){
+},{"./index":42}],45:[function(require,module,exports){
 var Reflux = require('./index');
 
 /**
@@ -5135,7 +5370,7 @@ module.exports = function(listenables){
     };
 };
 
-},{"./index":38}],42:[function(require,module,exports){
+},{"./index":42}],46:[function(require,module,exports){
 var _ = require('./utils');
 
 module.exports = function mix(def) {
@@ -5194,7 +5429,7 @@ module.exports = function mix(def) {
     return updated;
 };
 
-},{"./utils":43}],43:[function(require,module,exports){
+},{"./utils":47}],47:[function(require,module,exports){
 /*
  * isObject, extend, isFunction, isArguments are taken from undescore/lodash in
  * order to remove the dependency
@@ -5265,4 +5500,4 @@ exports.throwIf = function(val,msg){
     }
 };
 
-},{"eventemitter3":25,"native-promise-only":26}]},{},[4]);
+},{"eventemitter3":29,"native-promise-only":30}]},{},[4]);

@@ -40,7 +40,7 @@ footer a {
   padding: 10px;
 }
 
-.grid-item img {
+img {
   width: 100%;
 }
 
@@ -125,7 +125,7 @@ a, a:active, a:hover, a:focus {
   margin-bottom: 25px;
 }
 
-@media only screen and (max-width : 900px) {
+@media only screen and (max-width : 970px) {
 
   body {
     text-align: center;
@@ -165,8 +165,31 @@ a, a:active, a:hover, a:focus {
 }
 
 /**************************
+ ****** DETAILS VIEW ******
+ **************************/
+
+.details-view h4 {
+  margin-top: 65px;
+}
+
+/**************************
  ****** SCREEN SIZES ******
  **************************/
+
+@media only screen and (max-width : 970px) {
+  .details-view h4 {
+    margin-top: 25px;
+  }
+
+  .details-view ul.links {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .details-view .team-grid .grid-item {
+    width: 25%;
+  }
+}
 
 @media only screen and (max-width : 750px) {
 

@@ -4,24 +4,27 @@
  */
 
 var Reflux = require('reflux');
-var store = require('../store');
-var MasonryMixin = require('./masonry-mixin.jsx');
-
+var TeamStore = require('../stores/team-store');
+var MasonryMixin = require('../components/masonry-mixin.jsx');
 
 /**
- * Team Handler
+ * Team View
  */
 
-var TeamHandler = React.createClass({
+var TeamView = React.createClass({
 
   mixins: [
-    Reflux.connect(store),
+    Reflux.connect(TeamStore),
     MasonryMixin()
   ],
 
-  render: function() {
-    console.log(this.state, this.props);
+  getInitialState: function() {
+    return {
+      team: TeamStore.getFullTeam()
+    };
+  },
 
+  render: function() {
     var createItem = function(item, i) {
       return (
         <div className="grid-item text-center">
@@ -42,5 +45,5 @@ var TeamHandler = React.createClass({
   }
 });
 
-module.exports = TeamHandler;
+module.exports = TeamView;
 

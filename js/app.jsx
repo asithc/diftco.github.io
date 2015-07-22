@@ -8,11 +8,11 @@ var RouteHandler = Router.RouteHandler;
 var Route = Router.Route;
 var Link = Router.Link;
 var Reflux = require('reflux');
-var store = require('./store');
+var AppStore = require('./stores/app-store');
 var actions = require('./actions');
-var TeamHandler = require('./components/team-handler.jsx');
-var ProjectsHandler = require('./components/projects-handler.jsx');
-
+var TeamView = require('./views/team.jsx');
+var ProjectsView = require('./views/projects.jsx');
+var DetailsView = require('./views/details.jsx');
 
 /**
  * Nav item component
@@ -26,8 +26,19 @@ var NavItem = React.createClass({
     this.props.onSelected(this.props.uid);
   },
 
+  isRouteActive: function(uid) {
+    var name = uid;
+    var pth = this.getPathname();
+
+    if (~pth.indexOf(uid)) {
+      return true;
+    }
+
+    return this.isActive(name);
+  },
+
   render: function() {
-    var className = this.isActive(this.props.uid) ? 'active' : null;
+    var className = this.isRouteActive(this.props.uid) ? 'active' : null;
 
     return (
       <li className={className}>
@@ -84,7 +95,7 @@ var Nav = React.createClass({
 
 var App = React.createClass({
 
-  mixins: [ Reflux.connect(store) ],
+  mixins: [ Reflux.connect(AppStore) ],
 
   changeLanguage: function(e) {
     e.preventDefault();
@@ -150,8 +161,10 @@ var App = React.createClass({
 
 var routes = (
   <Route name="app" path="/" handler={App}>
-    <Route name="work" path="/" handler={ProjectsHandler} />
-    <Route name="team" path="/team/" handler={TeamHandler} />
+    <Route name="work" path="/" handler={ProjectsView} />
+    <Route name="team" path="/team/" handler={TeamView} />
+    <Route name="products" path="/products/" handler={ProjectsView} />
+    <Route name="product_details" path="/products/:name/" handler={DetailsView} />
   </Route>
 );
 
