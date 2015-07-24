@@ -25,21 +25,18 @@ module.exports = Reflux.createStore({
     this.itemName = null;
   },
 
-  setItemName: function(name) {
-    console.log('set item name', name);
+  setProjectName: function(name) {
     this.itemName = name;
-
-    //this.trigger(this.getItem());
   },
 
   changeLang: function(lang) {
     this.lang = lang;
 
-    this.trigger(this.getItem());
+    this.trigger({ project: this.getItem() });
   },
 
   getItem: function(name) {
-    var n = this.itemName || name;
+    var n = name || this.itemName;
     var d = data[this.lang];
 
     var project = d.projects.filter(function(p) {
@@ -47,11 +44,7 @@ module.exports = Reflux.createStore({
     })[0];
 
     return project;
-  },
+  }
 
-  //getInitialState: function() {
-  //  console.log('get initial state = product');
-  //  return {};
-  //}
 });
 

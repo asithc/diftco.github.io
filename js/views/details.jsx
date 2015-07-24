@@ -10,10 +10,10 @@ var Actions = require('../actions');
 var MasonryMixin = require('../components/masonry-mixin.jsx');
 
 /**
- * Details Handler
+ * Details View
  */
 
-var DetailsHandler = React.createClass({
+var DetailsView = React.createClass({
 
   mixins: [
     Reflux.connect(ProductStore),
@@ -24,6 +24,8 @@ var DetailsHandler = React.createClass({
   getInitialState: function() {
     var name = this.props.params.name;
 
+    console.log('Details.getInitialState', name, ProductStore.getItem(name));
+
     return {
       team: TeamStore.getTeamByProject(name),
       project: ProductStore.getItem(name)
@@ -33,9 +35,9 @@ var DetailsHandler = React.createClass({
   componentDidMount: function() {
     var name = this.props.params.name;
 
-    console.log('component did mount', name);
+    console.log('Details.componentDidMount', name);
 
-    Actions.setItemName(name);
+    Actions.setProjectName(name);
   },
 
   render: function() {
@@ -80,4 +82,4 @@ var DetailsHandler = React.createClass({
   }
 });
 
-module.exports = DetailsHandler;
+module.exports = DetailsView;

@@ -26,7 +26,11 @@ module.exports = Reflux.createStore({
   changeLang: function(lang) {
     this.lang = lang;
 
-    this.trigger({ team: this.getFullTeam() });
+    this.trigger({ team: this.getTeamByProject() });
+  },
+
+  setProjectName: function(name) {
+    this.projectName = name;
   },
 
   getFullTeam: function() {
@@ -34,6 +38,10 @@ module.exports = Reflux.createStore({
   },
 
   getTeamByProject: function(projectName) {
+    projectName = projectName || this.projectName;
+
+    console.log('getTeamByProject', projectName);
+
     return this.getFullTeam().filter(function(member) {
       return ~member.projects.indexOf(projectName);
     });
