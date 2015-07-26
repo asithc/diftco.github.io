@@ -28,7 +28,7 @@ footer a {
 }
 
 #main-wrapper {
-  padding-left: 80px;
+  padding-left: 26px;
 }
 
 #main-nav {
@@ -38,6 +38,10 @@ footer a {
 
 .grid-item {
   padding: 10px;
+}
+
+.lang-selector {
+  float: right;
 }
 
 img {
@@ -91,6 +95,7 @@ a, a:active, a:hover, a:focus {
   top: 0;
   left: 0;
   padding: 30px;
+  padding-top: 3%;
   height: 100%;
   visibility: hidden;
 }
@@ -115,6 +120,14 @@ a, a:active, a:hover, a:focus {
   text-decoration: none;
 }
 
+@media only screen and (max-width : 600px) {
+
+  .projects-grid .grid-item {
+    width: auto;
+    position: relative;
+  }
+
+}
 
 /**************************
  ******* TEAM GRID ********
@@ -129,6 +142,11 @@ a, a:active, a:hover, a:focus {
 
   body {
     text-align: center;
+  }
+
+  .lang-selector {
+    float: none;
+    padding: 0;
   }
 
   #main-nav {
@@ -146,10 +164,17 @@ a, a:active, a:hover, a:focus {
   }
 
   .team-grid .grid-item {
-    width: 30%;
+    width: 25%;
     margin-bottom: 25px;
   }
+}
 
+@media only screen and (max-width : 600px) {
+
+  .team-grid .grid-item {
+    width: 50%;
+    margin-bottom: 25px;
+  }
 }
 
 /***************************
@@ -170,6 +195,24 @@ a, a:active, a:hover, a:focus {
 
 .details-view h4 {
   margin-top: 65px;
+  margin-bottom: 20px;
+}
+
+/**************************
+ ****** MEDIA LIST ********
+ **************************/
+
+@media only screen and (max-width: 970px) {
+  .media-list {
+    display: table;
+    margin: 0 auto;
+  }
+}
+
+.media-list .media-item {
+  float:left;
+  display: inline-block;
+  margin-left: 10px;
 }
 
 /**************************
@@ -189,19 +232,9 @@ a, a:active, a:hover, a:focus {
   .details-view .team-grid .grid-item {
     width: 25%;
   }
-}
 
-@media only screen and (max-width : 750px) {
-
-  .team-grid .grid-item {
-    width: 50%;
-    margin-bottom: 25px;
+  #main-nav {
+    margin-bottom: 35px;
   }
-
-  .projects-grid .grid-item {
-    width: auto;
-    position: relative;
-  }
-
 }
 

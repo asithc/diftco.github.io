@@ -4,10 +4,9 @@
  */
 
 var Reflux = require('reflux');
-var ProductStore = require('../stores/product-store');
+var ProjectStore = require('../stores/project-store');
 var TeamStore = require('../stores/team-store');
 var Actions = require('../actions');
-var MasonryMixin = require('../components/masonry-mixin.jsx');
 
 /**
  * Details View
@@ -16,19 +15,21 @@ var MasonryMixin = require('../components/masonry-mixin.jsx');
 var DetailsView = React.createClass({
 
   mixins: [
-    Reflux.connect(ProductStore),
-    Reflux.connect(TeamStore),
-    MasonryMixin()
+    Reflux.connect(ProjectStore),
+    Reflux.connect(TeamStore)
   ],
 
   getInitialState: function() {
     var name = this.props.params.name;
 
-    console.log('Details.getInitialState', name, ProductStore.getItem(name));
 
     return {
-      team: TeamStore.getTeamByProject(name),
-      project: ProductStore.getItem(name)
+      project: ProjectStore.getProject(name),
+      media: [
+        { img: "http://placehold.it/70x70", title: "Manifesto" },
+        { img: "http://placehold.it/70x70", title: "Product" },
+        { img: "http://placehold.it/70x70", title: "Demo" }
+      ]
     };
   },
 
@@ -41,23 +42,30 @@ var DetailsView = React.createClass({
   },
 
   render: function() {
-    var createTeamItem = function(data) {
+    var createMediaItem = function(d) {
       return (
-        <div className="grid-item">
-          <img src={data.img} />
-        </div>
+        <li className="media-item">
+          <a className="hint--bottom" data-hint={d.title}>
+            <img src={d.img} />
+          </a>
+        </li>
       );
     };
+
+    var project = this.state.project;
 
     return (
       <div className="details-view">
         <div className="row">
           <div className="col-md-7">
-            <img src={this.state.project.img} />
+            <img 
+              src={project.img.low} 
+              data-src={project.img.high} 
+              className="lazyload" />
           </div>
           <div className="col-md-5">
-            <h3>{this.state.project.title}</h3>
-            <p>{this.state.project.desc}</p>
+            <h3>{project.title}</h3>
+            <p>{project.desc}</p>
           </div>
         </div>
         <div className="row" >
@@ -65,18 +73,19 @@ var DetailsView = React.createClass({
           <div className="col-md-7">
             <h4>Links</h4>
             <ul className="links">
-              {this.state.project.links.map(function(link) {
+              {project.links.map(function(link) {
                 return (<li><a href={link}>{link}</a></li>);
               })}
             </ul>
           </div>
           <div className="col-md-5">
-            <h4>Team</h4>
-            <div ref="masonryContainer" className="grid team-grid">
-              {this.state.team.map(createTeamItem)}
-            </div>
+            <h4>Media</h4>
+            <ul className="media-list">
+              {this.state.media.map(createMediaItem)}
+            </ul>
           </div>
         </div>
+
       </div>
     );
   }

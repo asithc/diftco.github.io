@@ -6,6 +6,7 @@
 var Reflux = require('reflux');
 var actions = require('../actions');
 var language = require('../lib/lang')();
+var _ = require('lodash');
 
 var data = {
   'es': require('../../es'),
@@ -29,20 +30,28 @@ module.exports = Reflux.createStore({
     this.trigger({ team: this.getTeamByProject() });
   },
 
+  unsetProjectName: function() {
+    this.projectName = null;
+  },
+
   setProjectName: function(name) {
     this.projectName = name;
   },
 
   getFullTeam: function() {
-    return data[this.lang].team;
+    return _.shuffle(data[this.lang].team);
   },
 
   getTeamByProject: function(projectName) {
     projectName = projectName || this.projectName;
 
-    console.log('getTeamByProject', projectName);
+    var team = this.getFullTeam();
 
-    return this.getFullTeam().filter(function(member) {
+    if (!projectName) {
+      return team;
+    }
+
+    return team.filter(function(member) {
       return ~member.projects.indexOf(projectName);
     });
   }

@@ -6,7 +6,7 @@
 var Link = ReactRouter.Link;
 var Reflux = require('reflux');
 var MasonryMixin = require('../components/masonry-mixin.jsx');
-var store = require('../stores/app-store');
+var ProjectsStore = require('../stores/projects-store');
 
 /**
  * Projects Handler
@@ -15,15 +15,25 @@ var store = require('../stores/app-store');
 var ProjectsHandler = React.createClass({
 
   mixins: [
-    Reflux.connect(store),
+    Reflux.connect(ProjectsStore),
     MasonryMixin()
   ],
+
+  getInitialState: function() {
+    return {
+      projects: ProjectsStore.getProjects()
+    };
+  },
 
   render: function() {
     var createItem = function(item, i) {
       return (
         <div className="grid-item">
-          <img src={item.img} />
+          <img 
+            src={item.img.low} 
+            data-src={item.img.high} 
+            className="lazyload" />
+
           <div className="grid-item-content">
             <h3>
               <Link to={item.href}>{item.title}</Link>

@@ -16,6 +16,7 @@ var reactify = require('reactify');
 var source = require('vinyl-source-stream');
 var merge = require('merge2');
 var less = require('gulp-less');
+var responsive = require('gulp-responsive');
 
 /**
  * Build output dir
@@ -119,6 +120,38 @@ gulp.task('build:css', function() {
   gulp.src(paths.css)
     .pipe(concat('app.css'))
     .pipe(gulp.dest(build_dir));
+});
+
+/**
+ * Responsive images
+ */
+
+gulp.task('build:img', function () {
+  var w = 100;
+
+  return gulp
+    .src('img/projects/*.jpg')
+    .pipe(responsive({
+      'alantu.jpg': [
+        {
+          width: w,
+          rename: 'alantu-low.jpg'
+        }
+      ],
+      'dift.jpg': [
+        {
+          width: w,
+          rename: 'dift-low.jpg'
+        }
+      ],
+      'ingame.jpg': [
+        {
+          width: w,
+          rename: 'ingame-low.jpg'
+        }
+      ]
+    }))
+    .pipe(gulp.dest('img/projects'));
 });
 
 /**

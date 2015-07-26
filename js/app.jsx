@@ -13,6 +13,13 @@ var actions = require('./actions');
 var TeamView = require('./views/team.jsx');
 var ProjectsView = require('./views/projects.jsx');
 var DetailsView = require('./views/details.jsx');
+var fastclick = require('fastclick');
+
+/**
+ * include lazysizzes
+ */
+
+require('lazysizes');
 
 /**
  * Nav item component
@@ -116,7 +123,7 @@ var App = React.createClass({
 
         <div className="row">
           <div className="col-md-12">
-            <ul className="lang-selector pull-right">
+            <ul className="lang-selector">
               <a className={esClass} href="" onClick={this.changeLanguage}>ES</a> |&nbsp;
               <a className={enClass} href="" onClick={this.changeLanguage}>EN</a>
             </ul>
@@ -160,16 +167,23 @@ var App = React.createClass({
 });
 
 var routes = (
-  <Route name="app" path="/" handler={App}>
-    <Route name="work" path="/" handler={ProjectsView} />
-    <Route name="team" path="/team/" handler={TeamView} />
-    <Route name="products" path="/products/" handler={ProjectsView} />
-    <Route name="product_details" path="/products/:name/" handler={DetailsView} />
+  <Route name="app" path="/" handler={App} ignoreScrollBehavior={true}>
+    <Route name="work" path="/" handler={ProjectsView} ignoreScrollBehavior={true} />
+    <Route name="team" path="/team/" handler={TeamView} ignoreScrollBehavior={true} />
+    <Route name="products" path="/products/" handler={ProjectsView} ignoreScrollBehavior={true} />
+    <Route name="product_details" path="/products/:name/" handler={DetailsView} ignoreScrollBehavior={true} />
   </Route>
 );
 
-// Router.HistoryLocation
 Router.run(routes, Router.HistoryLocation, function (Handler) {  
   React.render(<Handler/>, document.getElementById('app'));
 });
 
+
+/**
+ * Fast click for mobile browsers
+ */
+
+$(function() {
+  fastclick.FastClick.attach(document.body);
+});

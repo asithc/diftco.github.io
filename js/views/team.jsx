@@ -22,6 +22,8 @@ var TeamView = React.createClass({
     return {
       team: TeamStore.getFullTeam()
     };
+
+    Actions.unsetProjectName();
   },
 
   render: function() {

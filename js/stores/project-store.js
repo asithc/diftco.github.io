@@ -32,10 +32,10 @@ module.exports = Reflux.createStore({
   changeLang: function(lang) {
     this.lang = lang;
 
-    this.trigger({ project: this.getItem() });
+    this.trigger({ project: this.getProject() });
   },
 
-  getItem: function(name) {
+  getProject: function(name) {
     var n = name || this.itemName;
     var d = data[this.lang];
 

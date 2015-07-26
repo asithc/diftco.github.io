@@ -8,6 +8,7 @@
   },
   "author": "",
   "license": "ISC",
+  "repository": "git@github.com/diftco/diftco",
   "devDependencies": {
     "browserify": "^10.2.6",
     "del": "^1.2.0",
@@ -24,7 +25,10 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
+    "fastclick": "^1.0.6",
     "imagesloaded": "^3.1.8",
+    "lazysizes": "^1.1.4",
+    "lodash": "^3.10.0",
     "masonry-layout": "^3.3.1",
     "react": "^0.13.3",
     "reflux": "^0.2.9"
