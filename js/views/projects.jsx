@@ -16,7 +16,7 @@ var ProjectsHandler = React.createClass({
 
   mixins: [
     Reflux.connect(ProjectsStore),
-    MasonryMixin()
+    //MasonryMixin()
   ],
 
   getInitialState: function() {

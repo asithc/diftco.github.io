@@ -822,7 +822,7 @@ var ProjectsHandler = React.createClass({displayName: "ProjectsHandler",
 
   mixins: [
     Reflux.connect(ProjectsStore),
-    MasonryMixin()
+    //MasonryMixin()
   ],
 
   getInitialState: function() {
