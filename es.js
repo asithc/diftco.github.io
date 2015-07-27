@@ -16,49 +16,70 @@ module.exports = {
     {
       fullName: "Carlos De Venezia",
       desc: "Esta es una descripcion corta",
-      img: "/img/team/charly.jpg",
+      img: {
+        low: "/img/team/charly-low.jpg",
+        high: "/img/team/charly.jpg"
+      },
       href: "",
       projects: ["alantu", "dift"]
     },
     {
       fullName: "Conrado Cimino",
       desc: "Esta es una descripcion corta",
-      img: "/img/team/conan.jpg",
+      img: {
+        low: "/img/team/conan-low.jpg",
+        high: "/img/team/conan.jpg"
+      },
       href: "",
       projects: ["ingame"]
     },
     {
       fullName: "Gonzalo Aguirre",
       desc: "Esta es una descripcion corta",
-      img: "/img/team/gon.jpg",
+      img: {
+        low: "/img/team/gon-low.jpg",
+        high: "/img/team/gon.jpg"
+      },
       href: "",
       projects: ["ingame"]
     },
     {
       fullName: "Victor Calvello",
       desc: "Esta es una descripcion corta",
-      img: "/img/team/vic.jpg",
+      img: {
+        low: "/img/team/vic-low.jpg",
+        high: "/img/team/vic.jpg"
+      },
       href: "",
       projects: ["alantu", "ingame"]
     },
     {
       fullName: "Matias Medina",
       desc: "Esta es una descripcion corta",
-      img: "/img/team/mati.jpg",
+      img: {
+        low: "/img/team/mati-low.jpg",
+        high: "/img/team/mati.jpg"
+      },
       href: "",
       projects: ["alantu"]
     },
     {
       fullName: "Juan Pablo Garcia",
       desc: "Esta es una descripcion corta",
-      img: "/img/team/jpg.jpg",
+      img: {
+        low: "/img/team-low/jpg.jpg",
+        high: "/img/team/jpg.jpg"
+      },
       href: "",
       projects: ["ingame"]
     },
     {
       fullName: "Ignacio Olaciregui",
       desc: "Esta es una descripcion corta",
-      img: "/img/team/mono.jpg",
+      img: {
+        low: "/img/team/mono-low.jpg",
+        high: "/img/team/mono.jpg"
+      },
       href: "",
       projects: ["alantu", "dift"]
     }

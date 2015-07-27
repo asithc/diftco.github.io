@@ -45,7 +45,7 @@ var ProjectsHandler = React.createClass({
     };
 
     return (
-      <div ref="masonryContainer" className="grid projects-grid">
+      <div className="projects-grid">
         {this.state.projects.map(createItem)}
       </div>
     );

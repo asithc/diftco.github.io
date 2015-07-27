@@ -126,11 +126,11 @@ gulp.task('build:css', function() {
  * Responsive images
  */
 
-gulp.task('build:img', function () {
+gulp.task('build:img-projects', function () {
   var w = 100;
 
   return gulp
-    .src('img/projects/*.jpg')
+    .src(['img/projects/*.jpg', '!img/projects/*-*.jpg'])
     .pipe(responsive({
       'alantu.jpg': [
         {
@@ -154,6 +154,60 @@ gulp.task('build:img', function () {
     .pipe(gulp.dest('img/projects'));
 });
 
+gulp.task('build:img-team', function () {
+  var w = 20;
+
+  return gulp
+    .src(['img/team/*.jpg', '!img/team/*-*.jpg'])
+    .pipe(responsive({
+      'mati.jpg': [
+        {
+          width: w,
+          rename: 'mati-low.jpg'
+        }
+      ],
+      'conan.jpg': [
+        {
+          width: w,
+          rename: 'conan-low.jpg'
+        }
+      ],
+      'vic.jpg': [
+        {
+          width: w,
+          rename: 'vic-low.jpg'
+        }
+      ],
+      'jpg.jpg': [
+        {
+          width: w,
+          rename: 'jpg-low.jpg'
+        }
+      ],
+      'mono.jpg': [
+        {
+          width: w,
+          rename: 'mono-low.jpg'
+        }
+      ],
+      'gon.jpg': [
+        {
+          width: w,
+          rename: 'gon-low.jpg'
+        }
+      ],
+      'charly.jpg': [
+        {
+          width: w,
+          rename: 'charly-low.jpg'
+        }
+      ]
+    }))
+    .pipe(gulp.dest('img/team'));
+});
+
+gulp.task('build:img', ['build:img-team', 'build:img-projects']);
+
 /**
  * Watch for changes & rebuild
  */
@@ -167,5 +221,5 @@ gulp.task('watch', function() {
  * Default task
  */
 
-gulp.task('default', ['build:deps', 'build:css', 'build:js']);
+gulp.task('default', ['build:deps', 'build:css', 'build:js', 'build:img']);
 

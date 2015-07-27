@@ -18,49 +18,70 @@ module.exports = {
     {
       fullName: "Carlos De Venezia",
       desc: "This is a product short description here",
-      img: "/img/team/charly.jpg",
+      img: {
+        low: "/img/team/charly-low.jpg",
+        high: "/img/team/charly.jpg"
+      },
       href: "",
       projects: ["alantu", "dift"]
     },
     {
       fullName: "Conrado Cimino",
       desc: "This is a product short description here",
-      img: "/img/team/conan.jpg",
+      img: {
+        low: "/img/team/conan-low.jpg",
+        high: "/img/team/conan.jpg"
+      },
       href: "",
       projects: ["ingame"]
     },
     {
       fullName: "Gonzalo Aguirre",
       desc: "This is a product short description here",
-      img: "/img/team/gon.jpg",
+      img: {
+        low: "/img/team/gon-low.jpg",
+        high: "/img/team/gon.jpg"
+      },
       href: "",
       projects: ["ingame"]
     },
     {
       fullName: "Victor Calvello",
       desc: "This is a product short description here",
-      img: "/img/team/vic.jpg",
+      img: {
+        low: "/img/team/vic-low.jpg",
+        high: "/img/team/vic.jpg"
+      },
       href: "",
       projects: ["alantu", "ingame"]
     },
     {
       fullName: "Matias Medina",
       desc: "This is a product short description here",
-      img: "/img/team/mati.jpg",
+      img: {
+        low: "/img/team/mati-low.jpg",
+        high: "/img/team/mati.jpg"
+      },
       href: "",
       projects: ["alantu"]
     },
     {
       fullName: "Juan Pablo Garcia",
       desc: "This is a product short description here",
-      img: "/img/team/jpg.jpg",
+      img: {
+        low: "/img/team-low/jpg.jpg",
+        high: "/img/team/jpg.jpg"
+      },
       href: "",
       projects: ["ingame"]
     },
     {
       fullName: "Ignacio Olaciregui",
       desc: "This is a product short description here",
-      img: "/img/team/mono.jpg",
+      img: {
+        low: "/img/team/mono-low.jpg",
+        high: "/img/team/mono.jpg"
+      },
       href: "",
       projects: ["alantu", "dift"]
     }
@@ -127,49 +148,70 @@ module.exports = {
     {
       fullName: "Carlos De Venezia",
       desc: "Esta es una descripcion corta",
-      img: "/img/team/charly.jpg",
+      img: {
+        low: "/img/team/charly-low.jpg",
+        high: "/img/team/charly.jpg"
+      },
       href: "",
       projects: ["alantu", "dift"]
     },
     {
       fullName: "Conrado Cimino",
       desc: "Esta es una descripcion corta",
-      img: "/img/team/conan.jpg",
+      img: {
+        low: "/img/team/conan-low.jpg",
+        high: "/img/team/conan.jpg"
+      },
       href: "",
       projects: ["ingame"]
     },
     {
       fullName: "Gonzalo Aguirre",
       desc: "Esta es una descripcion corta",
-      img: "/img/team/gon.jpg",
+      img: {
+        low: "/img/team/gon-low.jpg",
+        high: "/img/team/gon.jpg"
+      },
       href: "",
       projects: ["ingame"]
     },
     {
       fullName: "Victor Calvello",
       desc: "Esta es una descripcion corta",
-      img: "/img/team/vic.jpg",
+      img: {
+        low: "/img/team/vic-low.jpg",
+        high: "/img/team/vic.jpg"
+      },
       href: "",
       projects: ["alantu", "ingame"]
     },
     {
       fullName: "Matias Medina",
       desc: "Esta es una descripcion corta",
-      img: "/img/team/mati.jpg",
+      img: {
+        low: "/img/team/mati-low.jpg",
+        high: "/img/team/mati.jpg"
+      },
       href: "",
       projects: ["alantu"]
     },
     {
       fullName: "Juan Pablo Garcia",
       desc: "Esta es una descripcion corta",
-      img: "/img/team/jpg.jpg",
+      img: {
+        low: "/img/team-low/jpg.jpg",
+        high: "/img/team/jpg.jpg"
+      },
       href: "",
       projects: ["ingame"]
     },
     {
       fullName: "Ignacio Olaciregui",
       desc: "Esta es una descripcion corta",
-      img: "/img/team/mono.jpg",
+      img: {
+        low: "/img/team/mono-low.jpg",
+        high: "/img/team/mono.jpg"
+      },
       href: "",
       projects: ["alantu", "dift"]
     }
@@ -631,7 +673,7 @@ var ProjectsStore = Reflux.createStore({
   getProjects: function(type) {
     type = type || this.type;
 
-    var projects = _.shuffle(data[this.lang].projects);
+    var projects = this.projects = this.projects || _.shuffle(data[this.lang].projects);
 
     if (!this.type) {
       return projects;
@@ -851,7 +893,7 @@ var ProjectsHandler = React.createClass({displayName: "ProjectsHandler",
     };
 
     return (
-      React.createElement("div", {ref: "masonryContainer", className: "grid projects-grid"}, 
+      React.createElement("div", {className: "projects-grid"}, 
         this.state.projects.map(createItem)
       )
     );
@@ -878,7 +920,7 @@ var TeamView = React.createClass({displayName: "TeamView",
 
   mixins: [
     Reflux.connect(TeamStore),
-    MasonryMixin()
+    //MasonryMixin()
   ],
 
   getInitialState: function() {
@@ -886,14 +928,18 @@ var TeamView = React.createClass({displayName: "TeamView",
       team: TeamStore.getFullTeam()
     };
 
-    Actions.unsetProjectName();
+    //Actions.unsetProjectName();
   },
 
   render: function() {
     var createItem = function(item, i) {
       return (
         React.createElement("div", {className: "grid-item text-center"}, 
-          React.createElement("img", {src: item.img}), 
+          React.createElement("img", {
+            src: item.img.low, 
+            "data-src": item.img.high, 
+            className: "lazyload"}), 
+
           React.createElement("div", {className: "grid-item-content"}, 
             React.createElement("h4", null, item.fullName), 
             React.createElement("p", null, item.desc)

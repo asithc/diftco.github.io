@@ -15,7 +15,7 @@ var TeamView = React.createClass({
 
   mixins: [
     Reflux.connect(TeamStore),
-    MasonryMixin()
+    //MasonryMixin()
   ],
 
   getInitialState: function() {
@@ -23,14 +23,18 @@ var TeamView = React.createClass({
       team: TeamStore.getFullTeam()
     };
 
-    Actions.unsetProjectName();
+    //Actions.unsetProjectName();
   },
 
   render: function() {
     var createItem = function(item, i) {
       return (
         <div className="grid-item text-center">
-          <img src={item.img} />
+          <img 
+            src={item.img.low} 
+            data-src={item.img.high} 
+            className="lazyload" />
+
           <div className="grid-item-content">
             <h4>{item.fullName}</h4>
             <p>{item.desc}</p>

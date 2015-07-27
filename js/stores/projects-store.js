@@ -52,7 +52,7 @@ var ProjectsStore = Reflux.createStore({
   getProjects: function(type) {
     type = type || this.type;
 
-    var projects = _.shuffle(data[this.lang].projects);
+    var projects = this.projects = this.projects || _.shuffle(data[this.lang].projects);
 
     if (!this.type) {
       return projects;

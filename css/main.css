@@ -36,10 +36,6 @@ footer a {
   margin-bottom: 70px;
 }
 
-.grid-item {
-  padding: 10px;
-}
-
 .lang-selector {
   float: right;
 }
@@ -77,24 +73,48 @@ a, a:active, a:hover, a:focus {
 }
 
 /**********************
+ ***** BASE GRID ******
+ **********************/
+
+.grid-item {
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+/**********************
  *** PROJECTS GRID ****
  **********************/
 
+.projects-grid {
+  -moz-column-count: 2;
+  -webkit-column-count: 2;
+  column-count: 2;
+  /**
+  -moz-column-gap: 10px;
+  -webkit-column-gap: 10px;
+  column-gap: 10px;
+  **/
+  width: 100%;
+}
+
 .projects-grid .grid-item {
-  width: 50%;
   position: relative;
+  width: 100%;
+  margin-bottom: 3%;
 }
 
 .projects-grid .grid-item-content {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 30px;
-  padding-top: 3%;
+  padding: 3%;
+  padding-top: 2%;
   height: 100%;
   visibility: hidden;
 }
 
+.projects-grid .grid-item:active .grid-item-content,
 .projects-grid .grid-item:hover .grid-item-content {
   background-color: #FFF;
   opacity: .8;
@@ -117,9 +137,10 @@ a, a:active, a:hover, a:focus {
 
 @media only screen and (max-width : 600px) {
 
-  .projects-grid .grid-item {
-    width: auto;
-    position: relative;
+  .projects-grid {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1;
   }
 
 }
@@ -128,48 +149,38 @@ a, a:active, a:hover, a:focus {
  ******* TEAM GRID ********
  **************************/
 
+.team-grid {
+  -moz-column-count: 6;
+  -webkit-column-count: 6;
+  column-count: 6;
+  width: 100%;
+  -moz-column-gap: 1%;
+  -webkit-column-gap: 1%;
+  column-gap: 1%;
+}
+
 .team-grid .grid-item {
-  width: 20%;
-  margin-bottom: 25px;
+  width: 93%;
+
 }
 
 @media only screen and (max-width : 970px) {
 
-  body {
-    text-align: center;
+  .team-grid {
+    -moz-column-count: 4;
+    -webkit-column-count: 4;
+    column-count: 4;
   }
 
-  .lang-selector {
-    float: none;
-    padding: 0;
-  }
-
-  #main-nav {
-    display: inline-block;
-    float: none;
-    vertical-align: top;
-  }
-
-  #main-nav {
-    text-align: center;
-  }
-
-  #main-wrapper {
-    padding-left: 0;
-  }
-
-  .team-grid .grid-item {
-    width: 25%;
-    margin-bottom: 25px;
-  }
 }
 
 @media only screen and (max-width : 600px) {
-
-  .team-grid .grid-item {
-    width: 50%;
-    margin-bottom: 25px;
+  .team-grid {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
   }
+
 }
 
 /***************************
@@ -182,6 +193,15 @@ a, a:active, a:hover, a:focus {
 
 .lang-selector a.active {
   text-decoration: underline;
+}
+
+@media only screen and (max-width : 970px) {
+
+  .lang-selector {
+    float: none;
+    padding: 0;
+  }
+
 }
 
 /**************************
@@ -215,6 +235,11 @@ a, a:active, a:hover, a:focus {
  **************************/
 
 @media only screen and (max-width : 970px) {
+
+  body {
+    text-align: center;
+  }
+
   .details-view h4 {
     margin-top: 25px;
   }
@@ -230,6 +255,17 @@ a, a:active, a:hover, a:focus {
 
   #main-nav {
     margin-bottom: 35px;
+  }
+
+  #main-nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+    text-align: center;
+  }
+
+  #main-wrapper {
+    padding-left: 0;
   }
 }
 
