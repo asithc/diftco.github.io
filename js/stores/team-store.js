@@ -39,7 +39,8 @@ module.exports = Reflux.createStore({
   },
 
   getFullTeam: function() {
-    return _.shuffle(data[this.lang].team);
+    this.team = this.team || _.shuffle(data[this.lang].team);
+    return this.team;
   },
 
   getTeamByProject: function(projectName) {
