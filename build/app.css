@@ -158,6 +158,7 @@ a, a:active, a:hover, a:focus {
   width: 16.5%;
   float: left;
   padding: 10px;
+  min-height: 340px;
 }
 
 @media only screen and (max-width : 970px) {
