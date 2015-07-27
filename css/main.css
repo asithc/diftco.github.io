@@ -138,11 +138,9 @@ a, a:active, a:hover, a:focus {
 @media only screen and (max-width : 600px) {
 
   .projects-grid {
-    /**
     -moz-column-count: 1;
     -webkit-column-count: 1;
     column-count: 1;
-    **/
   }
 
 }
