@@ -123,9 +123,17 @@ var App = React.createClass({
 
         <div className="row">
           <div className="col-md-12">
-            <ul className="lang-selector">
-              <a className={esClass} href="" onClick={this.changeLanguage}>ES</a> |&nbsp;
-              <a className={enClass} href="" onClick={this.changeLanguage}>EN</a>
+            <ul className="lang-selector nav nav-pills">
+              <li className={esClass}> 
+                <a href="" onClick={this.changeLanguage}>ES</a>
+              </li> 
+              <li className={enClass}> 
+              {
+                // 
+              }
+              
+              <a href="" onClick={this.changeLanguage}>EN</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -154,8 +162,8 @@ var App = React.createClass({
       <RouteHandler />
 
       <footer>
-        <p>© 2015 <a href="http://dift.co">Dift.co</a></p>
-        <p>
+        <p className="brand">© 2015 <a href="http://dift.co">Dift.co</a></p>
+        <p className="links">
           <a href="https://www.linkedin.com/company/dift-collective/" target="_blank">LINKEDIN</a>&nbsp;
           <a href="https://www.facebook.com/DiftCollective/" target="_blank">FACEBOOK</a>&nbsp;
           <a href="https://twitter.com/diftcollective" target="_blank">TWITTER</a>

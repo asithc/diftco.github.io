@@ -4,6 +4,7 @@
  */
 
 var Link = ReactRouter.Link;
+var Navigation = ReactRouter.Navigation;
 var Reflux = require('reflux');
 var MasonryMixin = require('../components/masonry-mixin.jsx');
 var ProjectsStore = require('../stores/projects-store');
@@ -16,13 +17,18 @@ var ProjectsHandler = React.createClass({
 
   mixins: [
     Reflux.connect(ProjectsStore),
-    //MasonryMixin()
+    Navigation
   ],
 
   getInitialState: function() {
     return {
       projects: ProjectsStore.getProjects()
     };
+  },
+
+  onProjectClick: function(e) {
+    var path = e.target.querySelector("a").pathname;
+    this.transitionTo(path);
   },
 
   render: function() {
@@ -45,7 +51,7 @@ var ProjectsHandler = React.createClass({
     };
 
     return (
-      <div className="projects-grid">
+      <div onClick={this.onProjectClick} className="projects-grid">
         {this.state.projects.map(createItem)}
       </div>
     );

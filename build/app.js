@@ -396,9 +396,17 @@ var App = React.createClass({displayName: "App",
 
         React.createElement("div", {className: "row"}, 
           React.createElement("div", {className: "col-md-12"}, 
-            React.createElement("ul", {className: "lang-selector"}, 
-              React.createElement("a", {className: esClass, href: "", onClick: this.changeLanguage}, "ES"), " | ", 
-              React.createElement("a", {className: enClass, href: "", onClick: this.changeLanguage}, "EN")
+            React.createElement("ul", {className: "lang-selector nav nav-pills"}, 
+              React.createElement("li", {className: esClass}, 
+                React.createElement("a", {href: "", onClick: this.changeLanguage}, "ES")
+              ), 
+              React.createElement("li", {className: enClass}, 
+              
+                // 
+              
+              
+              React.createElement("a", {href: "", onClick: this.changeLanguage}, "EN")
+              )
             )
           )
         ), 
@@ -427,8 +435,8 @@ var App = React.createClass({displayName: "App",
       React.createElement(RouteHandler, null), 
 
       React.createElement("footer", null, 
-        React.createElement("p", null, "© 2015 ", React.createElement("a", {href: "http://dift.co"}, "Dift.co")), 
-        React.createElement("p", null, 
+        React.createElement("p", {className: "brand"}, "© 2015 ", React.createElement("a", {href: "http://dift.co"}, "Dift.co")), 
+        React.createElement("p", {className: "links"}, 
           React.createElement("a", {href: "https://www.linkedin.com/company/dift-collective/", target: "_blank"}, "LINKEDIN"), " ", 
           React.createElement("a", {href: "https://www.facebook.com/DiftCollective/", target: "_blank"}, "FACEBOOK"), " ", 
           React.createElement("a", {href: "https://twitter.com/diftcollective", target: "_blank"}, "TWITTER")
@@ -853,6 +861,7 @@ module.exports = DetailsView;
  */
 
 var Link = ReactRouter.Link;
+var Navigation = ReactRouter.Navigation;
 var Reflux = require('reflux');
 var MasonryMixin = require('../components/masonry-mixin.jsx');
 var ProjectsStore = require('../stores/projects-store');
@@ -865,13 +874,18 @@ var ProjectsHandler = React.createClass({displayName: "ProjectsHandler",
 
   mixins: [
     Reflux.connect(ProjectsStore),
-    //MasonryMixin()
+    Navigation
   ],
 
   getInitialState: function() {
     return {
       projects: ProjectsStore.getProjects()
     };
+  },
+
+  onProjectClick: function(e) {
+    var path = e.target.querySelector("a").pathname;
+    this.transitionTo(path);
   },
 
   render: function() {
@@ -894,7 +908,7 @@ var ProjectsHandler = React.createClass({displayName: "ProjectsHandler",
     };
 
     return (
-      React.createElement("div", {className: "projects-grid"}, 
+      React.createElement("div", {onClick: this.onProjectClick, className: "projects-grid"}, 
         this.state.projects.map(createItem)
       )
     );
