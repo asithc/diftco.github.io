@@ -177,6 +177,14 @@ a, a:active, a:hover, a:focus {
 
 }
 
+@media only screen and (max-width : 450px) {
+
+  .team-grid .grid-item {
+    width: 50%;
+  }
+
+}
+
 /***************************
  ****** LANG SELECTOR ******
  ***************************/
