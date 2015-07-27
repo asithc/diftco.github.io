@@ -68,7 +68,7 @@ module.exports = {
       fullName: "Juan Pablo Garcia",
       desc: "This is a product short description here",
       img: {
-        low: "/img/team-low/jpg.jpg",
+        low: "/img/team/jpg-low.jpg",
         high: "/img/team/jpg.jpg"
       },
       href: "",

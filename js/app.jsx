@@ -130,9 +130,9 @@ var App = React.createClass({
           </div>
         </div>
 
-        <div className="row">
+        <div id="header" className="row">
           <div className="col-md-12">
-            <h1>{this.state.content.title}</h1>
+            <h1>COLLECTIVE <br /> DIGITAL <br /> CRAFT</h1>
           </div>
         </div>
 

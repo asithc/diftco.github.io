@@ -69,7 +69,7 @@ module.exports = {
       fullName: "Juan Pablo Garcia",
       desc: "This is a product short description here",
       img: {
-        low: "/img/team-low/jpg.jpg",
+        low: "/img/team/jpg-low.jpg",
         high: "/img/team/jpg.jpg"
       },
       href: "",
@@ -199,7 +199,7 @@ module.exports = {
       fullName: "Juan Pablo Garcia",
       desc: "Esta es una descripcion corta",
       img: {
-        low: "/img/team-low/jpg.jpg",
+        low: "/img/team/jpg-low.jpg",
         high: "/img/team/jpg.jpg"
       },
       href: "",
@@ -403,9 +403,9 @@ var App = React.createClass({displayName: "App",
           )
         ), 
 
-        React.createElement("div", {className: "row"}, 
+        React.createElement("div", {id: "header", className: "row"}, 
           React.createElement("div", {className: "col-md-12"}, 
-            React.createElement("h1", null, this.state.content.title)
+            React.createElement("h1", null, "COLLECTIVE ", React.createElement("br", null), " DIGITAL ", React.createElement("br", null), " CRAFT")
           )
         ), 
 
