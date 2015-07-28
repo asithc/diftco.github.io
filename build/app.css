@@ -128,15 +128,16 @@ a, a:active, a:hover, a:focus {
   column-gap: 10px;
   **/
   width: 100%;
+  position: relative;
 }
 
-.projects-grid .grid-sizer,
 .projects-grid .grid-item.alantu {
-  width: 33%;
+  width: 40%;
+  margin-left: 4%;
 }
 
 .projects-grid .grid-item {
-  width: 60%;
+  width: 50%;
 }
 
 .gutter-sizer {
@@ -199,6 +200,7 @@ a, a:active, a:hover, a:focus {
   width: 80%;
 }
 
+
 .projects-grid h3 a:hover {
   text-decoration: none;
 }
@@ -217,8 +219,12 @@ a, a:active, a:hover, a:focus {
     display: none;
   }
 
-}
+  .projects-grid .grid-item {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
 
+}
 
 /**************************
  ******* TEAM GRID ********
@@ -315,13 +321,17 @@ a, a:active, a:hover, a:focus {
 }
 
 .details-view .wrapper {
+  /**
   overflow: hidden;
   max-height: 332px;
+  **/
 }
 
 .details-view.alantu .wrapper img {
+  /**
   position: relative;
   bottom: 227px;
+  **/
 }
 
 /**************************

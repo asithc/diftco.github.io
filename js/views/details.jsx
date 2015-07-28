@@ -62,8 +62,8 @@ var DetailsView = React.createClass({
           <div className="col-sm-7">
             <div className="wrapper">
               <img 
-                src={project.img.low} 
-                data-src={project.img.high} 
+                src={project.img.details || project.img.low} 
+                data-src={project.img.details || project.img.high} 
                 className="lazyload" />
             </div>
           </div>

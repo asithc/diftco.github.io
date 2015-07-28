@@ -107,7 +107,8 @@ module.exports = {
       desc: "Alantu is a game which aims to create the biggest computer ever made.",
       img: {
         low: "/img/projects/alantu-low.jpg",
-        high: "/img/projects/alantu.jpg"
+        high: "/img/projects/alantu.jpg",
+        details: "/img/projects/alantu-horizontal.jpg"
       },          
       href: "/products/alantu/",
       links: ['http://alantu.io']

@@ -108,7 +108,8 @@ module.exports = {
       desc: "Alantu is a game which aims to create the biggest computer ever made.",
       img: {
         low: "/img/projects/alantu-low.jpg",
-        high: "/img/projects/alantu.jpg"
+        high: "/img/projects/alantu.jpg",
+        details: "/img/projects/alantu-horizontal.jpg"
       },          
       href: "/products/alantu/",
       links: ['http://alantu.io']
@@ -238,7 +239,8 @@ module.exports = {
       desc: "Alantu es un juego cuyo objetivo es darle vida a la computadora mas grande del planeta.",
       img: {
         low: "/img/projects/alantu-low.jpg",
-        high: "/img/projects/alantu.jpg"
+        high: "/img/projects/alantu.jpg",
+        details: "/img/projects/alantu-horizontal.jpg"
       },          
       href: "/products/alantu/",
       links: ['http://alantu.io']
@@ -482,14 +484,13 @@ var MasonryMixin = function(options) {
  
         imagesLoaded: function() {
             // make sure the imagesloaded plugin is only evaluated when in the browser
+
             imagesloaded(this.refs.masonryContainer.getDOMNode(), function(instance) {
                 this.masonry.layout();
             }.bind(this));
         },
  
         componentDidMount: function(domNode) {
-            console.log('initializing masonry');
- 
             // create masonry for specified container
             this.masonry = new Masonry(this.refs.masonryContainer.getDOMNode(), options);
  
@@ -498,24 +499,30 @@ var MasonryMixin = function(options) {
  
             // relayout when images are loaded
             this.imagesLoaded();
+
+            var self = this;
+
+            setTimeout(function() {
+               self.masonry.layout(); 
+            }, 1000);
         },
  
         componentDidUpdate: function() {
-            console.log('updating masonry');
- 
             // reload all items in container (bad for performance - should find a way to append/prepend by disabling react render)
             this.masonry.reloadItems();
  
             // relayout after reloading items
             this.masonry.layout();
  
+            masonry = this.masonry;
             // relayout again when images are loaded
             this.imagesLoaded();
- 
+
             // force resize event
             setTimeout(function() {
                 window.dispatchEvent(new Event('resize'));
             }, 1);
+
         }
     };
 };
@@ -824,8 +831,8 @@ var DetailsView = React.createClass({displayName: "DetailsView",
           React.createElement("div", {className: "col-sm-7"}, 
             React.createElement("div", {className: "wrapper"}, 
               React.createElement("img", {
-                src: project.img.low, 
-                "data-src": project.img.high, 
+                src: project.img.details || project.img.low, 
+                "data-src": project.img.details || project.img.high, 
                 className: "lazyload"})
             )
           ), 
@@ -881,9 +888,10 @@ var ProjectsHandler = React.createClass({displayName: "ProjectsHandler",
     Reflux.connect(ProjectsStore),
     MasonryMixin({ 
       itemSelector: '.grid-item',
-      columnWidth: '.grid-sizer',
-      gutter: '.gutter-sizer',
-      percentPosition: true 
+      //columnWidth: '.grid-sizer',
+      //gutter: '.gutter-sizer',
+      percentPosition: true,
+      transitionDuration: 0
     }),
     Navigation
   ],
@@ -897,8 +905,6 @@ var ProjectsHandler = React.createClass({displayName: "ProjectsHandler",
   onProjectClick: function(e) {
     var target = e.target.parentElement;
     var path = target.querySelector("a").pathname;
-    console.log(path);
-    console.log('------------');
     this.transitionTo(path);
   },
 
@@ -925,8 +931,10 @@ var ProjectsHandler = React.createClass({displayName: "ProjectsHandler",
 
     return (
       React.createElement("div", {ref: "masonryContainer", onClick: this.onProjectClick, className: "grid projects-grid"}, 
-        React.createElement("div", {className: "grid-sizer"}), 
-        React.createElement("div", {className: "gutter-sizer"}), 
+      /**
+        <div className="grid-sizer"></div>
+        <div className="gutter-sizer"></div>
+      **/
         this.state.projects.map(createItem)
       )
     );

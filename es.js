@@ -106,7 +106,8 @@ module.exports = {
       desc: "Alantu es un juego cuyo objetivo es darle vida a la computadora mas grande del planeta.",
       img: {
         low: "/img/projects/alantu-low.jpg",
-        high: "/img/projects/alantu.jpg"
+        high: "/img/projects/alantu.jpg",
+        details: "/img/projects/alantu-horizontal.jpg"
       },          
       href: "/products/alantu/",
       links: ['http://alantu.io']
