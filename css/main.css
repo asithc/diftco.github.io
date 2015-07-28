@@ -1,6 +1,7 @@
 body {
   font-family: "Courier", Helvetica, sans-serif;
   padding-top: 10px;
+  font-size: 16px;
 }
 
 h1 {
@@ -118,10 +119,10 @@ a, a:active, a:hover, a:focus {
  **********************/
 
 .projects-grid {
+  /**
   -moz-column-count: 2;
   -webkit-column-count: 2;
   column-count: 2;
-  /**
   -moz-column-gap: 10px;
   -webkit-column-gap: 10px;
   column-gap: 10px;
@@ -129,10 +130,25 @@ a, a:active, a:hover, a:focus {
   width: 100%;
 }
 
+.projects-grid .grid-sizer,
+.projects-grid .grid-item.alantu {
+  width: 33%;
+}
+
+.projects-grid .grid-item {
+  width: 60%;
+}
+
+.gutter-sizer {
+  width: 0%;
+}
+
 .projects-grid .grid-item {
   position: relative;
+  /**
   width: 100%;
-  margin-bottom: 3%;
+  **/
+  margin-bottom: 5.5%;
   cursor: pointer;
 }
 
@@ -140,15 +156,26 @@ a, a:active, a:hover, a:focus {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 3%;
-  padding-top: 2%;
+  padding: 10%;
+  padding-top: 7%;
   height: 100%;
   visibility: hidden;
 }
 
-.projects-grid .grid-item:active .grid-item-content,
+
+.projects-grid .grid-item.alantu:hover .grid-item-content {
+  background-color: #DA5034;
+}
+
+.projects-grid .grid-item.ingame:hover .grid-item-content {
+  background-color: #3642A4;
+}
+
+.projects-grid .grid-item.dift:hover .grid-item-content {
+  background-color: #31A69B;
+}
+
 .projects-grid .grid-item:hover .grid-item-content {
-  background-color: #FFF;
   opacity: .8;
   visibility: visible;
 }
@@ -157,25 +184,41 @@ a, a:active, a:hover, a:focus {
   font-family: Helvetica, Tahoma, Arial, sans-serif;
   font-size: .8em;
   line-height: 1.7em;
-  background-color: #282828;
   color: #FFF;
   font-weight: bold;
-  padding: 6px 10px;
+}
+
+.projects-grid p {
+  color: #FFF;
+  font-weight: bold;
+  width: 50%;
+  line-height: 1.5em;
+}
+
+.projects-grid .grid-item.alantu .grid-item-content  p {
+  width: 80%;
 }
 
 .projects-grid h3 a:hover {
   text-decoration: none;
 }
 
-@media only screen and (max-width : 600px) {
+@media only screen and (max-width : 970px) {
 
-  .projects-grid {
-    -moz-column-count: 1;
-    -webkit-column-count: 1;
-    column-count: 1;
+  .projects-grid .grid-item-content,
+  .projects-grid .grid-item-content p {
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width : 560px) {
+
+  .projects-grid .grid-item-content {
+    display: none;
   }
 
 }
+
 
 /**************************
  ******* TEAM GRID ********
@@ -269,6 +312,16 @@ a, a:active, a:hover, a:focus {
 .details-view h4 {
   margin-top: 65px;
   margin-bottom: 20px;
+}
+
+.details-view .wrapper {
+  overflow: hidden;
+  max-height: 332px;
+}
+
+.details-view.alantu .wrapper img {
+  position: relative;
+  bottom: 227px;
 }
 
 /**************************

@@ -54,23 +54,27 @@ var DetailsView = React.createClass({
 
     var project = this.state.project;
 
+    var className = "details-view " + project.name;
+
     return (
-      <div className="details-view">
+      <div className={className}>
         <div className="row">
-          <div className="col-md-7">
-            <img 
-              src={project.img.low} 
-              data-src={project.img.high} 
-              className="lazyload" />
+          <div className="col-sm-7">
+            <div className="wrapper">
+              <img 
+                src={project.img.low} 
+                data-src={project.img.high} 
+                className="lazyload" />
+            </div>
           </div>
-          <div className="col-md-5">
+          <div className="col-sm-5">
             <h3>{project.title}</h3>
             <p>{project.desc}</p>
           </div>
         </div>
         <div className="row" >
 
-          <div className="col-md-7">
+          <div className="col-sm-7">
             <h4>Links</h4>
             <ul className="links">
               {project.links.map(function(link) {
@@ -78,7 +82,7 @@ var DetailsView = React.createClass({
               })}
             </ul>
           </div>
-          <div className="col-md-5">
+          <div className="col-sm-5">
             <h4>Media</h4>
             <ul className="media-list">
               {this.state.media.map(createMediaItem)}

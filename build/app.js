@@ -681,7 +681,8 @@ var ProjectsStore = Reflux.createStore({
   getProjects: function(type) {
     type = type || this.type;
 
-    var projects = this.projects = this.projects || _.shuffle(data[this.lang].projects);
+    //var projects = this.projects = this.projects || _.shuffle(data[this.lang].projects);
+    var projects = data[this.lang].projects;
 
     if (!this.type) {
       return projects;
@@ -815,23 +816,27 @@ var DetailsView = React.createClass({displayName: "DetailsView",
 
     var project = this.state.project;
 
+    var className = "details-view " + project.name;
+
     return (
-      React.createElement("div", {className: "details-view"}, 
+      React.createElement("div", {className: className}, 
         React.createElement("div", {className: "row"}, 
-          React.createElement("div", {className: "col-md-7"}, 
-            React.createElement("img", {
-              src: project.img.low, 
-              "data-src": project.img.high, 
-              className: "lazyload"})
+          React.createElement("div", {className: "col-sm-7"}, 
+            React.createElement("div", {className: "wrapper"}, 
+              React.createElement("img", {
+                src: project.img.low, 
+                "data-src": project.img.high, 
+                className: "lazyload"})
+            )
           ), 
-          React.createElement("div", {className: "col-md-5"}, 
+          React.createElement("div", {className: "col-sm-5"}, 
             React.createElement("h3", null, project.title), 
             React.createElement("p", null, project.desc)
           )
         ), 
         React.createElement("div", {className: "row"}, 
 
-          React.createElement("div", {className: "col-md-7"}, 
+          React.createElement("div", {className: "col-sm-7"}, 
             React.createElement("h4", null, "Links"), 
             React.createElement("ul", {className: "links"}, 
               project.links.map(function(link) {
@@ -839,7 +844,7 @@ var DetailsView = React.createClass({displayName: "DetailsView",
               })
             )
           ), 
-          React.createElement("div", {className: "col-md-5"}, 
+          React.createElement("div", {className: "col-sm-5"}, 
             React.createElement("h4", null, "Media"), 
             React.createElement("ul", {className: "media-list"}, 
               this.state.media.map(createMediaItem)
@@ -874,6 +879,12 @@ var ProjectsHandler = React.createClass({displayName: "ProjectsHandler",
 
   mixins: [
     Reflux.connect(ProjectsStore),
+    MasonryMixin({ 
+      itemSelector: '.grid-item',
+      columnWidth: '.grid-sizer',
+      gutter: '.gutter-sizer',
+      percentPosition: true 
+    }),
     Navigation
   ],
 
@@ -884,14 +895,19 @@ var ProjectsHandler = React.createClass({displayName: "ProjectsHandler",
   },
 
   onProjectClick: function(e) {
-    var path = e.target.querySelector("a").pathname;
+    var target = e.target.parentElement;
+    var path = target.querySelector("a").pathname;
+    console.log(path);
+    console.log('------------');
     this.transitionTo(path);
   },
 
   render: function() {
     var createItem = function(item, i) {
+      var className = "grid-item " + item.name;
       return (
-        React.createElement("div", {className: "grid-item"}, 
+
+        React.createElement("div", {className: className}, 
           React.createElement("img", {
             src: item.img.low, 
             "data-src": item.img.high, 
@@ -908,7 +924,9 @@ var ProjectsHandler = React.createClass({displayName: "ProjectsHandler",
     };
 
     return (
-      React.createElement("div", {onClick: this.onProjectClick, className: "projects-grid"}, 
+      React.createElement("div", {ref: "masonryContainer", onClick: this.onProjectClick, className: "grid projects-grid"}, 
+        React.createElement("div", {className: "grid-sizer"}), 
+        React.createElement("div", {className: "gutter-sizer"}), 
         this.state.projects.map(createItem)
       )
     );

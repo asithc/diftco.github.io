@@ -17,6 +17,12 @@ var ProjectsHandler = React.createClass({
 
   mixins: [
     Reflux.connect(ProjectsStore),
+    MasonryMixin({ 
+      itemSelector: '.grid-item',
+      columnWidth: '.grid-sizer',
+      gutter: '.gutter-sizer',
+      percentPosition: true 
+    }),
     Navigation
   ],
 
@@ -27,14 +33,19 @@ var ProjectsHandler = React.createClass({
   },
 
   onProjectClick: function(e) {
-    var path = e.target.querySelector("a").pathname;
+    var target = e.target.parentElement;
+    var path = target.querySelector("a").pathname;
+    console.log(path);
+    console.log('------------');
     this.transitionTo(path);
   },
 
   render: function() {
     var createItem = function(item, i) {
+      var className = "grid-item " + item.name;
       return (
-        <div className="grid-item">
+
+        <div className={className}>
           <img 
             src={item.img.low} 
             data-src={item.img.high} 
@@ -51,7 +62,9 @@ var ProjectsHandler = React.createClass({
     };
 
     return (
-      <div onClick={this.onProjectClick} className="projects-grid">
+      <div ref="masonryContainer" onClick={this.onProjectClick} className="grid projects-grid">
+        <div className="grid-sizer"></div>
+        <div className="gutter-sizer"></div>
         {this.state.projects.map(createItem)}
       </div>
     );
