@@ -34,7 +34,6 @@ var TeamView = React.createClass({
             src={item.img.low} 
             data-src={item.img.high} 
             className="lazyload" />
-
           <div className="grid-item-content">
             <h4>{item.fullName}</h4>
             <p>{item.desc}</p>

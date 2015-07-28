@@ -980,7 +980,6 @@ var TeamView = React.createClass({displayName: "TeamView",
             src: item.img.low, 
             "data-src": item.img.high, 
             className: "lazyload"}), 
-
           React.createElement("div", {className: "grid-item-content"}, 
             React.createElement("h4", null, item.fullName), 
             React.createElement("p", null, item.desc)

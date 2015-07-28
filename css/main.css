@@ -242,11 +242,12 @@ a, a:active, a:hover, a:focus {
   min-height: 280px;
 }
 
-.team-grid .grid-item p {
-}
-
 .team-grid .grid-item h4 {
   margin: 35px 0px 15px;
+}
+
+.team-grid .grid-item img {
+  border-left: 25px solid #333; 
 }
 
 .team-grid .grid-item p,

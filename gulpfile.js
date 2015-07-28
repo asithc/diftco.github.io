@@ -155,50 +155,81 @@ gulp.task('build:img-projects', function () {
 });
 
 gulp.task('build:img-team', function () {
-  var w = 20;
+  var w = {
+    high: 360,
+    low: 20
+  };
 
   return gulp
-    .src(['img/team/*.jpg', '!img/team/*-*.jpg'])
+    .src(['img/team/orig/*.jpg'])
     .pipe(responsive({
       'mati.jpg': [
         {
-          width: w,
+          width: w.high,
+          rename: 'mati.jpg'
+        },
+        {
+          width: w.low,
           rename: 'mati-low.jpg'
         }
       ],
       'conan.jpg': [
         {
-          width: w,
+          width: w.high,
+          rename: 'conan.jpg'
+        },
+        {
+          width: w.low,
           rename: 'conan-low.jpg'
         }
       ],
       'vic.jpg': [
         {
-          width: w,
+          width: w.high,
+          rename: 'vic.jpg'
+        },
+        {
+          width: w.low,
           rename: 'vic-low.jpg'
         }
       ],
       'jpg.jpg': [
         {
-          width: w,
+          width: w.high,
+          rename: 'jpg.jpg'
+        },
+        {
+          width: w.low,
           rename: 'jpg-low.jpg'
         }
       ],
       'mono.jpg': [
         {
-          width: w,
+          width: w.high,
+          rename: 'mono.jpg'
+        },
+        {
+          width: w.low,
           rename: 'mono-low.jpg'
         }
       ],
       'gon.jpg': [
         {
-          width: w,
+          width: w.high,
+          rename: 'gon.jpg'
+        },
+        {
+          width: w.low,
           rename: 'gon-low.jpg'
         }
       ],
       'charly.jpg': [
         {
-          width: w,
+          width: w.high,
+          rename: 'charly.jpg'
+        },
+        {
+          width: w.low,
           rename: 'charly-low.jpg'
         }
       ]
