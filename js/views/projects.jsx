@@ -6,7 +6,7 @@
 var Link = ReactRouter.Link;
 var Navigation = ReactRouter.Navigation;
 var Reflux = require('reflux');
-var MasonryMixin = require('../components/masonry-mixin.jsx');
+//var MasonryMixin = require('../components/masonry-mixin.jsx');
 var ProjectsStore = require('../stores/projects-store');
 
 /**
@@ -17,13 +17,13 @@ var ProjectsHandler = React.createClass({
 
   mixins: [
     Reflux.connect(ProjectsStore),
-    MasonryMixin({ 
-      itemSelector: '.grid-item',
-      //columnWidth: '.grid-sizer',
-      //gutter: '.gutter-sizer',
-      percentPosition: true,
-      transitionDuration: 0
-    }),
+    //MasonryMixin({ 
+    //  itemSelector: '.grid-item',
+    //  //columnWidth: '.grid-sizer',
+    //  //gutter: '.gutter-sizer',
+    //  percentPosition: true,
+    //  transitionDuration: 0
+    //}),
     Navigation
   ],
 

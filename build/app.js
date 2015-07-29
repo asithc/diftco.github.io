@@ -102,6 +102,19 @@ module.exports = {
     },
 
     {
+      name: "dift",
+      type: 'product',
+      title: "Dift.io",
+      desc: "Dift.io it’s a simple mobile solution that allows users to track social performance.",
+      img: {
+        low: "/img/projects/dift-low.jpg",
+        high: "/img/projects/dift.jpg"
+      },
+      href: "/products/dift/",
+      links: ['http://dift.io']
+    },
+
+    {
       name: "alantu",
       type: 'product',
       title: "Alantu",
@@ -113,19 +126,6 @@ module.exports = {
       },          
       href: "/products/alantu/",
       links: ['http://alantu.io']
-    },
-
-    {
-      name: "dift",
-      type: 'product',
-      title: "Dift.io",
-      desc: "Dift.io it’s a simple mobile solution that allows users to track social performance.",
-      img: {
-        low: "/img/projects/dift-low.jpg",
-        high: "/img/projects/dift.jpg"
-      },
-      href: "/products/dift/",
-      links: ['http://dift.io']
     }
   ]
 };
@@ -233,6 +233,19 @@ module.exports = {
     },
 
     {
+      name: "dift",
+      type: 'product',
+      title: "Dift.io",
+      desc: "Dift.io es una aplicacion mobile que permite a los usuarios seguir su performance en las redes sociales.",
+      img: {
+        low: "/img/projects/dift-low.jpg",
+        high: "/img/projects/dift.jpg"
+      },
+      href: "/products/dift/",
+      links: ['http://dift.io']
+    },
+
+    {
       name: "alantu",
       type: 'product',
       title: "Alantu",
@@ -244,19 +257,6 @@ module.exports = {
       },          
       href: "/products/alantu/",
       links: ['http://alantu.io']
-    },
-
-    {
-      name: "dift",
-      type: 'product',
-      title: "Dift.io",
-      desc: "Dift.io es una aplicacion mobile que permite a los usuarios seguir su performance en las redes sociales.",
-      img: {
-        low: "/img/projects/dift-low.jpg",
-        high: "/img/projects/dift.jpg"
-      },
-      href: "/products/dift/",
-      links: ['http://dift.io']
     }
   ]
 };
@@ -875,7 +875,7 @@ module.exports = DetailsView;
 var Link = ReactRouter.Link;
 var Navigation = ReactRouter.Navigation;
 var Reflux = require('reflux');
-var MasonryMixin = require('../components/masonry-mixin.jsx');
+//var MasonryMixin = require('../components/masonry-mixin.jsx');
 var ProjectsStore = require('../stores/projects-store');
 
 /**
@@ -886,13 +886,13 @@ var ProjectsHandler = React.createClass({displayName: "ProjectsHandler",
 
   mixins: [
     Reflux.connect(ProjectsStore),
-    MasonryMixin({ 
-      itemSelector: '.grid-item',
-      //columnWidth: '.grid-sizer',
-      //gutter: '.gutter-sizer',
-      percentPosition: true,
-      transitionDuration: 0
-    }),
+    //MasonryMixin({ 
+    //  itemSelector: '.grid-item',
+    //  //columnWidth: '.grid-sizer',
+    //  //gutter: '.gutter-sizer',
+    //  percentPosition: true,
+    //  transitionDuration: 0
+    //}),
     Navigation
   ],
 
@@ -943,7 +943,7 @@ var ProjectsHandler = React.createClass({displayName: "ProjectsHandler",
 
 module.exports = ProjectsHandler;
 
-},{"../components/masonry-mixin.jsx":5,"../stores/projects-store":9,"reflux":32}],13:[function(require,module,exports){
+},{"../stores/projects-store":9,"reflux":32}],13:[function(require,module,exports){
 
 /**
  * Module dependecies

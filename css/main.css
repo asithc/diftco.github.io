@@ -119,29 +119,23 @@ a, a:active, a:hover, a:focus {
  **********************/
 
 .projects-grid {
-  /**
   -moz-column-count: 2;
   -webkit-column-count: 2;
   column-count: 2;
   -moz-column-gap: 10px;
   -webkit-column-gap: 10px;
   column-gap: 10px;
-  **/
   width: 100%;
   position: relative;
 }
 
 .projects-grid .grid-item.alantu {
-  width: 40%;
+  width: 100%;
   margin-left: 4%;
 }
 
 .projects-grid .grid-item {
-  width: 50%;
-}
-
-.gutter-sizer {
-  width: 0%;
+  width: 100%;
 }
 
 .projects-grid .grid-item {
@@ -207,6 +201,13 @@ a, a:active, a:hover, a:focus {
 
 @media only screen and (max-width : 970px) {
 
+  .projects-grid .grid-item-content {
+    padding-top: 0;
+  }
+}
+
+@media only screen and (max-width : 768px) {
+
   .projects-grid .grid-item-content,
   .projects-grid .grid-item-content p {
     margin: 0 auto;
@@ -214,6 +215,12 @@ a, a:active, a:hover, a:focus {
 }
 
 @media only screen and (max-width : 560px) {
+
+  .projects-grid {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1;
+  }
 
   .projects-grid .grid-item-content {
     display: none;
@@ -296,7 +303,7 @@ a, a:active, a:hover, a:focus {
 
 }
 
-@media only screen and (max-width : 970px) {
+@media only screen and (max-width : 768px) {
 
   .lang-selector li:first-child a {
     margin-left: 0;
@@ -334,6 +341,7 @@ a, a:active, a:hover, a:focus {
   bottom: 227px;
   **/
 }
+
 
 /**************************
  ****** MEDIA LIST ********
@@ -389,7 +397,7 @@ footer .links {
  ****** SCREEN SIZES ******
  **************************/
 
-@media only screen and (max-width : 970px) {
+@media only screen and (max-width : 768px) {
 
   body {
     text-align: center;

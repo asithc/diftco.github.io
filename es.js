@@ -100,6 +100,19 @@ module.exports = {
     },
 
     {
+      name: "dift",
+      type: 'product',
+      title: "Dift.io",
+      desc: "Dift.io es una aplicacion mobile que permite a los usuarios seguir su performance en las redes sociales.",
+      img: {
+        low: "/img/projects/dift-low.jpg",
+        high: "/img/projects/dift.jpg"
+      },
+      href: "/products/dift/",
+      links: ['http://dift.io']
+    },
+
+    {
       name: "alantu",
       type: 'product',
       title: "Alantu",
@@ -111,19 +124,6 @@ module.exports = {
       },          
       href: "/products/alantu/",
       links: ['http://alantu.io']
-    },
-
-    {
-      name: "dift",
-      type: 'product',
-      title: "Dift.io",
-      desc: "Dift.io es una aplicacion mobile que permite a los usuarios seguir su performance en las redes sociales.",
-      img: {
-        low: "/img/projects/dift-low.jpg",
-        high: "/img/projects/dift.jpg"
-      },
-      href: "/products/dift/",
-      links: ['http://dift.io']
     }
   ]
 };
