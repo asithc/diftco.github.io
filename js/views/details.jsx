@@ -5,8 +5,9 @@
 
 var Reflux = require('reflux');
 var ProjectStore = require('../stores/project-store');
-var TeamStore = require('../stores/team-store');
+var ProjectsStore = require('../stores/projects-store');
 var Actions = require('../actions');
+var Nav = require('../components/nav.jsx');
 
 /**
  * Details View
@@ -16,49 +17,84 @@ var DetailsView = React.createClass({
 
   mixins: [
     Reflux.connect(ProjectStore),
-    Reflux.connect(TeamStore)
+    Reflux.connect(ProjectsStore)
   ],
 
   getInitialState: function() {
     var name = this.props.params.name;
 
-
     return {
-      project: ProjectStore.getProject(name),
-      media: [
-        { img: "http://placehold.it/70x70", title: "Manifesto" },
-        { img: "http://placehold.it/70x70", title: "Product" },
-        { img: "http://placehold.it/70x70", title: "Demo" }
-      ]
+      projects: ProjectsStore.getProjects('product'),
+      project: ProjectStore.getProject(name)
     };
   },
 
   componentDidMount: function() {
+  
+  },
+
+  componentWillMount: function() {
     var name = this.props.params.name;
-
-    console.log('Details.componentDidMount', name);
-
     Actions.setProjectName(name);
   },
 
-  render: function() {
-    var createMediaItem = function(d) {
-      return (
-        <li className="media-item">
-          <a className="hint--bottom" data-hint={d.title}>
-            <img src={d.img} />
-          </a>
-        </li>
-      );
+  renderTwitter: function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+
+    if (d.getElementById(id)) return t;
+
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
     };
 
-    var project = this.state.project;
+    return t;
+  },
 
+  render: function() {
+    var project = this.state.project;
     var className = "details-view " + project.name;
+
+    console.log(this.state, this.props);
 
     return (
       <div className={className}>
-        <div className="row">
+
+        <Nav elementId="products-nav" items={[
+          { 
+            name: 'product_details', 
+            params: { name: 'ingame' }, 
+            title: 'Ingame' 
+          },
+          { 
+            name: 'product_details', 
+            params: { name: 'alantu' }, 
+            title: 'Alantu' 
+          },
+          { 
+            name: 'product_details', 
+            params: { name: 'dift' }, 
+            title: 'DiftStats' 
+          }
+        ]} />
+
+        <div className="row info">
+          <div className="col-sm-5">
+            <h3>{project.title}</h3>
+          </div>
+        </div>
+
+        <div className="row info">
+          <div className="col-sm-5">
+            <p>{project.desc.short}</p>
+            <p>{project.desc.long}</p>
+          </div>
           <div className="col-sm-7">
             <div className="wrapper">
               <img 
@@ -67,29 +103,31 @@ var DetailsView = React.createClass({
                 className="lazyload" />
             </div>
           </div>
-          <div className="col-sm-5">
-            <h3>{project.title}</h3>
-            <p>{project.desc}</p>
-          </div>
         </div>
-        <div className="row" >
-
-          <div className="col-sm-7">
-            <h4>Links</h4>
+        <div className="row">
+          <div className="col-sm-5">
+            <h4>Product Info</h4>
             <ul className="links">
               {project.links.map(function(link) {
                 return (<li><a href={link}>{link}</a></li>);
               })}
             </ul>
+
           </div>
-          <div className="col-sm-5">
-            <h4>Media</h4>
-            <ul className="media-list">
-              {this.state.media.map(createMediaItem)}
-            </ul>
+          <div className="col-sm-7">
+            <h4>Tweets</h4>
+            <a 
+              className="twitter-timeline" 
+              data-dnt="true" 
+              href="https://twitter.com/alantu" 
+              data-widget-id="626451037973573632"
+              data-chrome="nofooter noborders noheader noscrollbar"> 
+              Tweets by @alantu
+            </a>
+
+            { this.renderTwitter(document, "script", "twitter-wjs") }
           </div>
         </div>
-
       </div>
     );
   }

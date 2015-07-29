@@ -3,9 +3,9 @@
 module.exports = {
   lang: "en",
   nav: [
-    { uid: "work", title: "HOME" },
-    { uid: "team", title: "TEAM" },
-    { uid: "products", title: "PRODUCTS" }
+    { name: "work", title: "HOME" },
+    { name: "team", title: "TEAM" },
+    { name: "products", title: "PRODUCTS" }
   ],
 
   content: {
@@ -18,6 +18,9 @@ module.exports = {
     {
       fullName: "Carlos De Venezia",
       desc: "This is a product short description here",
+      roles: "Business & Operations",
+      linkedin: "",
+      twitter: "charlydv",
       img: {
         low: "/img/team/charly-low.jpg",
         high: "/img/team/charly.jpg"
@@ -28,6 +31,9 @@ module.exports = {
     {
       fullName: "Conrado Cimino",
       desc: "This is a product short description here",
+      roles: "Digital Marketing",
+      linkedin: "",
+      twitter: "conan",
       img: {
         low: "/img/team/conan-low.jpg",
         high: "/img/team/conan.jpg"
@@ -38,6 +44,9 @@ module.exports = {
     {
       fullName: "Gonzalo Aguirre",
       desc: "This is a product short description here",
+      roles: "Technology",
+      linkedin: "",
+      twitter: "gon",
       img: {
         low: "/img/team/gon-low.jpg",
         high: "/img/team/gon.jpg"
@@ -48,6 +57,9 @@ module.exports = {
     {
       fullName: "Victor Calvello",
       desc: "This is a product short description here",
+      roles: "Business & Operations",
+      linkedin: "",
+      twitter: "vcalvello",
       img: {
         low: "/img/team/vic-low.jpg",
         high: "/img/team/vic.jpg"
@@ -58,6 +70,9 @@ module.exports = {
     {
       fullName: "Matias Medina",
       desc: "This is a product short description here",
+      roles: "Business & Operations",
+      linkedin: "",
+      twitter: "tutem",
       img: {
         low: "/img/team/mati-low.jpg",
         high: "/img/team/mati.jpg"
@@ -68,6 +83,9 @@ module.exports = {
     {
       fullName: "Juan Pablo Garcia",
       desc: "This is a product short description here",
+      roles: "Technology",
+      linkedin: "",
+      twitter: "jpg",
       img: {
         low: "/img/team/jpg-low.jpg",
         high: "/img/team/jpg.jpg"
@@ -78,6 +96,9 @@ module.exports = {
     {
       fullName: "Ignacio Olaciregui",
       desc: "This is a product short description here",
+      roles: "Technology",
+      linkedin: "",
+      twitter: "ignacioola",
       img: {
         low: "/img/team/mono-low.jpg",
         high: "/img/team/mono.jpg"
@@ -92,7 +113,10 @@ module.exports = {
       name: "ingame",
       type: 'product',
       title: "Ingame",
-      desc: "Ingame is a new way to interact with your favourite brands, get cool rewards and have fun during the ride.",
+      desc: {
+        short: "Ingame is a new way to interact with your favourite brands, get cool rewards and have fun during the ride.",
+        long: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tortor magna, convallis eget feugiat ac, vestibulum id augue. Quisque ultricies, dolor vitae pulvinar sollicitudin, dui mi dignissim tortor, sit amet mollis velit purus a purus. Phasellus sed odio ut libero blandit bibendum a ac ipsum. In velit arcu, consectetur congue mollis non, bibendum pulvinar nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam odio nibh, interdum sit amet risus eget, elementum lobortis erat. Ut at magna et ligula facilisis aliquam eu malesuada nulla. Proin dapibus sem non sollicitudin lacinia. Nullam at lacus libero. Maecenas nec lectus a eros tempus mollis."
+      },
       img: {
         low: "/img/projects/ingame-low.jpg",
         high: "/img/projects/ingame.jpg"
@@ -105,7 +129,10 @@ module.exports = {
       name: "dift",
       type: 'product',
       title: "Dift.io",
-      desc: "Dift.io it’s a simple mobile solution that allows users to track social performance.",
+      desc: {
+        short: "Dift.io it’s a simple mobile solution that allows users to track social performance.",
+        long: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tortor magna, convallis eget feugiat ac, vestibulum id augue. Quisque ultricies, dolor vitae pulvinar sollicitudin, dui mi dignissim tortor, sit amet mollis velit purus a purus. Phasellus sed odio ut libero blandit bibendum a ac ipsum. In velit arcu, consectetur congue mollis non, bibendum pulvinar nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam odio nibh, interdum sit amet risus eget, elementum lobortis erat. Ut at magna et ligula facilisis aliquam eu malesuada nulla. Proin dapibus sem non sollicitudin lacinia. Nullam at lacus libero. Maecenas nec lectus a eros tempus mollis."
+      },
       img: {
         low: "/img/projects/dift-low.jpg",
         high: "/img/projects/dift.jpg"
@@ -118,7 +145,10 @@ module.exports = {
       name: "alantu",
       type: 'product',
       title: "Alantu",
-      desc: "Alantu is a game which aims to create the biggest computer ever made.",
+      desc: {
+        short: "Alantu is a game which aims to create the biggest computer ever made.",
+        long: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tortor magna, convallis eget feugiat ac, vestibulum id augue. Quisque ultricies, dolor vitae pulvinar sollicitudin, dui mi dignissim tortor, sit amet mollis velit purus a purus. Phasellus sed odio ut libero blandit bibendum a ac ipsum. In velit arcu, consectetur congue mollis non, bibendum pulvinar nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam odio nibh, interdum sit amet risus eget, elementum lobortis erat. Ut at magna et ligula facilisis aliquam eu malesuada nulla. Proin dapibus sem non sollicitudin lacinia. Nullam at lacus libero. Maecenas nec lectus a eros tempus mollis."
+      },
       img: {
         low: "/img/projects/alantu-low.jpg",
         high: "/img/projects/alantu.jpg",
@@ -149,6 +179,9 @@ module.exports = {
     {
       fullName: "Carlos De Venezia",
       desc: "Esta es una descripcion corta",
+      roles: "Business & Operations",
+      linkedin: "",
+      twitter: "charlydv",
       img: {
         low: "/img/team/charly-low.jpg",
         high: "/img/team/charly.jpg"
@@ -159,6 +192,9 @@ module.exports = {
     {
       fullName: "Conrado Cimino",
       desc: "Esta es una descripcion corta",
+      roles: "Digital Marketing",
+      linkedin: "",
+      twitter: "conan",
       img: {
         low: "/img/team/conan-low.jpg",
         high: "/img/team/conan.jpg"
@@ -272,7 +308,7 @@ module.exports = Reflux.createActions(
   ]
 );
 
-},{"reflux":32}],4:[function(require,module,exports){
+},{"reflux":35}],4:[function(require,module,exports){
 
 /**
  * Module dependencies
@@ -286,8 +322,10 @@ var Reflux = require('reflux');
 var AppStore = require('./stores/app-store');
 var actions = require('./actions');
 var TeamView = require('./views/team.jsx');
-var ProjectsView = require('./views/projects.jsx');
+var ProductsView = require('./views/products.jsx');
+var MixedView = require('./views/mixed.jsx');
 var DetailsView = require('./views/details.jsx');
+var Nav = require('./components/nav.jsx');
 var fastclick = require('fastclick');
 
 /**
@@ -295,81 +333,6 @@ var fastclick = require('fastclick');
  */
 
 require('lazysizes');
-
-/**
- * Nav item component
- */
-
-var NavItem = React.createClass({displayName: "NavItem",
-
-  mixins: [ Router.State ],
-
-  handleClick: function(e) {
-    this.props.onSelected(this.props.uid);
-  },
-
-  isRouteActive: function(uid) {
-    var name = uid;
-    var pth = this.getPathname();
-
-    if (~pth.indexOf(uid)) {
-      return true;
-    }
-
-    return this.isActive(name);
-  },
-
-  render: function() {
-    var className = this.isRouteActive(this.props.uid) ? 'active' : null;
-
-    return (
-      React.createElement("li", {className: className}, 
-        React.createElement(Link, {
-          to: this.props.uid, 
-          onClick: this.handleClick}, 
-            this.props.title
-        )
-      )
-    );
-  }
-});
-
-/**
- * Nav component
- */
-
-var Nav = React.createClass({displayName: "Nav",
-
-  getInitialState: function() {
-    return {};
-  },
-
-  onNavItemSelected: function(uid) {
-    this.setState({ activeItem: uid });
-  },
-
-  render: function() {
-    var self = this;
-    var activeItem = this.state.activeItem || this.props.activeItem;
-
-    var createItem = function(item, i) {
-      return React.createElement(NavItem, {
-        uid: item.uid,
-        title: item.title,
-        active: activeItem === item.uid,
-        onSelected: self.onNavItemSelected
-      });
-    };
-  
-    return (
-      React.createElement("ul", {id: "main-nav", className: "nav nav-pills"}, 
-        this.props.items.map(createItem)
-      )
-    );
-  }
-
-});
-
 
 /**
  * App component
@@ -396,30 +359,24 @@ var App = React.createClass({displayName: "App",
     React.createElement("div", {className: "container"}, 
       React.createElement("div", {id: "main-wrapper"}, 
 
-        React.createElement("div", {className: "row"}, 
+
+        React.createElement("div", {id: "header", className: "row"}, 
           React.createElement("div", {className: "col-md-12"}, 
-            React.createElement("ul", {className: "lang-selector nav nav-pills"}, 
+            React.createElement("div", {className: "pull-left"}, 
+              React.createElement("h1", null, "COLLECTIVE ", React.createElement("br", null), " DIGITAL ", React.createElement("br", null), " CRAFT")
+            ), 
+            React.createElement("ul", {className: "lang-selector nav nav-pills pull-right"}, 
               React.createElement("li", {className: esClass}, 
                 React.createElement("a", {href: "", onClick: this.changeLanguage}, "ES")
               ), 
               React.createElement("li", {className: enClass}, 
-              
-                // 
-              
-              
               React.createElement("a", {href: "", onClick: this.changeLanguage}, "EN")
               )
             )
           )
         ), 
 
-        React.createElement("div", {id: "header", className: "row"}, 
-          React.createElement("div", {className: "col-md-12"}, 
-            React.createElement("h1", null, "COLLECTIVE ", React.createElement("br", null), " DIGITAL ", React.createElement("br", null), " CRAFT")
-          )
-        ), 
-
-        React.createElement("div", {className: "row"}, 
+        React.createElement("div", {id: "main-copy", className: "row"}, 
           React.createElement("div", {className: "col-md-7"}, 
             React.createElement("p", null, this.state.content.p1), 
             React.createElement("p", null, this.state.content.p2)
@@ -428,7 +385,9 @@ var App = React.createClass({displayName: "App",
 
         React.createElement("div", {className: "row"}, 
           React.createElement("div", {className: "col-md-6"}, 
-            React.createElement(Nav, {items: this.state.nav})
+            React.createElement(Nav, {
+              elementId: "main-nav", 
+              items: this.state.nav})
           )
         )
 
@@ -451,9 +410,9 @@ var App = React.createClass({displayName: "App",
 
 var routes = (
   React.createElement(Route, {name: "app", path: "/", handler: App, ignoreScrollBehavior: true}, 
-    React.createElement(Route, {name: "work", path: "/", handler: ProjectsView, ignoreScrollBehavior: true}), 
+    React.createElement(Route, {name: "work", path: "/", handler: MixedView, ignoreScrollBehavior: true}), 
     React.createElement(Route, {name: "team", path: "/team/", handler: TeamView, ignoreScrollBehavior: true}), 
-    React.createElement(Route, {name: "products", path: "/products/", handler: ProjectsView, ignoreScrollBehavior: true}), 
+    React.createElement(Route, {name: "products", path: "/products/", handler: ProductsView, ignoreScrollBehavior: true}), 
     React.createElement(Route, {name: "product_details", path: "/products/:name/", handler: DetailsView, ignoreScrollBehavior: true})
   )
 );
@@ -471,7 +430,7 @@ $(function() {
   fastclick.FastClick.attach(document.body);
 });
 
-},{"./actions":3,"./stores/app-store":7,"./views/details.jsx":11,"./views/projects.jsx":12,"./views/team.jsx":13,"fastclick":14,"lazysizes":18,"reflux":32}],5:[function(require,module,exports){
+},{"./actions":3,"./components/nav.jsx":6,"./stores/app-store":8,"./views/details.jsx":12,"./views/mixed.jsx":13,"./views/products.jsx":14,"./views/team.jsx":16,"fastclick":17,"lazysizes":21,"reflux":35}],5:[function(require,module,exports){
 /** @jsx React.DOM */
  
 var React = window.React;
@@ -529,7 +488,96 @@ var MasonryMixin = function(options) {
  
 module.exports = MasonryMixin;
 
-},{"imagesloaded":15,"masonry-layout":20}],6:[function(require,module,exports){
+},{"imagesloaded":18,"masonry-layout":23}],6:[function(require,module,exports){
+
+/**
+ * Module dependencies
+ */
+
+var Router = ReactRouter;
+var Link = Router.Link;
+
+/**
+ * Nav item component
+ */
+
+var NavItem = React.createClass({displayName: "NavItem",
+
+  mixins: [ Router.State ],
+
+  handleClick: function(e) {
+    this.props.onSelected(this.props.name);
+  },
+
+  isRouteActive: function(name) {
+    var pth = this.getPathname();
+
+    if (~pth.indexOf(name)) {
+      return true;
+    }
+
+    return this.isActive(name);
+  },
+
+  render: function() {
+    var className = this.isRouteActive(this.props.name) ? 'active' : null;
+
+    return (
+      React.createElement("li", {className: className}, 
+        React.createElement(Link, {
+          to: this.props.name, 
+          params: this.props.params, 
+          onClick: this.handleClick}, 
+            this.props.title
+        )
+      )
+    );
+  }
+});
+
+/**
+ * Nav component
+ */
+
+var Nav = React.createClass({displayName: "Nav",
+
+  getInitialState: function() {
+    return {};
+  },
+
+  onNavItemSelected: function(name) {
+    this.setState({ activeItem: name });
+  },
+
+  render: function() {
+    var self = this;
+    var activeItem = this.state.activeItem || this.props.activeItem;
+
+    var createItem = function(item, i) {
+      var params = item.params || {};
+
+      return React.createElement(NavItem, {
+        name: item.name,
+        title: item.title,
+        params: params,
+        active: activeItem === item.name,
+        onSelected: self.onNavItemSelected
+      });
+    };
+  
+    return (
+      React.createElement("ul", {id: this.props.elementId, className: "nav nav-pills"}, 
+        this.props.items.map(createItem)
+      )
+    );
+  }
+
+});
+
+
+module.exports = Nav;
+
+},{}],7:[function(require,module,exports){
 
 /**
  * Browser lang
@@ -541,7 +589,7 @@ module.exports = function() {
   return (localStorage.getItem('lang') || navigator.userLanguage || navigator.language).split('-')[0] || defaultLanguage;
 };
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 
 /**
  * Module dependencies
@@ -582,7 +630,7 @@ module.exports = Reflux.createStore({
   }
 });
 
-},{"../../en":1,"../../es":2,"../actions":3,"../lib/lang":6,"reflux":32}],8:[function(require,module,exports){
+},{"../../en":1,"../../es":2,"../actions":3,"../lib/lang":7,"reflux":35}],9:[function(require,module,exports){
 
 
 /**
@@ -633,7 +681,7 @@ module.exports = Reflux.createStore({
 
 });
 
-},{"../../en":1,"../../es":2,"../actions":3,"../lib/lang":6,"reflux":32}],9:[function(require,module,exports){
+},{"../../en":1,"../../es":2,"../actions":3,"../lib/lang":7,"reflux":35}],10:[function(require,module,exports){
 
 /**
  * Module dependencies
@@ -688,10 +736,9 @@ var ProjectsStore = Reflux.createStore({
   getProjects: function(type) {
     type = type || this.type;
 
-    //var projects = this.projects = this.projects || _.shuffle(data[this.lang].projects);
     var projects = data[this.lang].projects;
 
-    if (!this.type) {
+    if (!type) {
       return projects;
     }
 
@@ -704,7 +751,7 @@ var ProjectsStore = Reflux.createStore({
 
 module.exports = ProjectsStore;
 
-},{"../../en":1,"../../es":2,"../actions":3,"../lib/lang":6,"lodash":19,"reflux":32}],10:[function(require,module,exports){
+},{"../../en":1,"../../es":2,"../actions":3,"../lib/lang":7,"lodash":22,"reflux":35}],11:[function(require,module,exports){
 
 /**
  * Module dependencies
@@ -766,7 +813,7 @@ module.exports = Reflux.createStore({
 
 });
 
-},{"../../en":1,"../../es":2,"../actions":3,"../lib/lang":6,"lodash":19,"reflux":32}],11:[function(require,module,exports){
+},{"../../en":1,"../../es":2,"../actions":3,"../lib/lang":7,"lodash":22,"reflux":35}],12:[function(require,module,exports){
 
 /**
  * Module dependecies
@@ -774,8 +821,9 @@ module.exports = Reflux.createStore({
 
 var Reflux = require('reflux');
 var ProjectStore = require('../stores/project-store');
-var TeamStore = require('../stores/team-store');
+var ProjectsStore = require('../stores/projects-store');
 var Actions = require('../actions');
+var Nav = require('../components/nav.jsx');
 
 /**
  * Details View
@@ -785,49 +833,84 @@ var DetailsView = React.createClass({displayName: "DetailsView",
 
   mixins: [
     Reflux.connect(ProjectStore),
-    Reflux.connect(TeamStore)
+    Reflux.connect(ProjectsStore)
   ],
 
   getInitialState: function() {
     var name = this.props.params.name;
 
-
     return {
-      project: ProjectStore.getProject(name),
-      media: [
-        { img: "http://placehold.it/70x70", title: "Manifesto" },
-        { img: "http://placehold.it/70x70", title: "Product" },
-        { img: "http://placehold.it/70x70", title: "Demo" }
-      ]
+      projects: ProjectsStore.getProjects('product'),
+      project: ProjectStore.getProject(name)
     };
   },
 
   componentDidMount: function() {
+  
+  },
+
+  componentWillMount: function() {
     var name = this.props.params.name;
-
-    console.log('Details.componentDidMount', name);
-
     Actions.setProjectName(name);
   },
 
-  render: function() {
-    var createMediaItem = function(d) {
-      return (
-        React.createElement("li", {className: "media-item"}, 
-          React.createElement("a", {className: "hint--bottom", "data-hint": d.title}, 
-            React.createElement("img", {src: d.img})
-          )
-        )
-      );
+  renderTwitter: function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+
+    if (d.getElementById(id)) return t;
+
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
     };
 
-    var project = this.state.project;
+    return t;
+  },
 
+  render: function() {
+    var project = this.state.project;
     var className = "details-view " + project.name;
+
+    console.log(this.state, this.props);
 
     return (
       React.createElement("div", {className: className}, 
-        React.createElement("div", {className: "row"}, 
+
+        React.createElement(Nav, {elementId: "products-nav", items: [
+          { 
+            name: 'product_details', 
+            params: { name: 'ingame' }, 
+            title: 'Ingame' 
+          },
+          { 
+            name: 'product_details', 
+            params: { name: 'alantu' }, 
+            title: 'Alantu' 
+          },
+          { 
+            name: 'product_details', 
+            params: { name: 'dift' }, 
+            title: 'DiftStats' 
+          }
+        ]}), 
+
+        React.createElement("div", {className: "row info"}, 
+          React.createElement("div", {className: "col-sm-5"}, 
+            React.createElement("h3", null, project.title)
+          )
+        ), 
+
+        React.createElement("div", {className: "row info"}, 
+          React.createElement("div", {className: "col-sm-5"}, 
+            React.createElement("p", null, project.desc.short), 
+            React.createElement("p", null, project.desc.long)
+          ), 
           React.createElement("div", {className: "col-sm-7"}, 
             React.createElement("div", {className: "wrapper"}, 
               React.createElement("img", {
@@ -835,30 +918,32 @@ var DetailsView = React.createClass({displayName: "DetailsView",
                 "data-src": project.img.details || project.img.high, 
                 className: "lazyload"})
             )
-          ), 
-          React.createElement("div", {className: "col-sm-5"}, 
-            React.createElement("h3", null, project.title), 
-            React.createElement("p", null, project.desc)
           )
         ), 
         React.createElement("div", {className: "row"}, 
-
-          React.createElement("div", {className: "col-sm-7"}, 
-            React.createElement("h4", null, "Links"), 
+          React.createElement("div", {className: "col-sm-5"}, 
+            React.createElement("h4", null, "Product Info"), 
             React.createElement("ul", {className: "links"}, 
               project.links.map(function(link) {
                 return (React.createElement("li", null, React.createElement("a", {href: link}, link)));
               })
             )
+
           ), 
-          React.createElement("div", {className: "col-sm-5"}, 
-            React.createElement("h4", null, "Media"), 
-            React.createElement("ul", {className: "media-list"}, 
-              this.state.media.map(createMediaItem)
-            )
+          React.createElement("div", {className: "col-sm-7"}, 
+            React.createElement("h4", null, "Tweets"), 
+            React.createElement("a", {
+              className: "twitter-timeline", 
+              "data-dnt": "true", 
+              href: "https://twitter.com/alantu", 
+              "data-widget-id": "626451037973573632", 
+              "data-chrome": "nofooter noborders noheader noscrollbar"}, 
+              "Tweets by @alantu"
+            ), 
+
+             this.renderTwitter(document, "script", "twitter-wjs") 
           )
         )
-
       )
     );
   }
@@ -866,7 +951,84 @@ var DetailsView = React.createClass({displayName: "DetailsView",
 
 module.exports = DetailsView;
 
-},{"../actions":3,"../stores/project-store":8,"../stores/team-store":10,"reflux":32}],12:[function(require,module,exports){
+},{"../actions":3,"../components/nav.jsx":6,"../stores/project-store":9,"../stores/projects-store":10,"reflux":35}],13:[function(require,module,exports){
+
+/**
+ * Module dependencies
+ */
+
+var ProjectsView = require('./projects.jsx');
+var ProjectsStore = require('../stores/projects-store');
+
+/**
+ * Mixed view
+ */
+
+var MixedView = React.createClass({displayName: "MixedView",
+
+  getInitialState: function() {
+
+    var items = ProjectsStore.getProjects('product');
+    return {
+      products: items 
+    };
+
+  },
+
+  render: function() {
+    return (
+      React.createElement(ProjectsView, {items: this.state.products})
+    );
+  }
+});
+
+/**
+ * Expose view
+ */
+
+module.exports = MixedView;
+
+},{"../stores/projects-store":10,"./projects.jsx":15}],14:[function(require,module,exports){
+
+/**
+ * Module dependencies
+ */
+
+var ProjectsView = require('./projects.jsx');
+var ProjectsStore = require('../stores/projects-store');
+
+/**
+ * Products view
+ */
+
+var ProductsView = React.createClass({displayName: "ProductsView",
+
+  getInitialState: function() {
+
+    var items = ProjectsStore.getProjects('product');
+
+    return {
+      products: items 
+    };
+
+  },
+
+  render: function() {
+
+
+    return (
+      React.createElement(ProjectsView, {items: this.state.products})
+    );
+  }
+});
+
+/**
+ * Expose view
+ */
+
+module.exports = ProductsView;
+
+},{"../stores/projects-store":10,"./projects.jsx":15}],15:[function(require,module,exports){
 
 /**
  * Module dependecies
@@ -875,32 +1037,16 @@ module.exports = DetailsView;
 var Link = ReactRouter.Link;
 var Navigation = ReactRouter.Navigation;
 var Reflux = require('reflux');
-//var MasonryMixin = require('../components/masonry-mixin.jsx');
-var ProjectsStore = require('../stores/projects-store');
 
 /**
- * Projects Handler
+ * Projects View
  */
 
 var ProjectsHandler = React.createClass({displayName: "ProjectsHandler",
 
   mixins: [
-    Reflux.connect(ProjectsStore),
-    //MasonryMixin({ 
-    //  itemSelector: '.grid-item',
-    //  //columnWidth: '.grid-sizer',
-    //  //gutter: '.gutter-sizer',
-    //  percentPosition: true,
-    //  transitionDuration: 0
-    //}),
     Navigation
   ],
-
-  getInitialState: function() {
-    return {
-      projects: ProjectsStore.getProjects()
-    };
-  },
 
   onProjectClick: function(e) {
     var target = e.target.parentElement;
@@ -924,20 +1070,18 @@ var ProjectsHandler = React.createClass({displayName: "ProjectsHandler",
               React.createElement("h3", null, 
                 React.createElement(Link, {to: item.href}, item.title)
               ), 
-              React.createElement("p", null, item.desc)
+              React.createElement("p", null, item.desc.short)
             )
           )
         )
         )
     };
 
+    var items = this.props.items;
+
     return (
-      React.createElement("div", {ref: "masonryContainer", onClick: this.onProjectClick, className: "grid projects-grid"}, 
-      /**
-        <div className="grid-sizer"></div>
-        <div className="gutter-sizer"></div>
-      **/
-        this.state.projects.map(createItem)
+      React.createElement("div", {onClick: this.onProjectClick, className: "grid projects-grid"}, 
+        items.map(createItem)
       )
     );
   }
@@ -945,7 +1089,7 @@ var ProjectsHandler = React.createClass({displayName: "ProjectsHandler",
 
 module.exports = ProjectsHandler;
 
-},{"../stores/projects-store":9,"reflux":32}],13:[function(require,module,exports){
+},{"reflux":35}],16:[function(require,module,exports){
 
 /**
  * Module dependecies
@@ -984,7 +1128,11 @@ var TeamView = React.createClass({displayName: "TeamView",
             className: "lazyload"}), 
           React.createElement("div", {className: "grid-item-content"}, 
             React.createElement("h4", null, item.fullName), 
-            React.createElement("p", null, item.desc)
+            React.createElement("ul", null, 
+              React.createElement("li", null, item.roles), 
+              React.createElement("li", null, React.createElement("a", {href: ""}, "@", item.twitter), " | ", React.createElement("a", {href: ""}, "linkedin")), 
+              React.createElement("li", null)
+            )
           )
         )
       )
@@ -1000,7 +1148,7 @@ var TeamView = React.createClass({displayName: "TeamView",
 
 module.exports = TeamView;
 
-},{"../components/masonry-mixin.jsx":5,"../stores/team-store":10,"reflux":32}],14:[function(require,module,exports){
+},{"../components/masonry-mixin.jsx":5,"../stores/team-store":11,"reflux":35}],17:[function(require,module,exports){
 ;(function () {
 	'use strict';
 
@@ -1843,7 +1991,7 @@ module.exports = TeamView;
 	}
 }());
 
-},{}],15:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 /*!
  * imagesLoaded v3.1.8
  * JavaScript is all like "You images are done yet or what?"
@@ -2180,7 +2328,7 @@ function makeArray( obj ) {
 
 });
 
-},{"eventie":16,"wolfy87-eventemitter":17}],16:[function(require,module,exports){
+},{"eventie":19,"wolfy87-eventemitter":20}],19:[function(require,module,exports){
 /*!
  * eventie v1.0.6
  * event binding helper
@@ -2264,7 +2412,7 @@ if ( typeof define === 'function' && define.amd ) {
 
 })( window );
 
-},{}],17:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 /*!
  * EventEmitter v4.2.11 - git.io/ee
  * Unlicense - http://unlicense.org/
@@ -2738,10 +2886,10 @@ if ( typeof define === 'function' && define.amd ) {
     }
 }.call(this));
 
-},{}],18:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 /*! lazysizes - v1.1.4 */
 !function(a,b){var c=b(a,a.document);a.lazySizes=c,"object"==typeof module&&module.exports?module.exports=c:"function"==typeof define&&define.amd&&define(c)}(window,function(a,b){"use strict";if(b.getElementsByClassName){var c,d=b.documentElement,e=a.addEventListener,f=a.setTimeout,g=a.requestAnimationFrame||f,h=a.setImmediate||f,i=/^picture$/i,j=["load","error","lazyincluded","_lazyloaded"],k=function(a,b){var c=new RegExp("(\\s|^)"+b+"(\\s|$)");return a.className.match(c)&&c},l=function(a,b){k(a,b)||(a.className+=" "+b)},m=function(a,b){var c;(c=k(a,b))&&(a.className=a.className.replace(c," "))},n=function(a,b,c){var d=c?"addEventListener":"removeEventListener";c&&n(a,b),j.forEach(function(c){a[d](c,b)})},o=function(a,c,d,e,f){var g=b.createEvent("CustomEvent");return g.initCustomEvent(c,!e,!f,d||{}),a.dispatchEvent(g),g},p=function(b,d){var e;a.HTMLPictureElement||((e=a.picturefill||a.respimage||c.pf)?e({reevaluate:!0,elements:[b]}):d&&d.src&&(b.src=d.src))},q=function(a,b){return(getComputedStyle(a,null)||{})[b]},r=function(a,b,d){for(d=d||a.offsetWidth;d<c.minSize&&b&&!a._lazysizesWidth;)d=b.offsetWidth,b=b.parentNode;return d},s=function(b){var d,e=0,i=a.Date,j=function(){d=!1,e=i.now(),b()},k=function(){h(j)},l=function(){g(k)};return function(){if(!d){var a=c.throttle-(i.now()-e);d=!0,6>a&&(a=6),f(l,a)}}},t=function(){var h,j,r,t,v,w,x,y,z,A,B,C,D,E=/^img$/i,F=/^iframe$/i,G="onscroll"in a&&!/glebot/.test(navigator.userAgent),H=0,I=0,J=0,K=0,L=function(a){J--,a&&a.target&&n(a.target,L),(!a||0>J||!a.target)&&(J=0)},M=function(a,b){var c,d=a,e="hidden"!=q(a,"visibility");for(y-=b,B+=b,z-=b,A+=b;e&&(d=d.offsetParent);)e=(q(d,"opacity")||1)>0,e&&"visible"!=q(d,"overflow")&&(c=d.getBoundingClientRect(),e=A>c.left&&z<c.right&&B>c.top-1&&y<c.bottom+1);return e},N=function(){var a,b,d,e,f,g,i,k,l;if((v=c.loadMode)&&8>J&&(a=h.length)){for(b=0,K++,D>I&&1>J&&K>3&&v>2?(I=D,K=0):I=I!=C&&v>1&&K>2&&6>J?C:H;a>b;b++)if(h[b]&&!h[b]._lazyRace)if(G)if((k=h[b].getAttribute("data-expand"))&&(g=1*k)||(g=I),l!==g&&(w=innerWidth+g,x=innerHeight+g,i=-1*g,l=g),d=h[b].getBoundingClientRect(),(B=d.bottom)>=i&&(y=d.top)<=x&&(A=d.right)>=i&&(z=d.left)<=w&&(B||A||z||y)&&(r&&3>J&&!k&&(3>v||4>K)||M(h[b],g))){if(S(h[b],d.width),f=!0,J>9)break}else!f&&r&&!e&&3>J&&4>K&&v>2&&(j[0]||c.preloadAfterLoad)&&(j[0]||!k&&(B||A||z||y||"auto"!=h[b].getAttribute(c.sizesAttr)))&&(e=j[0]||h[b]);else S(h[b]);e&&!f&&S(e)}},O=s(N),P=function(a){l(a.target,c.loadedClass),m(a.target,c.loadingClass),n(a.target,P)},Q=function(a,b){try{a.contentWindow.location.replace(b)}catch(c){a.setAttribute("src",b)}},R=function(){var a,b=[],c=function(){for(;b.length;)b.shift()();a=!1};return function(d){b.push(d),a||(a=!0,g(c))}}(),S=function(a,b){var d,e,g,h,j,q,s,v,w,x,y,z=E.test(a.nodeName),A=z&&(a.getAttribute(c.sizesAttr)||a.getAttribute("sizes")),B="auto"==A;(!B&&r||!z||!a.src&&!a.srcset||a.complete||k(a,c.errorClass))&&(a._lazyRace=!0,J++,R(function(){if(a._lazyRace&&delete a._lazyRace,m(a,c.lazyClass),!(w=o(a,"lazybeforeunveil")).defaultPrevented){if(A&&(B?(u.updateElem(a,!0,b),l(a,c.autosizesClass)):a.setAttribute("sizes",A)),q=a.getAttribute(c.srcsetAttr),j=a.getAttribute(c.srcAttr),z&&(s=a.parentNode,v=s&&i.test(s.nodeName||"")),x=w.detail.firesLoad||"src"in a&&(q||j||v),w={target:a},x&&(n(a,L,!0),clearTimeout(t),t=f(L,2500),l(a,c.loadingClass),n(a,P,!0)),v)for(d=s.getElementsByTagName("source"),e=0,g=d.length;g>e;e++)(y=c.customMedia[d[e].getAttribute("data-media")||d[e].getAttribute("media")])&&d[e].setAttribute("media",y),h=d[e].getAttribute(c.srcsetAttr),h&&d[e].setAttribute("srcset",h);q?a.setAttribute("srcset",q):j&&(F.test(a.nodeName)?Q(a,j):a.setAttribute("src",j)),(q||v)&&p(a,{src:j})}(!x||a.complete)&&(x?L(w):J--,P(w))}))},T=function(){var a,b=function(){c.loadMode=3,O()};r=!0,K+=8,c.loadMode=3,e("scroll",function(){3==c.loadMode&&(c.loadMode=2),clearTimeout(a),a=f(b,99)},!0)};return{_:function(){h=b.getElementsByClassName(c.lazyClass),j=b.getElementsByClassName(c.lazyClass+" "+c.preloadClass),C=c.expand,D=Math.round(C*c.expFactor),e("scroll",O,!0),e("resize",O,!0),a.MutationObserver?new MutationObserver(O).observe(d,{childList:!0,subtree:!0,attributes:!0}):(d.addEventListener("DOMNodeInserted",O,!0),d.addEventListener("DOMAttrModified",O,!0),setInterval(O,999)),e("hashchange",O,!0),["focus","mouseover","click","load","transitionend","animationend","webkitAnimationEnd"].forEach(function(a){b.addEventListener(a,O,!0)}),/d$|^c/.test(b.readyState)?T():(e("load",T),b.addEventListener("DOMContentLoaded",O)),O()},checkElems:O,unveil:S}}(),u=function(){var a,d=function(a,b,c){var d,e,f,g,h=a.parentNode;if(h&&(c=r(a,h,c),g=o(a,"lazybeforesizes",{width:c,dataAttr:!!b}),!g.defaultPrevented&&(c=g.detail.width,c&&c!==a._lazysizesWidth))){if(a._lazysizesWidth=c,c+="px",a.setAttribute("sizes",c),i.test(h.nodeName||""))for(d=h.getElementsByTagName("source"),e=0,f=d.length;f>e;e++)d[e].setAttribute("sizes",c);g.detail.dataAttr||p(a,g.detail)}},f=function(){var b,c=a.length;if(c)for(b=0;c>b;b++)d(a[b])},g=s(f);return{_:function(){a=b.getElementsByClassName(c.autosizesClass),e("resize",g)},checkElems:g,updateElem:d}}(),v=function(){v.i||(v.i=!0,u._(),t._())};return function(){var b,d={lazyClass:"lazyload",loadedClass:"lazyloaded",loadingClass:"lazyloading",preloadClass:"lazypreload",errorClass:"lazyerror",autosizesClass:"lazyautosizes",srcAttr:"data-src",srcsetAttr:"data-srcset",sizesAttr:"data-sizes",minSize:40,customMedia:{},init:!0,expFactor:2,expand:359,loadMode:2,throttle:125};c=a.lazySizesConfig||a.lazysizesConfig||{};for(b in d)b in c||(c[b]=d[b]);a.lazySizesConfig=c,f(function(){c.init&&v()})}(),{cfg:c,autoSizer:u,loader:t,init:v,uP:p,aC:l,rC:m,hC:k,fire:o,gW:r}}});
-},{}],19:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 (function (global){
 /**
  * @license
@@ -15096,7 +15244,7 @@ if ( typeof define === 'function' && define.amd ) {
 }.call(this));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],20:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 /*!
  * Masonry v3.3.1
  * Cascading grid layout library
@@ -15301,7 +15449,7 @@ if ( typeof define === 'function' && define.amd ) {
 
 }));
 
-},{"fizzy-ui-utils":24,"get-size":25,"outlayer":31}],21:[function(require,module,exports){
+},{"fizzy-ui-utils":27,"get-size":28,"outlayer":34}],24:[function(require,module,exports){
 /**
  * matchesSelector v1.0.3
  * matchesSelector( element, '.selector' )
@@ -15410,7 +15558,7 @@ if ( typeof define === 'function' && define.amd ) {
 
 })( Element.prototype );
 
-},{}],22:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 /*!
  * docReady v1.0.3
  * Cross browser DOMContentLoaded event emitter
@@ -15484,9 +15632,9 @@ if ( typeof define === 'function' && define.amd ) {
 
 })( window );
 
-},{"eventie":23}],23:[function(require,module,exports){
-arguments[4][16][0].apply(exports,arguments)
-},{"dup":16}],24:[function(require,module,exports){
+},{"eventie":26}],26:[function(require,module,exports){
+arguments[4][19][0].apply(exports,arguments)
+},{"dup":19}],27:[function(require,module,exports){
 /**
  * Fizzy UI utils v1.0.1
  * MIT license
@@ -15758,7 +15906,7 @@ return utils;
 
 }));
 
-},{"desandro-matches-selector":21,"doc-ready":22}],25:[function(require,module,exports){
+},{"desandro-matches-selector":24,"doc-ready":25}],28:[function(require,module,exports){
 /*!
  * getSize v1.2.2
  * measure size of elements
@@ -16010,7 +16158,7 @@ if ( typeof define === 'function' && define.amd ) {
 
 })( window );
 
-},{"desandro-get-style-property":26}],26:[function(require,module,exports){
+},{"desandro-get-style-property":29}],29:[function(require,module,exports){
 /*!
  * getStyleProperty v1.0.4
  * original by kangax
@@ -16067,7 +16215,7 @@ if ( typeof define === 'function' && define.amd ) {
 
 })( window );
 
-},{}],27:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 /**
  * Outlayer Item
  */
@@ -16655,13 +16803,13 @@ return Item;
 
 }));
 
-},{"desandro-get-style-property":28,"fizzy-ui-utils":24,"get-size":25,"wolfy87-eventemitter":30}],28:[function(require,module,exports){
-arguments[4][26][0].apply(exports,arguments)
-},{"dup":26}],29:[function(require,module,exports){
-arguments[4][16][0].apply(exports,arguments)
-},{"dup":16}],30:[function(require,module,exports){
-arguments[4][17][0].apply(exports,arguments)
-},{"dup":17}],31:[function(require,module,exports){
+},{"desandro-get-style-property":31,"fizzy-ui-utils":27,"get-size":28,"wolfy87-eventemitter":33}],31:[function(require,module,exports){
+arguments[4][29][0].apply(exports,arguments)
+},{"dup":29}],32:[function(require,module,exports){
+arguments[4][19][0].apply(exports,arguments)
+},{"dup":19}],33:[function(require,module,exports){
+arguments[4][20][0].apply(exports,arguments)
+},{"dup":20}],34:[function(require,module,exports){
 /*!
  * Outlayer v1.4.1
  * the brains and guts of a layout library
@@ -17589,10 +17737,10 @@ return Outlayer;
 }));
 
 
-},{"./item":27,"eventie":29,"fizzy-ui-utils":24,"get-size":25,"wolfy87-eventemitter":30}],32:[function(require,module,exports){
+},{"./item":30,"eventie":32,"fizzy-ui-utils":27,"get-size":28,"wolfy87-eventemitter":33}],35:[function(require,module,exports){
 module.exports = require('./src');
 
-},{"./src":46}],33:[function(require,module,exports){
+},{"./src":49}],36:[function(require,module,exports){
 'use strict';
 
 /**
@@ -17823,7 +17971,7 @@ EventEmitter.EventEmitter3 = EventEmitter;
 //
 module.exports = EventEmitter;
 
-},{}],34:[function(require,module,exports){
+},{}],37:[function(require,module,exports){
 (function (global){
 /*! Native Promise Only
     v0.7.8-a (c) Kyle Simpson
@@ -17832,7 +17980,7 @@ module.exports = EventEmitter;
 !function(t,n,e){n[t]=n[t]||e(),"undefined"!=typeof module&&module.exports?module.exports=n[t]:"function"==typeof define&&define.amd&&define(function(){return n[t]})}("Promise","undefined"!=typeof global?global:this,function(){"use strict";function t(t,n){l.add(t,n),h||(h=y(l.drain))}function n(t){var n,e=typeof t;return null==t||"object"!=e&&"function"!=e||(n=t.then),"function"==typeof n?n:!1}function e(){for(var t=0;t<this.chain.length;t++)o(this,1===this.state?this.chain[t].success:this.chain[t].failure,this.chain[t]);this.chain.length=0}function o(t,e,o){var r,i;try{e===!1?o.reject(t.msg):(r=e===!0?t.msg:e.call(void 0,t.msg),r===o.promise?o.reject(TypeError("Promise-chain cycle")):(i=n(r))?i.call(r,o.resolve,o.reject):o.resolve(r))}catch(c){o.reject(c)}}function r(o){var c,u,a=this;if(!a.triggered){a.triggered=!0,a.def&&(a=a.def);try{(c=n(o))?(u=new f(a),c.call(o,function(){r.apply(u,arguments)},function(){i.apply(u,arguments)})):(a.msg=o,a.state=1,a.chain.length>0&&t(e,a))}catch(s){i.call(u||new f(a),s)}}}function i(n){var o=this;o.triggered||(o.triggered=!0,o.def&&(o=o.def),o.msg=n,o.state=2,o.chain.length>0&&t(e,o))}function c(t,n,e,o){for(var r=0;r<n.length;r++)!function(r){t.resolve(n[r]).then(function(t){e(r,t)},o)}(r)}function f(t){this.def=t,this.triggered=!1}function u(t){this.promise=t,this.state=0,this.triggered=!1,this.chain=[],this.msg=void 0}function a(n){if("function"!=typeof n)throw TypeError("Not a function");if(0!==this.__NPO__)throw TypeError("Not a promise");this.__NPO__=1;var o=new u(this);this.then=function(n,r){var i={success:"function"==typeof n?n:!0,failure:"function"==typeof r?r:!1};return i.promise=new this.constructor(function(t,n){if("function"!=typeof t||"function"!=typeof n)throw TypeError("Not a function");i.resolve=t,i.reject=n}),o.chain.push(i),0!==o.state&&t(e,o),i.promise},this["catch"]=function(t){return this.then(void 0,t)};try{n.call(void 0,function(t){r.call(o,t)},function(t){i.call(o,t)})}catch(c){i.call(o,c)}}var s,h,l,p=Object.prototype.toString,y="undefined"!=typeof setImmediate?function(t){return setImmediate(t)}:setTimeout;try{Object.defineProperty({},"x",{}),s=function(t,n,e,o){return Object.defineProperty(t,n,{value:e,writable:!0,configurable:o!==!1})}}catch(d){s=function(t,n,e){return t[n]=e,t}}l=function(){function t(t,n){this.fn=t,this.self=n,this.next=void 0}var n,e,o;return{add:function(r,i){o=new t(r,i),e?e.next=o:n=o,e=o,o=void 0},drain:function(){var t=n;for(n=e=h=void 0;t;)t.fn.call(t.self),t=t.next}}}();var g=s({},"constructor",a,!1);return a.prototype=g,s(g,"__NPO__",0,!1),s(a,"resolve",function(t){var n=this;return t&&"object"==typeof t&&1===t.__NPO__?t:new n(function(n,e){if("function"!=typeof n||"function"!=typeof e)throw TypeError("Not a function");n(t)})}),s(a,"reject",function(t){return new this(function(n,e){if("function"!=typeof n||"function"!=typeof e)throw TypeError("Not a function");e(t)})}),s(a,"all",function(t){var n=this;return"[object Array]"!=p.call(t)?n.reject(TypeError("Not an array")):0===t.length?n.resolve([]):new n(function(e,o){if("function"!=typeof e||"function"!=typeof o)throw TypeError("Not a function");var r=t.length,i=Array(r),f=0;c(n,t,function(t,n){i[t]=n,++f===r&&e(i)},o)})}),s(a,"race",function(t){var n=this;return"[object Array]"!=p.call(t)?n.reject(TypeError("Not an array")):new n(function(e,o){if("function"!=typeof e||"function"!=typeof o)throw TypeError("Not a function");c(n,t,function(t,n){e(n)},o)})}),a});
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],35:[function(require,module,exports){
+},{}],38:[function(require,module,exports){
 /**
  * A module of methods that you want to include in all actions.
  * This module is consumed by `createAction`.
@@ -17840,7 +17988,7 @@ module.exports = EventEmitter;
 module.exports = {
 };
 
-},{}],36:[function(require,module,exports){
+},{}],39:[function(require,module,exports){
 exports.createdStores = [];
 
 exports.createdActions = [];
@@ -17854,7 +18002,7 @@ exports.reset = function() {
     }
 };
 
-},{}],37:[function(require,module,exports){
+},{}],40:[function(require,module,exports){
 var _ = require('./utils'),
     maker = require('./joins').instanceJoinCreator;
 
@@ -18076,7 +18224,7 @@ module.exports = {
     joinStrict: maker("strict")
 };
 
-},{"./joins":47,"./utils":51}],38:[function(require,module,exports){
+},{"./joins":50,"./utils":54}],41:[function(require,module,exports){
 var _ = require('./utils'),
     ListenerMethods = require('./ListenerMethods');
 
@@ -18095,7 +18243,7 @@ module.exports = _.extend({
 
 }, ListenerMethods);
 
-},{"./ListenerMethods":37,"./utils":51}],39:[function(require,module,exports){
+},{"./ListenerMethods":40,"./utils":54}],42:[function(require,module,exports){
 var _ = require('./utils');
 
 /**
@@ -18278,7 +18426,7 @@ module.exports = {
     }
 };
 
-},{"./utils":51}],40:[function(require,module,exports){
+},{"./utils":54}],43:[function(require,module,exports){
 /**
  * A module of methods that you want to include in all stores.
  * This module is consumed by `createStore`.
@@ -18286,7 +18434,7 @@ module.exports = {
 module.exports = {
 };
 
-},{}],41:[function(require,module,exports){
+},{}],44:[function(require,module,exports){
 module.exports = function(store, definition) {
   for (var name in definition) {
     if (Object.getOwnPropertyDescriptor && Object.defineProperty) {
@@ -18311,7 +18459,7 @@ module.exports = function(store, definition) {
   return store;
 };
 
-},{}],42:[function(require,module,exports){
+},{}],45:[function(require,module,exports){
 var Reflux = require('./index'),
     _ = require('./utils');
 
@@ -18339,7 +18487,7 @@ module.exports = function(listenable,key){
     };
 };
 
-},{"./index":46,"./utils":51}],43:[function(require,module,exports){
+},{"./index":49,"./utils":54}],46:[function(require,module,exports){
 var Reflux = require('./index'),
   _ = require('./utils');
 
@@ -18380,7 +18528,7 @@ module.exports = function(listenable, key, filterFunc) {
 };
 
 
-},{"./index":46,"./utils":51}],44:[function(require,module,exports){
+},{"./index":49,"./utils":54}],47:[function(require,module,exports){
 var _ = require('./utils'),
     Reflux = require('./index'),
     Keep = require('./Keep'),
@@ -18447,7 +18595,7 @@ var createAction = function(definition) {
 
 module.exports = createAction;
 
-},{"./Keep":36,"./index":46,"./utils":51}],45:[function(require,module,exports){
+},{"./Keep":39,"./index":49,"./utils":54}],48:[function(require,module,exports){
 var _ = require('./utils'),
     Reflux = require('./index'),
     Keep = require('./Keep'),
@@ -18510,7 +18658,7 @@ module.exports = function(definition) {
     return store;
 };
 
-},{"./Keep":36,"./bindMethods":41,"./index":46,"./mixer":50,"./utils":51}],46:[function(require,module,exports){
+},{"./Keep":39,"./bindMethods":44,"./index":49,"./mixer":53,"./utils":54}],49:[function(require,module,exports){
 exports.ActionMethods = require('./ActionMethods');
 
 exports.ListenerMethods = require('./ListenerMethods');
@@ -18621,7 +18769,7 @@ if (!Function.prototype.bind) {
   );
 }
 
-},{"./ActionMethods":35,"./Keep":36,"./ListenerMethods":37,"./ListenerMixin":38,"./PublisherMethods":39,"./StoreMethods":40,"./connect":42,"./connectFilter":43,"./createAction":44,"./createStore":45,"./joins":47,"./listenTo":48,"./listenToMany":49,"./utils":51}],47:[function(require,module,exports){
+},{"./ActionMethods":38,"./Keep":39,"./ListenerMethods":40,"./ListenerMixin":41,"./PublisherMethods":42,"./StoreMethods":43,"./connect":45,"./connectFilter":46,"./createAction":47,"./createStore":48,"./joins":50,"./listenTo":51,"./listenToMany":52,"./utils":54}],50:[function(require,module,exports){
 /**
  * Internal module used to create static and instance join methods
  */
@@ -18729,7 +18877,7 @@ function emitIfAllListenablesEmitted(join) {
     reset(join);
 }
 
-},{"./createStore":45,"./utils":51}],48:[function(require,module,exports){
+},{"./createStore":48,"./utils":54}],51:[function(require,module,exports){
 var Reflux = require('./index');
 
 
@@ -18767,7 +18915,7 @@ module.exports = function(listenable,callback,initial){
     };
 };
 
-},{"./index":46}],49:[function(require,module,exports){
+},{"./index":49}],52:[function(require,module,exports){
 var Reflux = require('./index');
 
 /**
@@ -18802,7 +18950,7 @@ module.exports = function(listenables){
     };
 };
 
-},{"./index":46}],50:[function(require,module,exports){
+},{"./index":49}],53:[function(require,module,exports){
 var _ = require('./utils');
 
 module.exports = function mix(def) {
@@ -18861,7 +19009,7 @@ module.exports = function mix(def) {
     return updated;
 };
 
-},{"./utils":51}],51:[function(require,module,exports){
+},{"./utils":54}],54:[function(require,module,exports){
 /*
  * isObject, extend, isFunction, isArguments are taken from undescore/lodash in
  * order to remove the dependency
@@ -18932,4 +19080,4 @@ exports.throwIf = function(val,msg){
     }
 };
 
-},{"eventemitter3":33,"native-promise-only":34}]},{},[4]);
+},{"eventemitter3":36,"native-promise-only":37}]},{},[4]);

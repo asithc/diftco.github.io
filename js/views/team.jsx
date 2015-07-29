@@ -36,7 +36,11 @@ var TeamView = React.createClass({
             className="lazyload" />
           <div className="grid-item-content">
             <h4>{item.fullName}</h4>
-            <p>{item.desc}</p>
+            <ul>
+              <li>{item.roles}</li>
+              <li><a href="">@{item.twitter}</a> | <a href="">linkedin</a></li>
+              <li></li>
+            </ul>
           </div>
         </div>
       )

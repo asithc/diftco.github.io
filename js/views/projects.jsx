@@ -6,32 +6,16 @@
 var Link = ReactRouter.Link;
 var Navigation = ReactRouter.Navigation;
 var Reflux = require('reflux');
-//var MasonryMixin = require('../components/masonry-mixin.jsx');
-var ProjectsStore = require('../stores/projects-store');
 
 /**
- * Projects Handler
+ * Projects View
  */
 
 var ProjectsHandler = React.createClass({
 
   mixins: [
-    Reflux.connect(ProjectsStore),
-    //MasonryMixin({ 
-    //  itemSelector: '.grid-item',
-    //  //columnWidth: '.grid-sizer',
-    //  //gutter: '.gutter-sizer',
-    //  percentPosition: true,
-    //  transitionDuration: 0
-    //}),
     Navigation
   ],
-
-  getInitialState: function() {
-    return {
-      projects: ProjectsStore.getProjects()
-    };
-  },
 
   onProjectClick: function(e) {
     var target = e.target.parentElement;
@@ -55,20 +39,18 @@ var ProjectsHandler = React.createClass({
               <h3>
                 <Link to={item.href}>{item.title}</Link>
               </h3>
-              <p>{item.desc}</p>
+              <p>{item.desc.short}</p>
             </div>
           </div>
         </div>
         )
     };
 
+    var items = this.props.items;
+
     return (
-      <div ref="masonryContainer" onClick={this.onProjectClick} className="grid projects-grid">
-      {/**
-        <div className="grid-sizer"></div>
-        <div className="gutter-sizer"></div>
-      **/}
-        {this.state.projects.map(createItem)}
+      <div onClick={this.onProjectClick} className="grid projects-grid">
+        {items.map(createItem)}
       </div>
     );
   }

@@ -2,9 +2,9 @@
 module.exports = {
   lang: "en",
   nav: [
-    { uid: "work", title: "HOME" },
-    { uid: "team", title: "TEAM" },
-    { uid: "products", title: "PRODUCTS" }
+    { name: "work", title: "HOME" },
+    { name: "team", title: "TEAM" },
+    { name: "products", title: "PRODUCTS" }
   ],
 
   content: {
@@ -17,6 +17,9 @@ module.exports = {
     {
       fullName: "Carlos De Venezia",
       desc: "This is a product short description here",
+      roles: "Business & Operations",
+      linkedin: "",
+      twitter: "charlydv",
       img: {
         low: "/img/team/charly-low.jpg",
         high: "/img/team/charly.jpg"
@@ -27,6 +30,9 @@ module.exports = {
     {
       fullName: "Conrado Cimino",
       desc: "This is a product short description here",
+      roles: "Digital Marketing",
+      linkedin: "",
+      twitter: "conan",
       img: {
         low: "/img/team/conan-low.jpg",
         high: "/img/team/conan.jpg"
@@ -37,6 +43,9 @@ module.exports = {
     {
       fullName: "Gonzalo Aguirre",
       desc: "This is a product short description here",
+      roles: "Technology",
+      linkedin: "",
+      twitter: "gon",
       img: {
         low: "/img/team/gon-low.jpg",
         high: "/img/team/gon.jpg"
@@ -47,6 +56,9 @@ module.exports = {
     {
       fullName: "Victor Calvello",
       desc: "This is a product short description here",
+      roles: "Business & Operations",
+      linkedin: "",
+      twitter: "vcalvello",
       img: {
         low: "/img/team/vic-low.jpg",
         high: "/img/team/vic.jpg"
@@ -57,6 +69,9 @@ module.exports = {
     {
       fullName: "Matias Medina",
       desc: "This is a product short description here",
+      roles: "Business & Operations",
+      linkedin: "",
+      twitter: "tutem",
       img: {
         low: "/img/team/mati-low.jpg",
         high: "/img/team/mati.jpg"
@@ -67,6 +82,9 @@ module.exports = {
     {
       fullName: "Juan Pablo Garcia",
       desc: "This is a product short description here",
+      roles: "Technology",
+      linkedin: "",
+      twitter: "jpg",
       img: {
         low: "/img/team/jpg-low.jpg",
         high: "/img/team/jpg.jpg"
@@ -77,6 +95,9 @@ module.exports = {
     {
       fullName: "Ignacio Olaciregui",
       desc: "This is a product short description here",
+      roles: "Technology",
+      linkedin: "",
+      twitter: "ignacioola",
       img: {
         low: "/img/team/mono-low.jpg",
         high: "/img/team/mono.jpg"
@@ -91,7 +112,10 @@ module.exports = {
       name: "ingame",
       type: 'product',
       title: "Ingame",
-      desc: "Ingame is a new way to interact with your favourite brands, get cool rewards and have fun during the ride.",
+      desc: {
+        short: "Ingame is a new way to interact with your favourite brands, get cool rewards and have fun during the ride.",
+        long: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tortor magna, convallis eget feugiat ac, vestibulum id augue. Quisque ultricies, dolor vitae pulvinar sollicitudin, dui mi dignissim tortor, sit amet mollis velit purus a purus. Phasellus sed odio ut libero blandit bibendum a ac ipsum. In velit arcu, consectetur congue mollis non, bibendum pulvinar nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam odio nibh, interdum sit amet risus eget, elementum lobortis erat. Ut at magna et ligula facilisis aliquam eu malesuada nulla. Proin dapibus sem non sollicitudin lacinia. Nullam at lacus libero. Maecenas nec lectus a eros tempus mollis."
+      },
       img: {
         low: "/img/projects/ingame-low.jpg",
         high: "/img/projects/ingame.jpg"
@@ -104,7 +128,10 @@ module.exports = {
       name: "dift",
       type: 'product',
       title: "Dift.io",
-      desc: "Dift.io it’s a simple mobile solution that allows users to track social performance.",
+      desc: {
+        short: "Dift.io it’s a simple mobile solution that allows users to track social performance.",
+        long: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tortor magna, convallis eget feugiat ac, vestibulum id augue. Quisque ultricies, dolor vitae pulvinar sollicitudin, dui mi dignissim tortor, sit amet mollis velit purus a purus. Phasellus sed odio ut libero blandit bibendum a ac ipsum. In velit arcu, consectetur congue mollis non, bibendum pulvinar nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam odio nibh, interdum sit amet risus eget, elementum lobortis erat. Ut at magna et ligula facilisis aliquam eu malesuada nulla. Proin dapibus sem non sollicitudin lacinia. Nullam at lacus libero. Maecenas nec lectus a eros tempus mollis."
+      },
       img: {
         low: "/img/projects/dift-low.jpg",
         high: "/img/projects/dift.jpg"
@@ -117,7 +144,10 @@ module.exports = {
       name: "alantu",
       type: 'product',
       title: "Alantu",
-      desc: "Alantu is a game which aims to create the biggest computer ever made.",
+      desc: {
+        short: "Alantu is a game which aims to create the biggest computer ever made.",
+        long: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tortor magna, convallis eget feugiat ac, vestibulum id augue. Quisque ultricies, dolor vitae pulvinar sollicitudin, dui mi dignissim tortor, sit amet mollis velit purus a purus. Phasellus sed odio ut libero blandit bibendum a ac ipsum. In velit arcu, consectetur congue mollis non, bibendum pulvinar nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam odio nibh, interdum sit amet risus eget, elementum lobortis erat. Ut at magna et ligula facilisis aliquam eu malesuada nulla. Proin dapibus sem non sollicitudin lacinia. Nullam at lacus libero. Maecenas nec lectus a eros tempus mollis."
+      },
       img: {
         low: "/img/projects/alantu-low.jpg",
         high: "/img/projects/alantu.jpg",

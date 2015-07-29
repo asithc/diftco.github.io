@@ -16,6 +16,9 @@ module.exports = {
     {
       fullName: "Carlos De Venezia",
       desc: "Esta es una descripcion corta",
+      roles: "Business & Operations",
+      linkedin: "",
+      twitter: "charlydv",
       img: {
         low: "/img/team/charly-low.jpg",
         high: "/img/team/charly.jpg"
@@ -26,6 +29,9 @@ module.exports = {
     {
       fullName: "Conrado Cimino",
       desc: "Esta es una descripcion corta",
+      roles: "Digital Marketing",
+      linkedin: "",
+      twitter: "conan",
       img: {
         low: "/img/team/conan-low.jpg",
         high: "/img/team/conan.jpg"
