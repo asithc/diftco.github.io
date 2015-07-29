@@ -45,16 +45,18 @@ var ProjectsHandler = React.createClass({
       return (
 
         <div className={className}>
-          <img 
-            src={item.img.low} 
-            data-src={item.img.high} 
-            className="lazyload" />
+          <div className="wrapper">
+            <img 
+              src={item.img.low} 
+              data-src={item.img.high} 
+              className="lazyload" />
 
-          <div className="grid-item-content">
-            <h3>
-              <Link to={item.href}>{item.title}</Link>
-            </h3>
-            <p>{item.desc}</p>
+            <div className="grid-item-content">
+              <h3>
+                <Link to={item.href}>{item.title}</Link>
+              </h3>
+              <p>{item.desc}</p>
+            </div>
           </div>
         </div>
         )

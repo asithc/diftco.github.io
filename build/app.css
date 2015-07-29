@@ -53,7 +53,7 @@ a, a:active, a:hover, a:focus {
 }
 
 .nav-pills>li>a {
-  color: #333;
+  color: #999;
   padding: 0 1px;
   margin-left: 15px;
 }
@@ -122,16 +122,19 @@ a, a:active, a:hover, a:focus {
   -moz-column-count: 2;
   -webkit-column-count: 2;
   column-count: 2;
-  -moz-column-gap: 10px;
-  -webkit-column-gap: 10px;
-  column-gap: 10px;
+  -moz-column-gap: 0;
+  -webkit-column-gap: 0;
+  column-gap: 0;
   width: 100%;
+}
+
+.projects-grid .wrapper {
   position: relative;
 }
 
 .projects-grid .grid-item.alantu {
   width: 100%;
-  margin-left: 4%;
+  padding-left: 10%;
 }
 
 .projects-grid .grid-item {
@@ -143,7 +146,7 @@ a, a:active, a:hover, a:focus {
   /**
   width: 100%;
   **/
-  margin-bottom: 5.5%;
+  margin-bottom: 10%;
   cursor: pointer;
 }
 
@@ -212,6 +215,10 @@ a, a:active, a:hover, a:focus {
   .projects-grid .grid-item-content p {
     margin: 0 auto;
   }
+
+  .projects-grid p {
+    width: 80%;
+  }
 }
 
 @media only screen and (max-width : 560px) {
@@ -222,6 +229,10 @@ a, a:active, a:hover, a:focus {
     column-count: 1;
   }
 
+  .projects-grid .grid-item.alantu {
+    padding-left: 0;
+  }
+
   .projects-grid .grid-item-content {
     display: none;
   }
@@ -230,7 +241,6 @@ a, a:active, a:hover, a:focus {
     width: 100% !important;
     margin-left: 0 !important;
   }
-
 }
 
 /**************************

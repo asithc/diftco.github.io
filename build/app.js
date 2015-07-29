@@ -914,16 +914,18 @@ var ProjectsHandler = React.createClass({displayName: "ProjectsHandler",
       return (
 
         React.createElement("div", {className: className}, 
-          React.createElement("img", {
-            src: item.img.low, 
-            "data-src": item.img.high, 
-            className: "lazyload"}), 
+          React.createElement("div", {className: "wrapper"}, 
+            React.createElement("img", {
+              src: item.img.low, 
+              "data-src": item.img.high, 
+              className: "lazyload"}), 
 
-          React.createElement("div", {className: "grid-item-content"}, 
-            React.createElement("h3", null, 
-              React.createElement(Link, {to: item.href}, item.title)
-            ), 
-            React.createElement("p", null, item.desc)
+            React.createElement("div", {className: "grid-item-content"}, 
+              React.createElement("h3", null, 
+                React.createElement(Link, {to: item.href}, item.title)
+              ), 
+              React.createElement("p", null, item.desc)
+            )
           )
         )
         )
