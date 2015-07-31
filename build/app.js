@@ -102,7 +102,11 @@ module.exports = [
   name: "ingame",
   type: 'product',
   title: "Ingame",
-  twitter: "ingameio",
+  twitter: {
+    username: "ingameio",
+    widgetId: "627160340053295108",
+    widgetUrl: "https://twitter.com/ingameio/favorites"
+  },
   desc: {
     short: {
       i18n: true,
@@ -127,7 +131,11 @@ module.exports = [
   name: "dift",
   type: 'product',
   title: "Dift.io",
-  twitter: "diftio",
+  twitter: {
+    username: "diftcollective",
+    widgetId: "627160340053295108",
+    widgetUrl: "https://twitter.com/ingameio/favorites"
+  },
   desc: {
     short: {
       i18n: true,
@@ -152,7 +160,11 @@ module.exports = [
   name: "alantu",
   type: 'product',
   title: "Alantu",
-  twitter: "alantuapp",
+  twitter: {
+    username: "alantuapp",
+    widgetId: "627173061570220032",
+    widgetUrl: "https://twitter.com/alantuapp"
+  },
   desc: {
     short: {
       i18n: true,
@@ -342,8 +354,8 @@ var TopNavBar = React.createClass({displayName: "TopNavBar",
 
   getInitialState: function() {
     return {
-      isClosed: true
-      //isClosed2: true
+      isClosed: true,
+      showMainMenu: false
     };
   },
 
@@ -380,13 +392,15 @@ var TopNavBar = React.createClass({displayName: "TopNavBar",
       this.setState({ isClosed: true });
     }
 
-    //if (scrollTop > 500) {
-    //  if (this.state.isClosed2) {
-    //    this.setState({ isClosed2: false });
-    //  }
-    //} else if (!this.state.isClosed2) {
-    //  this.setState({ isClosed2: true });
-    //}
+    if (scrollTop > 250) {
+
+      if (!this.state.showMainMenu) {
+        this.setState({ showMainMenu: true });
+      }
+
+    } else if (this.state.showMainMenu) {
+      this.setState({ showMainMenu: false });
+    }
 
     this.tick();
   },
@@ -418,9 +432,8 @@ var TopNavBar = React.createClass({displayName: "TopNavBar",
 
   render: function() {
     var isClosed = this.state.isClosed;
-    var isClosed2 = this.state.isClosed2;
 
-    classes = "navbar navbar-fixed-top";
+    classes = "navbar navbar-fixed-top navbar-default";
 
     var brandStyle = {};
     if (isClosed) {
@@ -429,18 +442,18 @@ var TopNavBar = React.createClass({displayName: "TopNavBar",
       brandStyle = { bottom: 0 };
     }
 
+    var mainMenuStyle = { };
+
+    if (this.state.showMainMenu) {
+      mainMenuStyle = { bottom: 0 };
+    }
+
     return (
       React.createElement("nav", {id: "top-navbar", className: classes}, 
         React.createElement("div", {className: "container"}, 
 
           React.createElement("div", {className: "navbar-header"}, 
-            React.createElement("button", {
-              type: "button", 
-              className: "navbar-toggle collapsed", 
-              "data-toggle": "collapse", 
-              "data-target": "#bs-example-navbar-collapse-1", 
-              "aria-expanded": "false"}, 
-
+            React.createElement("button", {type: "button", className: "navbar-toggle"}, 
               React.createElement("span", {className: "sr-only"}, "Toggle navigation"), 
               React.createElement("span", {className: "icon-bar"}), 
               React.createElement("span", {className: "icon-bar"}), 
@@ -454,18 +467,12 @@ var TopNavBar = React.createClass({displayName: "TopNavBar",
 
           ), 
 
-          React.createElement("div", {
-            class: "collapse navbar-collapse", 
-            id: "bs-example-navbar-collapse-1"}, 
+          React.createElement("div", {class: "collapse navbar-collapse"}, 
 
-            
-            
-              /**
-            <Nav 
-              items={this.props.items} 
-              extraClasses="navbar-nav" />
-              **/
-            
+            React.createElement(Nav, {
+              style: mainMenuStyle, 
+              items: this.props.items, 
+              extraClasses: "navbar-nav"}), 
 
             React.createElement(LangSelector, {
               lang: this.props.lang, 
@@ -559,7 +566,13 @@ var App = React.createClass({displayName: "App",
       React.createElement("div", {className: "row"}, 
         React.createElement("div", {className: "col-md-6"}, 
 
-          React.createElement(Nav, {id: "main-nav", items: this.state.nav})
+          React.createElement("nav", {className: "navbar"}, 
+            React.createElement("div", {className: "container"}, 
+              React.createElement(Nav, {id: "main-nav", 
+                extraClasses: "navbar-nav", 
+                items: this.state.nav})
+            )
+          )
 
         )
       ), 
@@ -724,11 +737,14 @@ var Nav = React.createClass({displayName: "Nav",
       });
     };
   
-    var classes = this.className + " nav nav-pills " +
+    var classes = this.className + " nav " +
       (this.props.extraClasses || '');
 
     return (
-      React.createElement("ul", {id: this.props.id, className: classes}, 
+      React.createElement("ul", {
+        id: this.props.id, 
+        style: this.props.style, 
+        className: classes}, 
         this.props.items.map(createItem)
       )
     );
@@ -993,6 +1009,43 @@ var Actions = require('../actions');
 var Nav = require('../components/nav.jsx');
 
 /**
+ * Twitter Widget
+ */
+
+var TwitterWidget = React.createClass({displayName: "TwitterWidget",
+
+  loadTwitter: function() {
+    window.twttr && 
+      window.twttr.widgets.load();
+  },
+
+  render: function() {
+    var url = "https://twitter.com/" + this.props.widgetUrl;
+    var text = "Tweets by @" + this.props.username;
+
+    console.log(url, text);
+
+    var self = this;
+    setTimeout(function() {
+      self.loadTwitter() ;
+    }, 1000);
+
+
+    return (
+      React.createElement("a", {
+        className: "twitter-timeline", 
+        "data-dnt": "true", 
+        href: url, 
+        "data-widget-id": this.props.widgetId, 
+        "data-chrome": "nofooter noborders noheader noscrollbar"}, 
+        text
+      )
+    );
+  }
+
+});
+
+/**
  * Details View
  */
 
@@ -1008,7 +1061,24 @@ var DetailsView = React.createClass({displayName: "DetailsView",
 
     return {
       projects: ProjectsStore.getProjects('product'),
-      project: ProjectStore.getProject(name)
+      project: ProjectStore.getProject(name),
+      items: [
+        { 
+          name: 'product_details', 
+          params: { name: 'ingame' }, 
+          title: 'Ingame' 
+        },
+        { 
+          name: 'product_details', 
+          params: { name: 'alantu' }, 
+          title: 'Alantu' 
+        },
+        { 
+          name: 'product_details', 
+          params: { name: 'dift' }, 
+          title: 'DiftStats' 
+        }
+      ]
     };
   },
 
@@ -1022,11 +1092,6 @@ var DetailsView = React.createClass({displayName: "DetailsView",
     Actions.setProjectName(name);
   },
 
-  renderTwitter: function() {
-    window.twttr && 
-      window.twttr.widgets.load();
-  },
-
   render: function() {
     //var project = this.state.project;
     // HACK : ver como cambiar el state con la ruta!!
@@ -1038,23 +1103,15 @@ var DetailsView = React.createClass({displayName: "DetailsView",
     return (
       React.createElement("div", {className: className}, 
 
-        React.createElement(Nav, {id: "sub-nav", items: [
-          { 
-            name: 'product_details', 
-            params: { name: 'ingame' }, 
-            title: 'Ingame' 
-          },
-          { 
-            name: 'product_details', 
-            params: { name: 'alantu' }, 
-            title: 'Alantu' 
-          },
-          { 
-            name: 'product_details', 
-            params: { name: 'dift' }, 
-            title: 'DiftStats' 
-          }
-        ]}), 
+        React.createElement("nav", {className: "navbar"}, 
+          React.createElement("div", {className: "container"}, 
+            React.createElement(Nav, {
+              id: "sub-nav", 
+              //extraClasses="nav-pills"
+              extraClasses: "navbar-nav", 
+              items: this.state.items})
+          )
+        ), 
 
         React.createElement("div", {className: "row info"}, 
           React.createElement("div", {className: "col-sm-5"}, 
@@ -1063,18 +1120,18 @@ var DetailsView = React.createClass({displayName: "DetailsView",
         ), 
 
         React.createElement("div", {className: "row info"}, 
-          React.createElement("div", {className: "col-sm-5"}, 
+          React.createElement("div", {className: "col-sm-6"}, 
             React.createElement("p", null, project.desc.short), 
             React.createElement("p", null, project.desc.long)
           ), 
-          React.createElement("div", {className: "col-sm-7"}, 
+          React.createElement("div", {className: "col-sm-6"}, 
             React.createElement("div", {className: "wrapper"}, 
-              React.createElement("img", {src: project.img.details || project.img.high})
+              React.createElement("img", {src: project.img.high})
             )
           )
         ), 
         React.createElement("div", {className: "row"}, 
-          React.createElement("div", {className: "col-sm-5"}, 
+          React.createElement("div", {className: "col-sm-6"}, 
             React.createElement("h4", null, "Product Info"), 
             React.createElement("ul", {className: "links"}, 
               project.links.map(function(link) {
@@ -1083,17 +1140,9 @@ var DetailsView = React.createClass({displayName: "DetailsView",
             )
 
           ), 
-          React.createElement("div", {className: "col-sm-7"}, 
+          React.createElement("div", {className: "col-sm-6"}, 
             React.createElement("h4", null, "Tweets"), 
-            React.createElement("a", {
-              className: "twitter-timeline", 
-              "data-dnt": "true", 
-              href: "https://twitter.com/alantu", 
-              "data-widget-id": "626451037973573632", 
-              "data-chrome": "nofooter noborders noheader noscrollbar"}, 
-              "Tweets by @alantu"
-            ), 
-             this.renderTwitter() 
+            React.createElement(TwitterWidget, React.__spread({},  project.twitter))
           )
         )
       )

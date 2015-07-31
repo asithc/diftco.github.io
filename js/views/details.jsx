@@ -11,6 +11,43 @@ var Actions = require('../actions');
 var Nav = require('../components/nav.jsx');
 
 /**
+ * Twitter Widget
+ */
+
+var TwitterWidget = React.createClass({
+
+  loadTwitter: function() {
+    window.twttr && 
+      window.twttr.widgets.load();
+  },
+
+  render: function() {
+    var url = "https://twitter.com/" + this.props.widgetUrl;
+    var text = "Tweets by @" + this.props.username;
+
+    console.log(url, text);
+
+    var self = this;
+    setTimeout(function() {
+      self.loadTwitter() ;
+    }, 1000);
+
+
+    return (
+      <a 
+        className="twitter-timeline" 
+        data-dnt="true" 
+        href={url}
+        data-widget-id={this.props.widgetId}
+        data-chrome="nofooter noborders noheader noscrollbar">
+        {text}
+      </a>
+    );
+  }
+
+});
+
+/**
  * Details View
  */
 
@@ -26,7 +63,24 @@ var DetailsView = React.createClass({
 
     return {
       projects: ProjectsStore.getProjects('product'),
-      project: ProjectStore.getProject(name)
+      project: ProjectStore.getProject(name),
+      items: [
+        { 
+          name: 'product_details', 
+          params: { name: 'ingame' }, 
+          title: 'Ingame' 
+        },
+        { 
+          name: 'product_details', 
+          params: { name: 'alantu' }, 
+          title: 'Alantu' 
+        },
+        { 
+          name: 'product_details', 
+          params: { name: 'dift' }, 
+          title: 'DiftStats' 
+        }
+      ]
     };
   },
 
@@ -40,11 +94,6 @@ var DetailsView = React.createClass({
     Actions.setProjectName(name);
   },
 
-  renderTwitter: function() {
-    window.twttr && 
-      window.twttr.widgets.load();
-  },
-
   render: function() {
     //var project = this.state.project;
     // HACK : ver como cambiar el state con la ruta!!
@@ -56,23 +105,15 @@ var DetailsView = React.createClass({
     return (
       <div className={className}>
 
-        <Nav id="sub-nav" items={[
-          { 
-            name: 'product_details', 
-            params: { name: 'ingame' }, 
-            title: 'Ingame' 
-          },
-          { 
-            name: 'product_details', 
-            params: { name: 'alantu' }, 
-            title: 'Alantu' 
-          },
-          { 
-            name: 'product_details', 
-            params: { name: 'dift' }, 
-            title: 'DiftStats' 
-          }
-        ]} />
+        <nav className="navbar">
+          <div className="container">
+            <Nav 
+              id="sub-nav" 
+              //extraClasses="nav-pills"
+              extraClasses="navbar-nav"
+              items={this.state.items} />
+          </div>
+        </nav>
 
         <div className="row info">
           <div className="col-sm-5">
@@ -81,18 +122,18 @@ var DetailsView = React.createClass({
         </div>
 
         <div className="row info">
-          <div className="col-sm-5">
+          <div className="col-sm-6">
             <p>{project.desc.short}</p>
             <p>{project.desc.long}</p>
           </div>
-          <div className="col-sm-7">
+          <div className="col-sm-6">
             <div className="wrapper">
-              <img src={project.img.details || project.img.high} />
+              <img src={project.img.high} />
             </div>
           </div>
         </div>
         <div className="row">
-          <div className="col-sm-5">
+          <div className="col-sm-6">
             <h4>Product Info</h4>
             <ul className="links">
               {project.links.map(function(link) {
@@ -101,17 +142,9 @@ var DetailsView = React.createClass({
             </ul>
 
           </div>
-          <div className="col-sm-7">
+          <div className="col-sm-6">
             <h4>Tweets</h4>
-            <a 
-              className="twitter-timeline" 
-              data-dnt="true" 
-              href="https://twitter.com/alantu" 
-              data-widget-id="626451037973573632"
-              data-chrome="nofooter noborders noheader noscrollbar"> 
-              Tweets by @alantu
-            </a>
-            { this.renderTwitter() }
+            <TwitterWidget {...project.twitter} />
           </div>
         </div>
       </div>

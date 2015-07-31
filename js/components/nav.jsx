@@ -85,11 +85,14 @@ var Nav = React.createClass({
       });
     };
   
-    var classes = this.className + " nav nav-pills " +
+    var classes = this.className + " nav " +
       (this.props.extraClasses || '');
 
     return (
-      <ul id={this.props.id} className={classes}>
+      <ul 
+        id={this.props.id} 
+        style={this.props.style} 
+        className={classes}>
         {this.props.items.map(createItem)}
       </ul>
     );

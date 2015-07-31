@@ -42,13 +42,27 @@ img {
  ***************************/
 
 #content {
-  margin-top: 30px;
+
+
 }
 
 
 #main-nav,
 #sub-nav {
   margin-left: -14px;
+}
+
+
+@media only screen and (max-width : 768px) {
+
+  #main-copy {
+    margin-top: 65px; 
+  }
+
+  #content {
+    margin-top: 0;
+  }
+
 }
 
 /****************************
@@ -117,50 +131,82 @@ a, a:active, a:hover, a:focus {
 
 }
 
+@media only screen and (max-width : 768px) {
+
+  #main-nav,
+  #header {
+    display: none;
+  }
+
+}
+
+
 /****************************
  ******** TOP NAVBAR ********
  ****************************/
 
 #top-navbar a.navbar-brand {
+  font-weight: bold;
   font-size: .9em;
-  padding-right: 8px;
 }
 
 #top-navbar .site-nav li:first-child {
   display:none;
 }
 
-#top-navbar.closed {
-  top: -130px;
-}
-
-#top-navbar {
-  background-color: #FFF;
-
-  -moz-transition: top 250ms ease;
-  -o-transition: top 250ms ease;
-  -webkit-transition: top 250ms ease;
-  transition: top 250ms ease;
-  overflow: hidden;
-}
-
-#top-navbar .navbar-brand {
-  bottom: -50px;
-  position: relative;    
-
-  -moz-transition: bottom 500ms ease .1s;
-  -o-transition: bottom 500ms ease .1s;
-  -webkit-transition: bottom 500ms ease .1s;
-  transition: bottom 500ms ease .1s;
+#top-navbar .navbar-nav > .active > a,
+#top-navbar .nav a.active {
+  background-color: transparent;
 }
 
 #top-navbar .lang-selector {
   margin-right: 0;
 }
 
+@media only screen and (min-width : 768px) {
+  #top-navbar.closed {
+    top: -150px;
+  }
+
+  #top-navbar {
+    opacity: 1;
+    background-color: #FFF;
+
+    -moz-transition: top 250ms ease;
+    -o-transition: top 250ms ease;
+    -webkit-transition: top 250ms ease;
+    transition: top 250ms ease;
+    overflow: hidden;
+  }
+
+  #top-navbar .site-nav,
+  #top-navbar .navbar-brand {
+    bottom: -55px;
+    position: relative;    
+
+    -moz-transition: bottom 500ms ease .3s;
+    -o-transition: bottom 500ms ease .3s;
+    -webkit-transition: bottom 500ms ease .3s;
+    transition: bottom 500ms ease .3s;
+  }
+}
+
+@media only screen and (max-width : 768px) {
+
+  #top-navbar .lang-selector,
+  #top-navbar .site-nav {
+    display:none;
+  }
+
+}
+
 /****************************
  ******** SITE NAV **********
  ****************************/
+
+.site-nav > li.active a {
+  font-weight: bold;
+}
 
 .site-nav > li > a {
   padding-left: 30px;
@@ -168,22 +214,7 @@ a, a:active, a:hover, a:focus {
 }
 
 .site-nav > li:first-child > a {
-  margin-left: -15px;
-}
-
-/****************************
- ******* PRODUCTS NAV *******
- ****************************/
-
-#products-nav {
-  margin-bottom: 2.5em;
-}
-
-#products-nav > li.active > a, 
-#products-nav > li.active > a:focus, 
-#products-nav > li.active > a:hover {
-  color: #000;
-  font-weight: normal;
+  margin-left: -30px;
 }
 
 /************************
@@ -200,7 +231,7 @@ a, a:active, a:hover, a:focus {
  **********************/
 
 .details-view {
-  padding-top: 2em;
+  padding-top: 1.5em;
   border-top: 1px dashed #999;
 }
 

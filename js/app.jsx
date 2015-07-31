@@ -37,8 +37,8 @@ var TopNavBar = React.createClass({
 
   getInitialState: function() {
     return {
-      isClosed: true
-      //isClosed2: true
+      isClosed: true,
+      showMainMenu: false
     };
   },
 
@@ -75,13 +75,15 @@ var TopNavBar = React.createClass({
       this.setState({ isClosed: true });
     }
 
-    //if (scrollTop > 500) {
-    //  if (this.state.isClosed2) {
-    //    this.setState({ isClosed2: false });
-    //  }
-    //} else if (!this.state.isClosed2) {
-    //  this.setState({ isClosed2: true });
-    //}
+    if (scrollTop > 250) {
+
+      if (!this.state.showMainMenu) {
+        this.setState({ showMainMenu: true });
+      }
+
+    } else if (this.state.showMainMenu) {
+      this.setState({ showMainMenu: false });
+    }
 
     this.tick();
   },
@@ -113,9 +115,8 @@ var TopNavBar = React.createClass({
 
   render: function() {
     var isClosed = this.state.isClosed;
-    var isClosed2 = this.state.isClosed2;
 
-    classes = "navbar navbar-fixed-top";
+    classes = "navbar navbar-fixed-top navbar-default";
 
     var brandStyle = {};
     if (isClosed) {
@@ -124,18 +125,18 @@ var TopNavBar = React.createClass({
       brandStyle = { bottom: 0 };
     }
 
+    var mainMenuStyle = { };
+
+    if (this.state.showMainMenu) {
+      mainMenuStyle = { bottom: 0 };
+    }
+
     return (
       <nav id="top-navbar" className={classes}>
         <div className="container">
 
           <div className="navbar-header">
-            <button 
-              type="button" 
-              className="navbar-toggle collapsed" 
-              data-toggle="collapse" 
-              data-target="#bs-example-navbar-collapse-1" 
-              aria-expanded="false">
-
+            <button type="button" className="navbar-toggle">
               <span className="sr-only">Toggle navigation</span>
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
@@ -149,18 +150,12 @@ var TopNavBar = React.createClass({
 
           </div>
 
-          <div 
-            class="collapse navbar-collapse" 
-            id="bs-example-navbar-collapse-1">
+          <div class="collapse navbar-collapse">
 
-            {
-            
-              /**
             <Nav 
+              style={mainMenuStyle}
               items={this.props.items} 
               extraClasses="navbar-nav" />
-              **/
-            }
 
             <LangSelector 
               lang={this.props.lang}
@@ -254,7 +249,13 @@ var App = React.createClass({
       <div className="row">
         <div className="col-md-6">
 
-          <Nav id="main-nav" items={this.state.nav} />
+          <nav className="navbar">
+            <div className="container">
+              <Nav id="main-nav" 
+                extraClasses="navbar-nav"
+                items={this.state.nav} />
+            </div>
+          </nav>
 
         </div>
       </div>

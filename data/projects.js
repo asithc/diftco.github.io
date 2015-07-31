@@ -3,7 +3,11 @@ module.exports = [
   name: "ingame",
   type: 'product',
   title: "Ingame",
-  twitter: "ingameio",
+  twitter: {
+    username: "ingameio",
+    widgetId: "627160340053295108",
+    widgetUrl: "https://twitter.com/ingameio/favorites"
+  },
   desc: {
     short: {
       i18n: true,
@@ -28,7 +32,11 @@ module.exports = [
   name: "dift",
   type: 'product',
   title: "Dift.io",
-  twitter: "diftio",
+  twitter: {
+    username: "diftcollective",
+    widgetId: "627160340053295108",
+    widgetUrl: "https://twitter.com/ingameio/favorites"
+  },
   desc: {
     short: {
       i18n: true,
@@ -53,7 +61,11 @@ module.exports = [
   name: "alantu",
   type: 'product',
   title: "Alantu",
-  twitter: "alantuapp",
+  twitter: {
+    username: "alantuapp",
+    widgetId: "627173061570220032",
+    widgetUrl: "https://twitter.com/alantuapp"
+  },
   desc: {
     short: {
       i18n: true,
