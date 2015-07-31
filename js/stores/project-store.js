@@ -9,8 +9,8 @@ var actions = require('../actions');
 var language = require('../lib/lang')();
 
 var data = {
-  'es': require('../../es'),
-  'en': require('../../en')
+  'es': require('../../data/es'),
+  'en': require('../../data/en')
 };
 
 /**

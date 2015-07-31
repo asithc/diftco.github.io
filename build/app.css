@@ -1,3 +1,8 @@
+
+/****************************
+ ****** BASE STYLES *********
+ ****************************/
+
 body {
   font-family: "Courier", Helvetica, sans-serif;
   padding-top: 10px;
@@ -27,16 +32,23 @@ a {
   font-size: .9em;
 }
 
-footer a {
-  margin-left:10px;
-}
-
 img {
   width: 100%;
 }
 
-#main-copy {
-  margin-bottom: 2em;
+
+/***************************
+ ********* CUSTOM **********
+ ***************************/
+
+#content {
+  margin-top: 30px;
+}
+
+
+#main-nav,
+#sub-nav {
+  margin-left: -14px;
 }
 
 /****************************
@@ -47,11 +59,6 @@ a, a:active, a:hover, a:focus {
   color: #333;
 }
 
-.nav {
-  margin-left: -14px;
-  margin-bottom: 2em;
-}
-
 .nav> li > a:focus, 
 .nav > li > a:hover {
   text-decoration: none;
@@ -60,17 +67,21 @@ a, a:active, a:hover, a:focus {
 
 .nav-pills > li > a {
   color: #999;
+  /**
   padding: 0 1px;
   margin-left: 50px;
+  **/
 }
 
 .nav-pills > li:first-child a {
+  /**
   margin-left: 15px;
+  **/
 }
 
 .nav-pills > li.active > a, 
 .nav-pills > li.active > a:focus, 
-.nav-pills>li.active>a:hover {
+.nav-pills > li.active > a:hover {
   color: #333;
   background-color: transparent;
   font-weight: bold;
@@ -79,11 +90,6 @@ a, a:active, a:hover, a:focus {
 
 @media only screen and (max-width : 970px) {
 
-  .nav-pills {
-    display: inline-block;
-    float: none;
-    vertical-align: top;
-  }
 }
 
 /**********************
@@ -99,10 +105,44 @@ a, a:active, a:hover, a:focus {
   line-height: .9em;
 }
 
+#header .nav {
+  margin-left: -14px;
+}
+
+#header .lang-selector {
+  margin-top: -12px;
+}
+
 @media only screen and (max-width : 970px) {
 
-
 }
+
+/****************************
+ ******** TOP NAVBAR ********
+ ****************************/
+
+#top-navbar a.navbar-brand {
+  font-size: .9em;
+}
+
+#top-navbar .site-nav li:first-child {
+  display:none;
+}
+
+#top-navbar.closed {
+  top: -130px;
+}
+
+#top-navbar {
+  padding: 0 102px;
+  background-color: #FFF;
+
+  -moz-transition: all 250ms linear;
+  -o-transition: all 250ms linear;
+  -webkit-transition: all 250ms linear;
+  transition: all 250ms linear;
+}
+
 
 /****************************
  ******* PRODUCTS NAV *******
@@ -125,9 +165,6 @@ a, a:active, a:hover, a:focus {
 
 @media only screen and (max-width : 970px) {
 
-  #main-nav {
-    margin-bottom: 35px;
-  }
 
 }
 
@@ -194,7 +231,9 @@ a, a:active, a:hover, a:focus {
 }
 
 .projects-grid .grid-item.alantu {
+  /**
   width: 100%;
+  **/
   padding-left: 10%;
 }
 
@@ -310,18 +349,33 @@ a, a:active, a:hover, a:focus {
 
 .team-grid {
   width: 100%;
-  float: left;
 }
 
 .team-grid .grid-item {
-  width: 20%;
+  width: 30%;
+  margin-right: 3%;
   float: left;
   padding: 0;
-  min-height: 350px;
-  margin-right: 25px;
+  margin-bottom: 3%;
+}
+
+.team-grid .grid-item .wrapper {
+  position: relative;
+}
+
+.team-grid .grid-item .grid-item-content {
+  padding-left: 20px;
+  position: absolute; 
+  bottom: 0;
+  display: none;
+}
+
+.team-grid .grid-item:hover .grid-item-content {
+  display: block;
 }
 
 .team-grid .grid-item h4 {
+  color: #FFF;
   margin: 35px 0px 15px;
 }
 
@@ -334,29 +388,36 @@ a, a:active, a:hover, a:focus {
 .team-grid .grid-item ul,
 .team-grid .grid-item ul a {
   font-size: .8em; 
+  color: #fff;
 }
 
 .team-grid .grid-item img {
-  border-left: 25px solid #333; 
+  border-left: 35px solid #333; 
 }
 
 .team-grid .grid-item p,
 .team-grid .grid-item h4 {
+  color: #fff;
   text-align: left;
 }
 
 @media only screen and (max-width : 970px) {
 
+  .team-grid .grid-item .grid-item-content {
+    display: block;
+  }
+
   .team-grid .grid-item {
-    width: 20%;
+    width: 45%;
   }
 
 }
 
-@media only screen and (max-width : 600px) {
+@media only screen and (max-width : 550px) {
 
   .team-grid .grid-item {
-    width: 33%;
+    width: 100%;
+    margin-bottom: 7%;
   }
 
 }
@@ -364,7 +425,6 @@ a, a:active, a:hover, a:focus {
 @media only screen and (max-width : 450px) {
 
   .team-grid .grid-item {
-    width: 50%;
   }
 
 }
@@ -373,13 +433,15 @@ a, a:active, a:hover, a:focus {
  ****** LANG SELECTOR ******
  ***************************/
 
-.lang-selector {
+#header .lang-selector {
   float: right;
+}
+
+.lang-selector {
   margin-bottom: 0;
 }
 
-.lang-selector>li>a {
-  margin-left: 1em;
+.lang-selector > li > a {
 }
 
 .lang-selector li:first-child {
@@ -390,14 +452,6 @@ a, a:active, a:hover, a:focus {
 
   .lang-selector li:first-child a {
     margin-left: 0;
-  }
-
-
-  .lang-selector {
-    margin: 10px 0 0; 
-    display: inline-block;
-    float: none;
-    padding: 0;
   }
 
 }
@@ -425,33 +479,43 @@ a, a:active, a:hover, a:focus {
   **/
 }
 
+.details-view .site-nav {
+  margin-bottom: 45px;
+}
+
 /**********************
  ****** FOOTER ********
  **********************/
 
-footer {
+.footer {
+  border-top: 1px dashed #999;
   clear: both;
-  padding: 60px 0 20px;
+  padding: 20px 0;
+  margin-top: 100px;
 }
 
-footer p {
+.footer a {
+  margin-left:10px;
+  font-size: 1em;
+}
+
+.footer p {
   margin: 10px 0;
 }
 
-footer .brand {
-  float: left;
+.footer ul {
+  font-size: 1em;
+  padding-left: 0;
+  list-style: none;
 }
 
-footer .links {
-  float: right;
+.footer ul > li > a {
+  margin-left: 0;
 }
+
 
 @media only screen and (max-width: 970px) {
 
-  footer .brand,
-  footer .links {
-    float: none;
-  }
 }
 
 /**************************
@@ -460,8 +524,5 @@ footer .links {
 
 @media only screen and (max-width : 768px) {
 
-  #main-wrapper {
-    padding-left: 0;
-  }
 }
 

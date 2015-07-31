@@ -3,9 +3,8 @@
  * Module dependencies
  */
 
-var _ = require('lodash');
 var Reflux = require('reflux');
-var Actions = require('../actions');
+var actions = require('../actions');
 
 /**
  * Default lang
@@ -18,8 +17,8 @@ var language = require('../lib/lang')();
  */
 
 var data = {
-  'es': require('../../es'),
-  'en': require('../../en')
+  'es': require('../../data/es'),
+  'en': require('../../data/en')
 };
 
 /**
@@ -28,7 +27,7 @@ var data = {
 
 var ProjectsStore = Reflux.createStore({
 
-  listenables: [ Actions ],
+  listenables: [ actions ],
 
   init: function() {
     this.lang = language;
@@ -38,7 +37,7 @@ var ProjectsStore = Reflux.createStore({
   changeLang: function(lang) {
     this.lang = lang;
 
-    this.trigger({projects: this.getProjects()});
+    this.trigger({ projects: this.getProjects() });
   },
 
   setProjectsType: function(type) {

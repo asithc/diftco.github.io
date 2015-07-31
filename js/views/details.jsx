@@ -3,6 +3,7 @@
  * Module dependecies
  */
 
+var React = require('react');
 var Reflux = require('reflux');
 var ProjectStore = require('../stores/project-store');
 var ProjectsStore = require('../stores/projects-store');
@@ -30,35 +31,24 @@ var DetailsView = React.createClass({
   },
 
   componentDidMount: function() {
-  
+    console.log('DetailsView.componentDidMount');
   },
 
   componentWillMount: function() {
+    console.log('DetailsView.componentWillMount');
     var name = this.props.params.name;
     Actions.setProjectName(name);
   },
 
-  renderTwitter: function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0],
-        t = window.twttr || {};
-
-    if (d.getElementById(id)) return t;
-
-    js = d.createElement(s);
-    js.id = id;
-    js.src = "https://platform.twitter.com/widgets.js";
-    fjs.parentNode.insertBefore(js, fjs);
-
-    t._e = [];
-    t.ready = function(f) {
-      t._e.push(f);
-    };
-
-    return t;
+  renderTwitter: function() {
+    window.twttr && 
+      window.twttr.widgets.load();
   },
 
   render: function() {
-    var project = this.state.project;
+    //var project = this.state.project;
+    // HACK : ver como cambiar el state con la ruta!!
+    var project = ProjectStore.getProject(this.props.params.name);
     var className = "details-view " + project.name;
 
     console.log(this.state, this.props);
@@ -66,7 +56,7 @@ var DetailsView = React.createClass({
     return (
       <div className={className}>
 
-        <Nav elementId="products-nav" items={[
+        <Nav id="sub-nav" items={[
           { 
             name: 'product_details', 
             params: { name: 'ingame' }, 
@@ -97,10 +87,7 @@ var DetailsView = React.createClass({
           </div>
           <div className="col-sm-7">
             <div className="wrapper">
-              <img 
-                src={project.img.details || project.img.low} 
-                data-src={project.img.details || project.img.high} 
-                className="lazyload" />
+              <img src={project.img.details || project.img.high} />
             </div>
           </div>
         </div>
@@ -124,8 +111,7 @@ var DetailsView = React.createClass({
               data-chrome="nofooter noborders noheader noscrollbar"> 
               Tweets by @alantu
             </a>
-
-            { this.renderTwitter(document, "script", "twitter-wjs") }
+            { this.renderTwitter() }
           </div>
         </div>
       </div>

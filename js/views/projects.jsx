@@ -3,8 +3,10 @@
  * Module dependecies
  */
 
-var Link = ReactRouter.Link;
-var Navigation = ReactRouter.Navigation;
+var React = require('react');
+var Router = require('react-router');
+var Link = Router.Link;
+var Navigation = Router.Navigation;
 var Reflux = require('reflux');
 
 /**
@@ -26,8 +28,8 @@ var ProjectsHandler = React.createClass({
   render: function() {
     var createItem = function(item, i) {
       var className = "grid-item " + item.name;
-      return (
 
+      return (
         <div className={className}>
           <div className="wrapper">
             <img 
@@ -43,7 +45,7 @@ var ProjectsHandler = React.createClass({
             </div>
           </div>
         </div>
-        )
+      )
     };
 
     var items = this.props.items;

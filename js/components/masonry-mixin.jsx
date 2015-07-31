@@ -1,6 +1,6 @@
 /** @jsx React.DOM */
  
-var React = window.React;
+var React = require('react');
 var imagesloaded = require('imagesloaded');
 var Masonry = require('masonry-layout');
  
