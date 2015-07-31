@@ -343,6 +343,7 @@ var TopNavBar = React.createClass({displayName: "TopNavBar",
   getInitialState: function() {
     return {
       isClosed: true
+      //isClosed2: true
     };
   },
 
@@ -369,15 +370,23 @@ var TopNavBar = React.createClass({displayName: "TopNavBar",
 
   handleTick: function() {
     var scrollTop = $(window).scrollTop();
-    var h = $(this.getDOMNode()).height();
+    //var h = $(this.getDOMNode()).height();
 
-    if (scrollTop > ( 50 + 10 ) ) {
+    if (scrollTop > 40) {
       if (this.state.isClosed) {
         this.setState({ isClosed: false });
       }
     } else if (!this.state.isClosed) {
       this.setState({ isClosed: true });
     }
+
+    //if (scrollTop > 500) {
+    //  if (this.state.isClosed2) {
+    //    this.setState({ isClosed2: false });
+    //  }
+    //} else if (!this.state.isClosed2) {
+    //  this.setState({ isClosed2: true });
+    //}
 
     this.tick();
   },
@@ -409,16 +418,20 @@ var TopNavBar = React.createClass({displayName: "TopNavBar",
 
   render: function() {
     var isClosed = this.state.isClosed;
+    var isClosed2 = this.state.isClosed2;
 
     classes = "navbar navbar-fixed-top";
 
+    var brandStyle = {};
     if (isClosed) {
       classes += " closed";
+    } else {
+      brandStyle = { bottom: 0 };
     }
 
     return (
       React.createElement("nav", {id: "top-navbar", className: classes}, 
-        React.createElement("div", {className: "container-fluid"}, 
+        React.createElement("div", {className: "container"}, 
 
           React.createElement("div", {className: "navbar-header"}, 
             React.createElement("button", {
@@ -436,6 +449,7 @@ var TopNavBar = React.createClass({displayName: "TopNavBar",
 
             React.createElement(Link, {
               className: "navbar-brand", 
+              style: brandStyle, 
               to: "work"}, "DIFT.CO")
 
           ), 
@@ -444,9 +458,14 @@ var TopNavBar = React.createClass({displayName: "TopNavBar",
             class: "collapse navbar-collapse", 
             id: "bs-example-navbar-collapse-1"}, 
 
-            React.createElement(Nav, {
-              items: this.props.items, 
-              extraClasses: "navbar-nav"}), 
+            
+            
+              /**
+            <Nav 
+              items={this.props.items} 
+              extraClasses="navbar-nav" />
+              **/
+            
 
             React.createElement(LangSelector, {
               lang: this.props.lang, 
@@ -485,7 +504,7 @@ var LangSelector = React.createClass({displayName: "LangSelector",
       (this.props.extraClasses || '');
 
     return (
-      React.createElement("ul", {className: classes}, 
+      React.createElement("ul", {className: classes, style: this.props.style}, 
         React.createElement("li", {className: esClass}, 
           React.createElement("a", {href: "", onClick: this.changeLanguage}, "ES")
         ), 

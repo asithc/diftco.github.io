@@ -38,6 +38,7 @@ var TopNavBar = React.createClass({
   getInitialState: function() {
     return {
       isClosed: true
+      //isClosed2: true
     };
   },
 
@@ -64,15 +65,23 @@ var TopNavBar = React.createClass({
 
   handleTick: function() {
     var scrollTop = $(window).scrollTop();
-    var h = $(this.getDOMNode()).height();
+    //var h = $(this.getDOMNode()).height();
 
-    if (scrollTop > ( 50 + 10 ) ) {
+    if (scrollTop > 40) {
       if (this.state.isClosed) {
         this.setState({ isClosed: false });
       }
     } else if (!this.state.isClosed) {
       this.setState({ isClosed: true });
     }
+
+    //if (scrollTop > 500) {
+    //  if (this.state.isClosed2) {
+    //    this.setState({ isClosed2: false });
+    //  }
+    //} else if (!this.state.isClosed2) {
+    //  this.setState({ isClosed2: true });
+    //}
 
     this.tick();
   },
@@ -104,16 +113,20 @@ var TopNavBar = React.createClass({
 
   render: function() {
     var isClosed = this.state.isClosed;
+    var isClosed2 = this.state.isClosed2;
 
     classes = "navbar navbar-fixed-top";
 
+    var brandStyle = {};
     if (isClosed) {
       classes += " closed";
+    } else {
+      brandStyle = { bottom: 0 };
     }
 
     return (
       <nav id="top-navbar" className={classes}>
-        <div className="container-fluid">
+        <div className="container">
 
           <div className="navbar-header">
             <button 
@@ -131,6 +144,7 @@ var TopNavBar = React.createClass({
 
             <Link
               className="navbar-brand"
+              style={brandStyle}
               to="work">DIFT.CO</Link>
 
           </div>
@@ -139,9 +153,14 @@ var TopNavBar = React.createClass({
             class="collapse navbar-collapse" 
             id="bs-example-navbar-collapse-1">
 
+            {
+            
+              /**
             <Nav 
               items={this.props.items} 
               extraClasses="navbar-nav" />
+              **/
+            }
 
             <LangSelector 
               lang={this.props.lang}
@@ -180,7 +199,7 @@ var LangSelector = React.createClass({
       (this.props.extraClasses || '');
 
     return (
-      <ul className={classes}>
+      <ul className={classes} style={this.props.style}>
         <li className={esClass}> 
           <a href="" onClick={this.changeLanguage}>ES</a>
         </li> 

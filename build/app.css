@@ -123,6 +123,7 @@ a, a:active, a:hover, a:focus {
 
 #top-navbar a.navbar-brand {
   font-size: .9em;
+  padding-right: 8px;
 }
 
 #top-navbar .site-nav li:first-child {
@@ -134,15 +135,41 @@ a, a:active, a:hover, a:focus {
 }
 
 #top-navbar {
-  padding: 0 102px;
   background-color: #FFF;
 
-  -moz-transition: all 250ms linear;
-  -o-transition: all 250ms linear;
-  -webkit-transition: all 250ms linear;
-  transition: all 250ms linear;
+  -moz-transition: top 250ms ease;
+  -o-transition: top 250ms ease;
+  -webkit-transition: top 250ms ease;
+  transition: top 250ms ease;
+  overflow: hidden;
 }
 
+#top-navbar .navbar-brand {
+  bottom: -50px;
+  position: relative;    
+
+  -moz-transition: bottom 500ms ease .1s;
+  -o-transition: bottom 500ms ease .1s;
+  -webkit-transition: bottom 500ms ease .1s;
+  transition: bottom 500ms ease .1s;
+}
+
+#top-navbar .lang-selector {
+  margin-right: 0;
+}
+
+/****************************
+ ******** SITE NAV **********
+ ****************************/
+
+.site-nav > li > a {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.site-nav > li:first-child > a {
+  margin-left: -15px;
+}
 
 /****************************
  ******* PRODUCTS NAV *******
