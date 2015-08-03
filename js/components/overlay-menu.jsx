@@ -25,24 +25,19 @@ var OverlayMenu = React.createClass({
     this.props.onClose();
   },
 
-  render: function() {
+  handleNavItemSelected: function(name) {
+    console.log('selected %s', name);
 
-    var style = { 
-      display: this.props.visible ? 'block' : 'none',
-      position: 'fixed',
-      top: 0,
-      bottom: 0,
-      left: 0,
-      right: 0,
-      opacity: 0.9,
-      backgroundColor: '#000',
-      zIndex: 99999
-    };
+    this.props.onClose();
+  },
+
+  render: function() {
+    var active = this.props.visible ? 'active' : null;
 
     return (
       <div 
-        id="overlay-menu"
-        style={style}>
+        className={active}
+        id="overlay-menu">
 
         <div className="header">
           <button 
@@ -54,7 +49,6 @@ var OverlayMenu = React.createClass({
             <span aria-hidden="true">×</span>
           </button>
 
-
           <LangSelector 
             lang={this.props.lang} />
 
@@ -63,9 +57,12 @@ var OverlayMenu = React.createClass({
         <div className="wrapper">
           <nav className="navbar">
             <div className="container">
+
               <Nav id="overlay-nav" 
                 extraClasses="navbar-nav"
-                items={this.props.items} />
+                items={this.props.items} 
+                onItemSelected={this.handleNavItemSelected} />
+
             </div>
           </nav>
         </div>

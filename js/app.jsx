@@ -50,7 +50,7 @@ var App = React.createClass({
     Route.State
   ],
 
-  getDefaultState: function() {
+  getInitialState: function() {
     return {
       overlayVisible: false
     };

@@ -102,6 +102,7 @@ var TopNavBar = React.createClass({
   },
 
   handleMenuClick: function() {
+    console.log('hahahaha', this.props);
 
     if (this.props.onMenuClick) {
       this.props.onMenuClick();
@@ -132,6 +133,7 @@ var TopNavBar = React.createClass({
         <div className="container">
 
           <div className="navbar-header">
+
             <button type="button" 
               className="navbar-toggle" 
               onClick={this.handleMenuClick}>

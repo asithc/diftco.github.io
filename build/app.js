@@ -368,7 +368,7 @@ var App = React.createClass({displayName: "App",
     Route.State
   ],
 
-  getDefaultState: function() {
+  getInitialState: function() {
     return {
       overlayVisible: false
     };
@@ -578,7 +578,7 @@ var NavItem = React.createClass({displayName: "NavItem",
   },
 
   handleClick: function(e) {
-    //this.props.onSelected(this.props.name);
+    this.props.onSelected(this.props.name);
   },
 
   isRouteActive: function(name) {
@@ -616,17 +616,26 @@ var Nav = React.createClass({displayName: "Nav",
 
   className: 'site-nav',
 
-  getInitialState: function() {
-    return {};
+  getDefaultProps: function() {
+    return {
+      extraClasses: null,
+      items: [],
+      onItemSelected: function() {}
+    };
   },
 
-  onNavItemSelected: function(name) {
-    //this.setState({ activeItem: name });
+  getInitialState: function() {
+    return {
+    
+    };
+  },
+
+  handleItemSelected: function(name) {
+    this.props.onItemSelected(name);
   },
 
   render: function() {
     var self = this;
-    //var activeItem = this.state.activeItem || this.props.activeItem;
 
     var createItem = function(item, i) {
       var params = item.params || {};
@@ -634,9 +643,8 @@ var Nav = React.createClass({displayName: "Nav",
       return React.createElement(NavItem, {
         name: item.name,
         title: item.title,
-        params: params
-        //active: activeItem === item.name,
-        //onSelected: self.onNavItemSelected
+        params: params,
+        onSelected: self.handleItemSelected
       });
     };
   
@@ -686,24 +694,19 @@ var OverlayMenu = React.createClass({displayName: "OverlayMenu",
     this.props.onClose();
   },
 
-  render: function() {
+  handleNavItemSelected: function(name) {
+    console.log('selected %s', name);
 
-    var style = { 
-      display: this.props.visible ? 'block' : 'none',
-      position: 'fixed',
-      top: 0,
-      bottom: 0,
-      left: 0,
-      right: 0,
-      opacity: 0.9,
-      backgroundColor: '#000',
-      zIndex: 99999
-    };
+    this.props.onClose();
+  },
+
+  render: function() {
+    var active = this.props.visible ? 'active' : null;
 
     return (
       React.createElement("div", {
-        id: "overlay-menu", 
-        style: style}, 
+        className: active, 
+        id: "overlay-menu"}, 
 
         React.createElement("div", {className: "header"}, 
           React.createElement("button", {
@@ -715,7 +718,6 @@ var OverlayMenu = React.createClass({displayName: "OverlayMenu",
             React.createElement("span", {"aria-hidden": "true"}, "×")
           ), 
 
-
           React.createElement(LangSelector, {
             lang: this.props.lang})
 
@@ -724,9 +726,12 @@ var OverlayMenu = React.createClass({displayName: "OverlayMenu",
         React.createElement("div", {className: "wrapper"}, 
           React.createElement("nav", {className: "navbar"}, 
             React.createElement("div", {className: "container"}, 
+
               React.createElement(Nav, {id: "overlay-nav", 
                 extraClasses: "navbar-nav", 
-                items: this.props.items})
+                items: this.props.items, 
+                onItemSelected: this.handleNavItemSelected})
+
             )
           )
         )
@@ -847,6 +852,7 @@ var TopNavBar = React.createClass({displayName: "TopNavBar",
   },
 
   handleMenuClick: function() {
+    console.log('hahahaha', this.props);
 
     if (this.props.onMenuClick) {
       this.props.onMenuClick();
@@ -877,6 +883,7 @@ var TopNavBar = React.createClass({displayName: "TopNavBar",
         React.createElement("div", {className: "container"}, 
 
           React.createElement("div", {className: "navbar-header"}, 
+
             React.createElement("button", {type: "button", 
               className: "navbar-toggle", 
               onClick: this.handleMenuClick}, 

@@ -23,7 +23,7 @@ var NavItem = React.createClass({
   },
 
   handleClick: function(e) {
-    //this.props.onSelected(this.props.name);
+    this.props.onSelected(this.props.name);
   },
 
   isRouteActive: function(name) {
@@ -61,17 +61,26 @@ var Nav = React.createClass({
 
   className: 'site-nav',
 
-  getInitialState: function() {
-    return {};
+  getDefaultProps: function() {
+    return {
+      extraClasses: null,
+      items: [],
+      onItemSelected: function() {}
+    };
   },
 
-  onNavItemSelected: function(name) {
-    //this.setState({ activeItem: name });
+  getInitialState: function() {
+    return {
+    
+    };
+  },
+
+  handleItemSelected: function(name) {
+    this.props.onItemSelected(name);
   },
 
   render: function() {
     var self = this;
-    //var activeItem = this.state.activeItem || this.props.activeItem;
 
     var createItem = function(item, i) {
       var params = item.params || {};
@@ -79,9 +88,8 @@ var Nav = React.createClass({
       return React.createElement(NavItem, {
         name: item.name,
         title: item.title,
-        params: params
-        //active: activeItem === item.name,
-        //onSelected: self.onNavItemSelected
+        params: params,
+        onSelected: self.handleItemSelected
       });
     };
   
