@@ -721,11 +721,13 @@ var OverlayMenu = React.createClass({displayName: "OverlayMenu",
 
         ), 
 
-        React.createElement("nav", {className: "navbar"}, 
-          React.createElement("div", {className: "container"}, 
-            React.createElement(Nav, {id: "overlay-nav", 
-              extraClasses: "navbar-nav", 
-              items: this.props.items})
+        React.createElement("div", {className: "wrapper"}, 
+          React.createElement("nav", {className: "navbar"}, 
+            React.createElement("div", {className: "container"}, 
+              React.createElement(Nav, {id: "overlay-nav", 
+                extraClasses: "navbar-nav", 
+                items: this.props.items})
+            )
           )
         )
       
