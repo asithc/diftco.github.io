@@ -41,22 +41,25 @@ img {
  ********* CUSTOM **********
  ***************************/
 
-#content {
-
-
-}
-
-
 #main-nav,
 #sub-nav {
   margin-left: -14px;
 }
 
+#content {
+  overflow: hidden;
+}
 
 @media only screen and (max-width : 768px) {
 
+  #main-navbar {
+    display: none;
+  }
+
+
   #main-copy {
-    margin-top: 65px; 
+    margin-top: 75px;
+    margin-bottom: 15px;
   }
 
   #content {
@@ -133,13 +136,61 @@ a, a:active, a:hover, a:focus {
 
 @media only screen and (max-width : 768px) {
 
-  #main-nav,
   #header {
     display: none;
   }
 
 }
 
+/****************************
+ *********** NAVS ***********
+ ****************************/
+
+.navbar-default {
+  background-color: #FFF;
+}
+
+/****************************
+ ****** OVERLAY MENU  *******
+ ****************************/
+
+#overlay-menu {
+  padding: 5px 20px;
+  text-align: left;
+}
+
+#overlay-menu button.close{
+  color: #FFF;
+  opacity: 1;
+  font-size: 3em;
+  margin: 2px 0 0;
+}
+
+#overlay-menu .nav a {
+  color: #FFF;
+  font-size: 1.2em;
+  line-height: 1.6em;
+}
+
+#overlay-menu .header {
+  margin-bottom: 2.8em;
+}
+
+#overlay-nav li {
+  border-bottom: 1px dashed #FFF;
+}
+
+#overlay-menu .nav li a {
+  padding-left: 0;
+}
+
+@media only screen and (min-width : 768px) {
+
+  #overlay-menu {
+    display: none !important;
+  }
+
+}
 
 /****************************
  ******** TOP NAVBAR ********
@@ -172,10 +223,10 @@ a, a:active, a:hover, a:focus {
     opacity: 1;
     background-color: #FFF;
 
-    -moz-transition: top 250ms ease;
-    -o-transition: top 250ms ease;
-    -webkit-transition: top 250ms ease;
-    transition: top 250ms ease;
+    -moz-transition: all 250ms ease;
+    -o-transition: all 250ms ease;
+    -webkit-transition: all 250ms ease;
+    transition: all 250ms ease;
     overflow: hidden;
   }
 
@@ -184,10 +235,10 @@ a, a:active, a:hover, a:focus {
     bottom: -55px;
     position: relative;    
 
-    -moz-transition: bottom 500ms ease .3s;
-    -o-transition: bottom 500ms ease .3s;
-    -webkit-transition: bottom 500ms ease .3s;
-    transition: bottom 500ms ease .3s;
+    -moz-transition: all 500ms ease .3s;
+    -o-transition: all 500ms ease .3s;
+    -webkit-transition: all 500ms ease .3s;
+    transition: all 500ms ease .3s;
   }
 }
 
@@ -213,8 +264,12 @@ a, a:active, a:hover, a:focus {
   padding-right: 30px;
 }
 
-.site-nav > li:first-child > a {
-  margin-left: -30px;
+@media only screen and (min-width: 768px) {
+
+  .site-nav > li:first-child > a {
+    margin-left: -30px;
+  }
+
 }
 
 /************************
@@ -232,6 +287,7 @@ a, a:active, a:hover, a:focus {
 
 .details-view {
   padding-top: 1.5em;
+  padding-bottom: 1.5em;
   border-top: 1px dashed #999;
 }
 
@@ -246,6 +302,9 @@ a, a:active, a:hover, a:focus {
 
 @media only screen and (max-width : 768px) {
 
+  .details-view {
+  }
+
   .details-view h4 {
     margin-top: 25px;
   }
@@ -258,6 +317,16 @@ a, a:active, a:hover, a:focus {
   .details-view .team-grid .grid-item {
     width: 25%;
   }
+
+  .details-view .site-nav {
+    margin-bottom: 15px;
+    margin-top: 10px;
+  } 
+
+  .details-view .tweets {
+    display: none;
+  }
+
 }
 
 /**********************
@@ -406,7 +475,6 @@ a, a:active, a:hover, a:focus {
  **************************/
 
 .team-grid {
-  width: 100%;
 }
 
 .team-grid .grid-item {
@@ -538,7 +606,7 @@ a, a:active, a:hover, a:focus {
 }
 
 .details-view .site-nav {
-  margin-bottom: 45px;
+  margin-bottom: 20px;
 }
 
 /**********************
@@ -549,7 +617,6 @@ a, a:active, a:hover, a:focus {
   border-top: 1px dashed #999;
   clear: both;
   padding: 20px 0;
-  margin-top: 100px;
 }
 
 .footer a {
@@ -572,7 +639,16 @@ a, a:active, a:hover, a:focus {
 }
 
 
-@media only screen and (max-width: 970px) {
+@media only screen and (max-width: 768px) {
+
+  .footer h4 {
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
+
+  .footer {
+    margin-top: 20px;
+  }
 
 }
 
@@ -581,6 +657,8 @@ a, a:active, a:hover, a:focus {
  **************************/
 
 @media only screen and (max-width : 768px) {
-
+  body {
+    text-align: center;
+  }
 }
 

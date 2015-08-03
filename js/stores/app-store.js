@@ -31,10 +31,15 @@ module.exports = Reflux.createStore({
     this.trigger(data[lang]);
   },
 
+  changeSection: function(name) {
+    this.trigger({ section: name });
+  },
+
   getInitialState: function() {
     var d = data[this.lang];
 
     return d;
   }
+
 });
 

@@ -15,9 +15,7 @@ var Reflux = require('reflux');
 
 var ProjectsHandler = React.createClass({
 
-  mixins: [
-    Navigation
-  ],
+  mixins: [ Navigation ],
 
   onProjectClick: function(e) {
     var target = e.target.parentElement;
@@ -25,7 +23,13 @@ var ProjectsHandler = React.createClass({
     this.transitionTo(path);
   },
 
+  componentDidMount: function() {
+    window.projectsLoaded = true;
+  },
+
   render: function() {
+    var loaded = window.projectsLoaded;
+
     var createItem = function(item, i) {
       var className = "grid-item " + item.name;
 
@@ -33,9 +37,9 @@ var ProjectsHandler = React.createClass({
         <div className={className}>
           <div className="wrapper">
             <img 
-              src={item.img.low} 
+              src={loaded ? item.img.high : item.img.low} 
               data-src={item.img.high} 
-              className="lazyload" />
+              className={loaded ? "" : "lazyload"} />
 
             <div className="grid-item-content">
               <h3>

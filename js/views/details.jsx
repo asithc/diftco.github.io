@@ -22,12 +22,10 @@ var TwitterWidget = React.createClass({
   },
 
   render: function() {
+    var self = this;
     var url = "https://twitter.com/" + this.props.widgetUrl;
     var text = "Tweets by @" + this.props.username;
 
-    console.log(url, text);
-
-    var self = this;
     setTimeout(function() {
       self.loadTwitter() ;
     }, 1000);
@@ -142,7 +140,7 @@ var DetailsView = React.createClass({
             </ul>
 
           </div>
-          <div className="col-sm-6">
+          <div className="tweets col-sm-6">
             <h4>Tweets</h4>
             <TwitterWidget {...project.twitter} />
           </div>
