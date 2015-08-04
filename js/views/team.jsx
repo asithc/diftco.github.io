@@ -31,6 +31,8 @@ var TeamView = React.createClass({
     var loaded = window.teamLoaded;
 
     var createItem = function(item, i) {
+      var twitterUrl = "http://twitter.com/" + item.twitter;
+
       return (
         <div className="grid-item text-center">
           <img 
@@ -45,7 +47,7 @@ var TeamView = React.createClass({
               <h4>{item.fullName}</h4>
               <ul>
                 <li>{item.roles}</li>
-                <li><a href="">@{item.twitter}</a> | <a href="">linkedin</a></li>
+                <li><a href={twitterUrl} target="_blank">@{item.twitter}</a> | <a href="">linkedin</a></li>
                 <li></li>
               </ul>
             </div>

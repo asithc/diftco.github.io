@@ -22,7 +22,7 @@ module.exports = [
     es: "Negocios & Operaciones",
     en: "Business & Operations"
   },
-  twitter: "conan",
+  twitter: "ConradoCimino",
   linkedin: "",
   img: {
     low: "/img/team/conan-low.jpg",
@@ -35,10 +35,10 @@ module.exports = [
   fullName: "Gonzalo Aguirre",
   roles: {
     i18n: true,
-    es: "Tecnologia",
+    es: "Tecnología",
     en: "Technology"
   },
-  twitter: "gon",
+  twitter: "_gonAguirre",
   linkedin: "",
   img: {
     low: "/img/team/gon-low.jpg",
@@ -51,7 +51,7 @@ module.exports = [
   fullName: "Victor Calvello",
   roles: {
     i18n: true,
-    es: "Tecnologia",
+    es: "Tecnología",
     en: "Technology"
   },
   twitter: "vcalvello",
@@ -83,10 +83,10 @@ module.exports = [
   fullName: "Juan Pablo Garcia",
   roles: {
     i18n: true,
-    es: "Tecnologia",
+    es: "Tecnología",
     en: "Technology"
   },
-  twitter: "jpg",
+  twitter: "jpgd",
   linkedin: "",
   img: {
     low: "/img/team/jpg-low.jpg",
@@ -99,7 +99,7 @@ module.exports = [
   fullName: "Ignacio Olaciregui",
   roles: {
     i18n: true,
-    es: "Tecnologia",
+    es: "Tecnología",
     en: "Technology"
   },
   twitter: "ignacioola",
