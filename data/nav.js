@@ -1,6 +1,6 @@
 module.exports = [
   { 
-    name: "work", 
+    name: "home", 
     title: {
       i18n: true,
       es: "HOME",

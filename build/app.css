@@ -46,8 +46,22 @@ img {
   margin-left: -14px;
 }
 
+#main-container {
+  position: relative;
+}
+
 #content {
+  padding-bottom: 40px;
   overflow: hidden;
+  position: relative;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media only screen and (max-width : 768px) {
@@ -56,16 +70,40 @@ img {
     display: none;
   }
 
-
-  #main-copy {
-    margin-top: 75px;
-    margin-bottom: 15px;
-  }
-
   #content {
-    margin-top: 0;
+    margin-top: 60px;
   }
 
+}
+
+/************************
+ ******* HOME VIEW ******
+ ************************/
+
+#home {
+  font-size: 2em;
+}
+
+#home > .wrapper {
+  /**
+  position: absolute;
+  bottom: 40%;
+  **/
+}
+
+/*****************************
+ ******* STICKY FOOTER *******
+ *****************************/
+
+#main-container {
+  display: flex;
+  min-height: 99vh;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#content {
+  flex:1;
 }
 
 /****************************
@@ -194,8 +232,11 @@ a, a:active, a:hover, a:focus {
   box-sizing: border-box;
   **/
 
+/**
   display: -ms-flexbox;
   display: -webkit-flex;
+  **/
+
   display: flex;
 
   -ms-flex-align: center;
@@ -212,8 +253,8 @@ a, a:active, a:hover, a:focus {
 #overlay-menu button.close{
   color: #FFF;
   opacity: 1;
-  font-size: 3em;
-  margin: 2px 0 0;
+  font-size: 2em;
+  margin: 5px 5px 0 0;
 }
 
 #overlay-menu .nav a {
@@ -370,6 +411,8 @@ a, a:active, a:hover, a:focus {
 @media only screen and (max-width : 768px) {
 
   .details-view {
+    padding-top: 0;
+    border-top: 0 none;
   }
 
   .details-view h4 {
@@ -705,7 +748,6 @@ a, a:active, a:hover, a:focus {
   clear: both;
   padding: 20px 0;
   font-size: .9em;
-  margin-top: 40px;
 }
 
 .footer a {
@@ -753,3 +795,28 @@ a, a:active, a:hover, a:focus {
   }
 }
 
+/*****************************
+ ********* TYPED JS **********
+ *****************************/
+
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}

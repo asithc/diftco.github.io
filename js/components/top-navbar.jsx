@@ -31,6 +31,11 @@ var TopNavBar = React.createClass({
   },
 
   componentDidMount: function() {
+    var $menu = $('#main-nav');
+    this.menuOffset = $menu.offset().top;
+
+    var $brand = $('#main-logo');
+    this.brandOffset = $brand.offset().top + $brand.height() - 30;
 
     this.events.forEach(function(type) {
       window.addEventListener(type, this.handleEvent);
@@ -55,7 +60,7 @@ var TopNavBar = React.createClass({
     var scrollTop = $(window).scrollTop();
     //var h = $(this.getDOMNode()).height();
 
-    if (scrollTop > 40) {
+    if (scrollTop > this.brandOffset) {
       if (this.state.isClosed) {
         this.setState({ isClosed: false });
       }
@@ -63,7 +68,7 @@ var TopNavBar = React.createClass({
       this.setState({ isClosed: true });
     }
 
-    if (scrollTop > 250) {
+    if (scrollTop > this.menuOffset) {
 
       if (!this.state.showMainMenu) {
         this.setState({ showMainMenu: true });
@@ -147,7 +152,7 @@ var TopNavBar = React.createClass({
             <Link
               className="navbar-brand"
               style={brandStyle}
-              to="work">DIFT.CO</Link>
+              to="home">DIFT.CO</Link>
 
               {this.state.section}
 

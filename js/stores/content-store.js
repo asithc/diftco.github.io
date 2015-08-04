@@ -13,7 +13,7 @@ var data = {
 };
 
 /**
- * App store
+ * Content store
  */
 
 module.exports = Reflux.createStore({

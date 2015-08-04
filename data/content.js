@@ -7,8 +7,27 @@ module.exports = {
       en: "Dift Collective it’s a multidisciplinary team led by Strategist, Designers, Technologist and Producers that believe in innovation-led work."
     },
     p2: {
-      i18n: true,
-      es: "Amamos crear productos y crear experiencias poderosas.",
-      en: "We love to create products and design powerful user experiences."
+      main: {
+        i18n: true,
+        es: "Amamos",
+        en: "We love to"
+      },
+      variations: [
+        {
+          i18n: true,
+          es: " diseñar experiencias poderosas.",
+          en: " design powerful user experiences."
+        },
+        {
+          i18n: true,
+          es: " crear productos.",
+          en: " create products."
+        },
+        {
+          i18n: true,
+          es: " saddssgdgs.",
+          en: " fsddfsdfds."
+        }
+      ]
     }
 };

@@ -10,11 +10,12 @@ var RouteHandler = Router.RouteHandler;
 var Route = Router.Route;
 var Link = Router.Link;
 var Reflux = require('reflux');
-var AppStore = require('./stores/app-store');
+var ContentStore = require('./stores/content-store');
 var actions = require('./actions');
 var TeamView = require('./views/team.jsx');
 var ProductsView = require('./views/products.jsx');
 var MixedView = require('./views/mixed.jsx');
+var HomeView = require('./views/home.jsx');
 var DetailsView = require('./views/details.jsx');
 var TopNavBar = require('./components/top-navbar.jsx');
 var Nav = require('./components/nav.jsx');
@@ -46,7 +47,7 @@ require('./lib/twitter-widget');
 var App = React.createClass({
 
   mixins: [ 
-    Reflux.connect(AppStore),
+    Reflux.connect(ContentStore),
     Route.State
   ],
 
@@ -66,7 +67,7 @@ var App = React.createClass({
 
   render: function() {
     return (
-    <div className="container">
+    <div id="main-container" className="container">
 
       <OverlayMenu 
         items={this.state.nav} 
@@ -83,18 +84,11 @@ var App = React.createClass({
         <div className="col-md-12">
 
           <div className="pull-left">
-            <h1>COLLECTIVE <br /> DIGITAL <br /> CRAFT</h1>
+            <h1 id="main-logo">COLLECTIVE <br /> DIGITAL <br /> CRAFT</h1>
           </div>
                      
           <LangSelector lang={this.state.lang} />
 
-        </div>
-      </div>
-
-      <div id="main-copy" className="row">
-        <div className="col-md-7">
-          <p>{this.state.content.p1}</p>
-          <p>{this.state.content.p2}</p>
         </div>
       </div>
 
@@ -159,15 +153,14 @@ var App = React.createClass({
 
 var routes = (
   <Route name="app" path="/" handler={App} ignoreScrollBehavior={true}>
-
-    <Route name="work" path="/" handler={MixedView} ignoreScrollBehavior={true} />
-
-    <Route name="team" path="/team/" handler={TeamView} ignoreScrollBehavior={true} />
-
-    <Route name="products" path="/products/" handler={ProductsView} ignoreScrollBehavior={true} />
-
-    <Route name="product_details" path="/products/:name/" handler={DetailsView} ignoreScrollBehavior={true} />
-
+    <Route name="home" path="/" handler={HomeView} 
+      ignoreScrollBehavior={true} />
+    <Route name="team" path="/team/" handler={TeamView} 
+      ignoreScrollBehavior={true} />
+    <Route name="products" path="/products/" handler={ProductsView} 
+      ignoreScrollBehavior={true} />
+    <Route name="product_details" path="/products/:name/" 
+      handler={DetailsView} ignoreScrollBehavior={true} />
   </Route>
 );
 

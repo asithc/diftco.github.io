@@ -11,18 +11,18 @@ module.exports = [
   desc: {
     short: {
       i18n: true,
-      en: "Ingame is a new way to interact with your favourite brands, get cool rewards and have fun during the ride.",
-      es: "Ingame es una nueva forma de interactuar con tus marcas favoritas mientras te divertis y ganas premios."
+      en: "Ingame is a marketing tool that works as a mobile game.",
+      es: "Ingame es una herramienta de marketing que funciona como un juego mobile."
     },
     long: {
       i18n: true,
-      en: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tortor magna, convallis eget feugiat ac, vestibulum id augue. Quisque ultricies, dolor vitae pulvinar sollicitudin, dui mi dignissim tortor, sit amet mollis velit purus a purus. Phasellus sed odio ut libero blandit bibendum a ac ipsum. In velit arcu, consectetur congue mollis non, bibendum pulvinar nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam odio nibh, interdum sit amet risus eget, elementum lobortis erat. Ut at magna et ligula facilisis aliquam eu malesuada nulla. Proin dapibus sem non sollicitudin lacinia. Nullam at lacus libero. Maecenas nec lectus a eros tempus mollis.",
-      es: ""
+      en: "Through Ingame, brands and media shows can send 'missions' to users. Missions can vary from answering quick trivias/surveys, generating content for the brand's social channels, or even rating material that other users have uploaded . This enables the possibility of engaging with consumers,  generating great content at a low cost and testing it before defining if it should be broadcasted to the rest of the brand's audience. ",
+      es: "A través de Ingame, marcas y medios pueden enviar ‘misiones’ a sus usuarios. Las misiones pueden estar relacionadas a contestar trivias y encuestas, generar contenido para los canales de la marca o inclusive calificar el que otros usuarios compartieron. Esto permite la posibilidad de interactuar con consumidores, generar contenido de calidad a bajo costo y calificarlo para definir si debe ser transmitido al resto de la audiencia de la marca."
     }
   },
   img: {
-    low: "/img/projects/ingame-low.jpg",
-    high: "/img/projects/ingame.jpg"
+    low: "/img/projects/ingame-low.png",
+    high: "/img/projects/ingame.png"
   },
   href: "/products/ingame/",
   links: ['http://ingame.io']
