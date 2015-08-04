@@ -16,6 +16,7 @@ var TeamView = require('./views/team.jsx');
 var ProductsView = require('./views/products.jsx');
 var MixedView = require('./views/mixed.jsx');
 var HomeView = require('./views/home.jsx');
+var ContactView = require('./views/contact.jsx');
 var DetailsView = require('./views/details.jsx');
 var TopNavBar = require('./components/top-navbar.jsx');
 var Nav = require('./components/nav.jsx');
@@ -48,7 +49,7 @@ var App = React.createClass({
 
   mixins: [ 
     Reflux.connect(ContentStore),
-    Route.State
+    Router.State
   ],
 
   getInitialState: function() {
@@ -65,7 +66,13 @@ var App = React.createClass({
     this.setState({ overlayVisible: false });
   },
 
+  shouldShowFooter: function() {
+    return this.isActive('home') || this.isActive('contact');
+  },
+
   render: function() {
+    var showFooter = this.shouldShowFooter(); 
+
     return (
     <div id="main-container" className="container">
 
@@ -110,7 +117,9 @@ var App = React.createClass({
         <RouteHandler />
       </div>
 
-      <div className="footer row">
+      <div 
+        className="footer row" 
+        style={showFooter ? { display: 'none'} : {}}>
 
         <div className="social col-sm-3">
           <h4>FOLLOW US</h4>
@@ -161,6 +170,8 @@ var routes = (
       ignoreScrollBehavior={true} />
     <Route name="product_details" path="/products/:name/" 
       handler={DetailsView} ignoreScrollBehavior={true} />
+    <Route name="contact" path="/contact/" 
+      handler={ContactView} ignoreScrollBehavior={true} />
   </Route>
 );
 

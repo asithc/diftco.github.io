@@ -19,19 +19,15 @@ var HomeView = React.createClass({
 
   componentDidMount: function() {
     var variations = this.state.content.p2.variations;
-
-    console.log('componentDidMount', variations);
-
     var node = this.refs.typed.getDOMNode();
-    setTimeout(function() {
-      $(node).typed({
-        strings: variations,
-        loop: true,
-        typeSpeed: 50,
-        startDelay: 1000,
-        backDelay: 3000
-      });
-    }, 2000);
+
+    $(node).typed({
+      strings: variations,
+      loop: true,
+      typeSpeed: 50,
+      startDelay: 1000,
+      backDelay: 3000
+    });
 
   },
 
@@ -43,7 +39,11 @@ var HomeView = React.createClass({
           <p>{this.state.content.p1}</p>
           <p>
             {this.state.content.p2.main}
-            <span ref="typed">{this.state.content.p2.variations[1]}</span>
+            <span 
+              className="typed-text" 
+              ref="typed">
+              {this.state.content.p2.variations[1]}
+            </span>
           </p>
         </div>
       </div>

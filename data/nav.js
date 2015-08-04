@@ -22,6 +22,14 @@ module.exports = [
       es: "PRODUCTOS",
       en: "PRODUCTS"
     }
+  },
+  { 
+    name: "contact", 
+    title: {
+      i18n: true,
+      es: "CONTACTO",
+      en: "CONTACT"
+    }
   }
 ];
 

@@ -33,12 +33,13 @@ var TeamView = React.createClass({
     var createItem = function(item, i) {
       return (
         <div className="grid-item text-center">
+          <img 
+            src={loaded ? item.img.high : item.img.low} 
+            data-src={item.img.high} 
+            className={loaded ? "" : "lazyload"} />
+
           <div className="wrapper">
 
-            <img 
-              src={loaded ? item.img.high : item.img.low} 
-              data-src={item.img.high} 
-              className={loaded ? "" : "lazyload"} />
 
             <div className="grid-item-content">
               <h4>{item.fullName}</h4>

@@ -21,15 +21,13 @@ var TwitterWidget = React.createClass({
       window.twttr.widgets.load();
   },
 
+  componentDidMount: function() {
+    this.loadTwitter();
+  },
+
   render: function() {
-    var self = this;
     var url = "https://twitter.com/" + this.props.widgetUrl;
     var text = "Tweets by @" + this.props.username;
-
-    setTimeout(function() {
-      self.loadTwitter() ;
-    }, 1000);
-
 
     return (
       <a 
@@ -98,8 +96,6 @@ var DetailsView = React.createClass({
     var project = ProjectStore.getProject(this.props.params.name);
     var className = "details-view " + project.name;
 
-    console.log(this.state, this.props);
-
     return (
       <div className={className}>
 
@@ -107,7 +103,6 @@ var DetailsView = React.createClass({
           <div className="container">
             <Nav 
               id="sub-nav" 
-              //extraClasses="nav-pills"
               extraClasses="navbar-nav"
               items={this.state.items} />
           </div>
@@ -142,7 +137,8 @@ var DetailsView = React.createClass({
           </div>
           <div className="tweets col-sm-6">
             <h4>Tweets</h4>
-            <TwitterWidget {...project.twitter} />
+            <TwitterWidget 
+              {...project.twitter} />
           </div>
         </div>
       </div>
@@ -151,3 +147,4 @@ var DetailsView = React.createClass({
 });
 
 module.exports = DetailsView;
+
