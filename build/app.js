@@ -399,7 +399,8 @@ var App = React.createClass({displayName: "App",
 
   getInitialState: function() {
     return {
-      overlayVisible: false
+      overlayVisible: false,
+      contentActive: false
     };
   },
 
@@ -417,6 +418,9 @@ var App = React.createClass({displayName: "App",
 
   render: function() {
     var showFooter = this.shouldShowFooter(); 
+
+    var contentActiveClass = this.state.contentActive ? 
+      'active' : null;
 
     return (
     React.createElement("div", {id: "main-container", className: "container"}, 
@@ -458,7 +462,7 @@ var App = React.createClass({displayName: "App",
         )
       ), 
 
-      React.createElement("div", {id: "content"}, 
+      React.createElement("div", {id: "content", className: contentActiveClass}, 
         React.createElement(RouteHandler, null)
       ), 
 
@@ -502,6 +506,14 @@ var App = React.createClass({displayName: "App",
       )
     )
     )
+  },
+
+  componentDidMount: function() {
+    var self = this;
+
+    setTimeout(function() {
+      self.setState({ contentActive: true });
+    }, 300);
   }
 });
 
@@ -609,7 +621,14 @@ var NavItem = React.createClass({displayName: "NavItem",
   },
 
   handleClick: function(e) {
-    this.props.onSelected(this.props.name);
+    var self = this;
+
+    $('#content').removeClass('active');
+    self.props.onSelected(this.props.name);
+
+    setTimeout(function() {
+      $('#content').addClass('active');
+    }, 300);
   },
 
   isRouteActive: function(name) {

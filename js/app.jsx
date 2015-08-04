@@ -54,7 +54,8 @@ var App = React.createClass({
 
   getInitialState: function() {
     return {
-      overlayVisible: false
+      overlayVisible: false,
+      contentActive: false
     };
   },
 
@@ -72,6 +73,9 @@ var App = React.createClass({
 
   render: function() {
     var showFooter = this.shouldShowFooter(); 
+
+    var contentActiveClass = this.state.contentActive ? 
+      'active' : null;
 
     return (
     <div id="main-container" className="container">
@@ -113,7 +117,7 @@ var App = React.createClass({
         </div>
       </div>
 
-      <div id="content">
+      <div id="content" className={contentActiveClass}>
         <RouteHandler />
       </div>
 
@@ -157,6 +161,14 @@ var App = React.createClass({
       </div>
     </div>
     )
+  },
+
+  componentDidMount: function() {
+    var self = this;
+
+    setTimeout(function() {
+      self.setState({ contentActive: true });
+    }, 300);
   }
 });
 

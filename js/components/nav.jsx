@@ -23,7 +23,14 @@ var NavItem = React.createClass({
   },
 
   handleClick: function(e) {
-    this.props.onSelected(this.props.name);
+    var self = this;
+
+    $('#content').removeClass('active');
+    self.props.onSelected(this.props.name);
+
+    setTimeout(function() {
+      $('#content').addClass('active');
+    }, 300);
   },
 
   isRouteActive: function(name) {
