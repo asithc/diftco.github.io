@@ -593,6 +593,12 @@ a, a:active, a:hover, a:focus {
   text-align: left;
 }
 
+@media only screen and (max-width : 768px) {
+  .team-grid .grid-item .grid-item-content {
+    display: block;
+  }
+}
+
 @media only screen and (min-width : 970px) {
   .team-grid .grid-item {
     width: 31.33%;
@@ -605,9 +611,6 @@ a, a:active, a:hover, a:focus {
 
 @media only screen and (max-width : 970px) and (min-width: 550px) {
 
-  .team-grid .grid-item .grid-item-content {
-    display: block;
-  }
 
   .team-grid .grid-item {
     width: 48.5%;
@@ -701,6 +704,7 @@ a, a:active, a:hover, a:focus {
   border-top: 1px dashed #999;
   clear: both;
   padding: 20px 0;
+  font-size: .9em;
   margin-top: 40px;
 }
 
@@ -709,12 +713,15 @@ a, a:active, a:hover, a:focus {
   font-size: 1em;
 }
 
+.footer h4 {
+  margin-bottom: 5px;
+}
+
 .footer p {
   margin: 10px 0;
 }
 
 .footer ul {
-  font-size: 1em;
   padding-left: 0;
   list-style: none;
 }
@@ -728,10 +735,10 @@ a, a:active, a:hover, a:focus {
 
   .footer h4 {
     margin-top: 35px;
-    margin-bottom: 35px;
   }
 
   .footer {
+    margin-bottom: 20px;
   }
 
 }

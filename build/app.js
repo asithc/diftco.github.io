@@ -439,9 +439,9 @@ var App = React.createClass({displayName: "App",
         React.createElement("div", {className: "social col-sm-3"}, 
           React.createElement("h4", null, "FOLLOW US"), 
           React.createElement("ul", null, 
-            React.createElement("li", null, React.createElement("a", {href: "https://www.linkedin.com/company/dift-collective/", target: "_blank"}, "LINKEDIN")), 
-            React.createElement("li", null, React.createElement("a", {href: "https://www.facebook.com/DiftCollective/", target: "_blank"}, "FACEBOOK")), 
-            React.createElement("li", null, React.createElement("a", {href: "https://twitter.com/diftcollective", target: "_blank"}, "TWITTER"))
+            React.createElement("li", null, React.createElement("a", {href: "https://www.linkedin.com/company/dift-collective/", target: "_blank"}, "Linkedin")), 
+            React.createElement("li", null, React.createElement("a", {href: "https://www.facebook.com/DiftCollective/", target: "_blank"}, "Facebook")), 
+            React.createElement("li", null, React.createElement("a", {href: "https://twitter.com/diftcollective", target: "_blank"}, "Twitter"))
           )
         ), 
 
