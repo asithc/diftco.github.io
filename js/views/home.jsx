@@ -1,11 +1,12 @@
-
-/**
- * Module dependecies
- */
+/** @jsx React.DOM */
 
 var React = require('react');
 var Reflux = require('reflux');
 var ContentStore = require('../stores/content-store');
+var typish = require('typish');
+var Typer = require('../components/typer.jsx');
+
+
 
 /**
  * Home View
@@ -17,18 +18,41 @@ var HomeView = React.createClass({
     Reflux.connect(ContentStore),
   ],
 
-  componentDidMount: function() {
-    var variations = this.state.content.p2.variations;
-    var node = this.refs.typed.getDOMNode();
-
-    $(node).typed({
-      strings: variations,
-      loop: true,
-      typeSpeed: 50,
-      startDelay: 1000,
-      backDelay: 3000
+  componentWillMount: function() {
+    this.setState({ 
+      textToType: this.getNextTextToType() 
     });
+  },
 
+  componentDidMount: function() {
+  },
+
+  componentWillUnmount: function() {
+  },
+
+  componentWillUpdate: function() {
+  },
+
+  componentDidUpdate: function() {
+  },
+
+  getNextTextToType: function() {
+    var variations = this.state.content.p2.variations;
+
+    var i = this.__i || 0;
+
+    this.__i = (i+1) % (variations.length);
+
+    console.log(i, variations);
+
+    return variations[i];
+  },
+
+  onTypeEnd: function() {
+    var text = this.getNextTextToType();
+    console.log('type end', text);
+
+    this.setState({ textToType: text });
   },
 
   render: function() {
@@ -39,11 +63,19 @@ var HomeView = React.createClass({
           <p>{this.state.content.p1}</p>
           <p>
             {this.state.content.p2.main}
-            <span 
-              className="typed-text" 
-              ref="typed">
-              {this.state.content.p2.variations[1]}
+
+            <span className="typed-text">
+
+              <Typer 
+                content={this.state.textToType} 
+                onEnd={this.onTypeEnd} />
+
             </span>
+
+            {/**
+               
+                {this.state.content.p2.variations[1]}
+            **/}
           </p>
         </div>
       </div>

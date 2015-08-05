@@ -33,6 +33,7 @@
     "react": "^0.13.3",
     "react-router": "^0.13.3",
     "react-sticky": "^2.3.1",
-    "reflux": "^0.2.9"
+    "reflux": "^0.2.9",
+    "typish": "^0.2.2"
   }
 }

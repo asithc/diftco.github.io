@@ -74,13 +74,7 @@ var App = React.createClass({
     this.setState({ overlayVisible: false });
   },
 
-  shouldShowFooter: function() {
-    return this.isActive('home') || this.isActive('contact');
-  },
-
   render: function() {
-    var showFooter = this.shouldShowFooter(); 
-
     var contentActiveClass = this.state.contentActive ? 
       'active' : null;
 
@@ -128,9 +122,7 @@ var App = React.createClass({
         <RouteHandler />
       </div>
 
-      <div 
-        className="footer row" 
-        style={showFooter ? { display: 'none'} : {}}>
+      <div className="footer row">
 
         <div className="social col-sm-3">
           <h4>FOLLOW US</h4>

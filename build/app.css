@@ -5,7 +5,7 @@
 
 body {
   font-family: "Courier", Helvetica, sans-serif;
-  padding-top: 10px;
+  padding-top: 0;
   font-size: 16px;
 }
 
@@ -69,11 +69,6 @@ img {
 #content.active {
   visibility: visible;
   opacity: 1;
-  /**
-  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),visibility 0.4s cubic-bezier(0.23, 1, 0.32, 1),opacity 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-  -moz-transition: -moz-transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),visibility 0.4s cubic-bezier(0.23, 1, 0.32, 1),opacity 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),visibility 0.4s cubic-bezier(0.23, 1, 0.32, 1),opacity 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-  **/
   -moz-transition: opacity 400ms ease-out;
   -o-transition: opacity 400ms ease-out;
   -webkit-transition: opacity 400ms ease-out;
@@ -87,7 +82,7 @@ img {
   }
 
   #content {
-    margin-top: 60px;
+    margin-top: 66px;
   }
 
 }
@@ -148,13 +143,21 @@ img {
 
 #main-container {
   display: flex;
-  min-height: 100vh;
+  min-height: 120vh;
   flex-direction: column;
   overflow: hidden;
 }
 
 #content {
   flex:1;
+}
+
+@media only screen and (max-width : 768px) {
+
+  #main-container {
+    min-height: 90vh;
+  }
+
 }
 
 /****************************
@@ -203,7 +206,7 @@ a, a:active, a:hover, a:focus {
  **********************/
 
 #header {
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 #header h1 {
@@ -433,6 +436,10 @@ a, a:active, a:hover, a:focus {
 
   .site-nav > li:first-child > a {
     margin-left: -30px;
+  }
+
+  .nav .nav-contact {
+    display: none;
   }
 
 }
@@ -833,12 +840,8 @@ a, a:active, a:hover, a:focus {
 
 @media only screen and (max-width: 768px) {
 
-  .footer h4 {
-    margin-top: 35px;
-  }
-
   .footer {
-    margin-bottom: 20px;
+    display: none;
   }
 
 }
@@ -857,7 +860,7 @@ a, a:active, a:hover, a:focus {
  ********* TYPED JS **********
  *****************************/
 
-.typed-cursor{
+.typer-cursor{
     opacity: 1;
     -webkit-animation: blink 0.7s infinite;
     -moz-animation: blink 0.7s infinite;

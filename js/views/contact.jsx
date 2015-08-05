@@ -23,7 +23,7 @@ var ContactView = React.createClass({
       <div id="contact">
 
         <div className="row">
-          <div className="col-md-12">
+          <div className="col-sm-4">
             <h4>BUENOS AIRES</h4>
             <ul>
               <li>Conesa 1051</li>
@@ -31,19 +31,15 @@ var ContactView = React.createClass({
               <li><a href="tel:+541139623000">Tel. +5411.3962.3000</a></li>
             </ul>
           </div>
-        </div>
 
-        <div className="row">
-          <div className="col-md-12">
+          <div className="col-sm-4">
             <h4>CONTACT</h4>
             <ul>
               <li><a href="mailto:newbiz@dift.co">newbiz@dift.co</a></li>
             </ul>
           </div>
-        </div>
 
-        <div className="row">
-          <div className="col-md-12">
+          <div className="col-sm-4">
             <h4>FOLLOW US</h4>
             <ul>
               <li><a href="https://www.linkedin.com/company/dift-collective/" target="_blank">Linkedin</a></li>

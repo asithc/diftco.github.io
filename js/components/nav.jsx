@@ -48,7 +48,9 @@ var NavItem = React.createClass({
   },
 
   render: function() {
-    var className = this.isRouteActive(this.props.name) ? 'active' : null;
+    var className = 'nav-' + this.props.name;
+
+    className += this.isRouteActive(this.props.name) ? ' active' : '';
 
     return (
       <li key={this.props.name} className={className}>
