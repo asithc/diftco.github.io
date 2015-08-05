@@ -10,14 +10,19 @@ var RouteHandler = Router.RouteHandler;
 var Route = Router.Route;
 var Link = Router.Link;
 var Reflux = require('reflux');
+
 var ContentStore = require('./stores/content-store');
+var NavStore = require('./stores/nav-store');
+
 var actions = require('./actions');
+
 var TeamView = require('./views/team.jsx');
 var ProductsView = require('./views/products.jsx');
 var MixedView = require('./views/mixed.jsx');
 var HomeView = require('./views/home.jsx');
 var ContactView = require('./views/contact.jsx');
 var DetailsView = require('./views/details.jsx');
+
 var TopNavBar = require('./components/top-navbar.jsx');
 var Nav = require('./components/nav.jsx');
 var LangSelector = require('./components/lang-selector.jsx');
@@ -49,13 +54,15 @@ var App = React.createClass({
 
   mixins: [ 
     Reflux.connect(ContentStore),
+    Reflux.connect(NavStore),
     Router.State
   ],
 
   getInitialState: function() {
     return {
       overlayVisible: false,
-      contentActive: false
+      contentActive: false,
+      routeName: null
     };
   },
 

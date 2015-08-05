@@ -6,6 +6,7 @@
 var React = require('react');
 var Router = require('react-router');
 var Link = Router.Link;
+var actions = require('./actions');
 
 /**
  * Nav item component
@@ -25,10 +26,12 @@ var NavItem = React.createClass({
   handleClick: function(e) {
     var self = this;
 
+    actions.navigate(this.props.name);
     $('#content').removeClass('active');
     self.props.onSelected(this.props.name);
 
     setTimeout(function() {
+      
       $('#content').addClass('active');
     }, 300);
   },

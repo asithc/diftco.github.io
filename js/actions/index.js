@@ -5,7 +5,8 @@ module.exports = Reflux.createActions(
     'changeLang', 
     'setProjectName',
     'unsetProjectName',
-    'changeSection'
+    'changeSection',
+    'navigate'
   ]
 );
 
