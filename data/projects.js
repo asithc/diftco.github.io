@@ -25,7 +25,11 @@ module.exports = [
     high: "/img/projects/ingame.png"
   },
   href: "/products/ingame/",
-  links: ['http://ingame.io']
+  links: [
+    { url: 'https://www.ingame.io' },
+    { url: 'https://brands.ingame.io/' },
+    { url: 'https://goo.gl/W5Slbg/' }
+  ]
 },
 
 {
@@ -54,7 +58,9 @@ module.exports = [
     high: "/img/projects/dift.jpg"
   },
   href: "/products/dift/",
-  links: ['http://dift.io']
+  links: [
+    { url: 'http://dift.io' }
+  ]
 },
 
 {
@@ -84,6 +90,8 @@ module.exports = [
     details: "/img/projects/alantu-horizontal.jpg"
   },          
   href: "/products/alantu/",
-  links: ['http://alantu.io']
+  links: [
+    { url: 'http://alantu.io' }
+  ]
 }
 ];

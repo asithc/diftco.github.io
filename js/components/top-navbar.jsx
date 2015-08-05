@@ -158,7 +158,7 @@ var TopNavBar = React.createClass({
 
           </div>
 
-          <div class="collapse navbar-collapse">
+          <div className="collapse navbar-collapse">
 
             <Nav 
               style={mainMenuStyle}

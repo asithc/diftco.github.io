@@ -6,7 +6,7 @@
 var React = require('react');
 var Router = require('react-router');
 var Link = Router.Link;
-var actions = require('./actions');
+var actions = require('../actions');
 
 /**
  * Nav item component
@@ -51,7 +51,7 @@ var NavItem = React.createClass({
     var className = this.isRouteActive(this.props.name) ? 'active' : null;
 
     return (
-      <li className={className}>
+      <li key={this.props.name} className={className}>
         <Link 
           to={this.props.name}
           params={this.props.params}

@@ -7,7 +7,7 @@ module.exports = [
     en: "Business & Operations"
   },
   twitter: "charlydv",
-  linkedin: "",
+  linkedin: "https://ar.linkedin.com/in/carlosdevenezia",
   img: {
     low: "/img/team/charly-low.jpg",
     high: "/img/team/charly.jpg"
@@ -23,7 +23,7 @@ module.exports = [
     en: "Business & Operations"
   },
   twitter: "ConradoCimino",
-  linkedin: "",
+  linkedin: "https://www.linkedin.com/pub/conrado-cimino/28/6b9/50?trk=pub-pbmap",
   img: {
     low: "/img/team/conan-low.jpg",
     high: "/img/team/conan.jpg"
@@ -39,7 +39,7 @@ module.exports = [
     en: "Technology"
   },
   twitter: "_gonAguirre",
-  linkedin: "",
+  linkedin: "https://ar.linkedin.com/pub/gonzalo-aguirre/38/870/525",
   img: {
     low: "/img/team/gon-low.jpg",
     high: "/img/team/gon.jpg"
@@ -55,7 +55,7 @@ module.exports = [
     en: "Technology"
   },
   twitter: "vcalvello",
-  linkedin: "",
+  linkedin: "https://ar.linkedin.com/in/vcalvello",
   img: {
     low: "/img/team/vic-low.jpg",
     high: "/img/team/vic.jpg"
@@ -71,7 +71,7 @@ module.exports = [
     en: "Business & Operations"
   },
   twitter: "tutem",
-  linkedin: "",
+  linkedin: "https://ar.linkedin.com/in/matiasmedina1",
   img: {
     low: "/img/team/mati-low.jpg",
     high: "/img/team/mati.jpg"
@@ -80,14 +80,14 @@ module.exports = [
   projects: ["alantu"]
 },
 {
-  fullName: "Juan Pablo Garcia",
+  fullName: "Juan Pablo García",
   roles: {
     i18n: true,
     es: "Tecnología",
     en: "Technology"
   },
   twitter: "jpgd",
-  linkedin: "",
+  linkedin: "https://ar.linkedin.com/in/juanpablogarciadalolla",
   img: {
     low: "/img/team/jpg-low.jpg",
     high: "/img/team/jpg.jpg"
@@ -103,7 +103,7 @@ module.exports = [
     en: "Technology"
   },
   twitter: "ignacioola",
-  linkedin: "",
+  linkedin: "https://ar.linkedin.com/in/ignacioola",
   img: {
     low: "/img/team/mono-low.jpg",
     high: "/img/team/mono.jpg"

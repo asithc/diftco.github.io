@@ -21,8 +21,8 @@ var TwitterWidget = React.createClass({
       window.twttr.widgets.load();
   },
 
-  componentDidMount: function() {
-    this.loadTwitter();
+  shouldComponentUpdate: function() {
+    return false;
   },
 
   render: function() {
@@ -30,17 +30,22 @@ var TwitterWidget = React.createClass({
     var text = "Tweets by @" + this.props.username;
 
     return (
-      <a 
-        className="twitter-timeline" 
-        data-dnt="true" 
-        href={url}
-        data-widget-id={this.props.widgetId}
-        data-chrome="nofooter noborders noheader noscrollbar">
-        {text}
-      </a>
+      <div>
+        <a 
+          className="twitter-timeline" 
+          data-dnt="true" 
+          href={url}
+          data-widget-id={this.props.widgetId}
+          data-chrome="nofooter noborders noheader noscrollbar">
+          {text}
+        </a>
+      </div>
     );
-  }
+  },
 
+  componentDidMount: function() {
+    this.loadTwitter();
+  }
 });
 
 /**
@@ -81,11 +86,10 @@ var DetailsView = React.createClass({
   },
 
   componentDidMount: function() {
-    console.log('DetailsView.componentDidMount');
+
   },
 
   componentWillMount: function() {
-    console.log('DetailsView.componentWillMount');
     var name = this.props.params.name;
     Actions.setProjectName(name);
   },
@@ -95,6 +99,10 @@ var DetailsView = React.createClass({
     // HACK : ver como cambiar el state con la ruta!!
     var project = ProjectStore.getProject(this.props.params.name);
     var className = "details-view " + project.name;
+
+    var createLink = function(link, i) {
+      return (<li key={i}><a href={link.url} target="_blank">{link.url}</a></li>);
+    };
 
     return (
       <div className={className}>
@@ -129,9 +137,7 @@ var DetailsView = React.createClass({
           <div className="col-sm-6">
             <h4>Product Info</h4>
             <ul className="links">
-              {project.links.map(function(link) {
-                return (<li><a href={link}>{link}</a></li>);
-              })}
+              {project.links.map(createLink)}
             </ul>
 
           </div>
@@ -144,6 +150,7 @@ var DetailsView = React.createClass({
       </div>
     );
   }
+
 });
 
 module.exports = DetailsView;

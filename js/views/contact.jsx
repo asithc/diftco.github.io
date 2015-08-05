@@ -28,7 +28,7 @@ var ContactView = React.createClass({
             <ul>
               <li>Conesa 1051</li>
               <li>Buenos Aires, CP 4020</li>
-              <li>Tel. +5411.4444.4444</li>
+              <li><a href="tel:+541139623000">Tel. +5411.3962.3000</a></li>
             </ul>
           </div>
         </div>
