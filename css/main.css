@@ -532,10 +532,7 @@ a, a:active, a:hover, a:focus {
 }
 
 .projects-grid .grid-item.alantu {
-  /**
-  width: 100%;
-  **/
-  padding-left: 10%;
+  margin-left: 10%;
 }
 
 .projects-grid .grid-item {
@@ -544,9 +541,6 @@ a, a:active, a:hover, a:focus {
 
 .projects-grid .grid-item {
   position: relative;
-  /**
-  width: 100%;
-  **/
   margin-bottom: 10%;
   cursor: pointer;
 }
