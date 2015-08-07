@@ -21,13 +21,11 @@ var TwitterWidget = React.createClass({
       window.twttr.widgets.load();
   },
 
-  shouldComponentUpdate: function() {
-    return false;
-  },
-
   render: function() {
-    var url = "https://twitter.com/" + this.props.widgetUrl;
-    var text = "Tweets by @" + this.props.username;
+    var url = this.props.widgetUrl || 
+      ('https://twitter.com/' + this.props.username);
+
+    var text = 'Tweets by @' + this.props.username;
 
     return (
       <div>
@@ -44,6 +42,7 @@ var TwitterWidget = React.createClass({
   },
 
   componentDidMount: function() {
+    console.log('TwitterWidget.didMount');
     this.loadTwitter();
   }
 });
@@ -85,6 +84,10 @@ var DetailsView = React.createClass({
     };
   },
 
+  shouldComponentUpdate: function() {
+    return true;
+  },
+
   componentDidMount: function() {
 
   },
@@ -100,12 +103,14 @@ var DetailsView = React.createClass({
     var project = ProjectStore.getProject(this.props.params.name);
     var className = "details-view " + project.name;
 
+    var timestamp = new Date() + '';
+
     var createLink = function(link, i) {
       return (<li key={i}><a href={link.url} target="_blank">{link.url}</a></li>);
     };
 
     return (
-      <div className={className}>
+      <div key={timestamp} className={className}>
 
         <nav className="navbar">
           <div className="container">
@@ -143,8 +148,7 @@ var DetailsView = React.createClass({
           </div>
           <div className="tweets col-sm-6">
             <h4>Tweets</h4>
-            <TwitterWidget 
-              {...project.twitter} />
+            <TwitterWidget {...project.twitter} />
           </div>
         </div>
       </div>

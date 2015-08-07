@@ -78,6 +78,8 @@ var App = React.createClass({
     var contentActiveClass = this.state.contentActive ? 
       'active' : null;
 
+    var hideFooter = this.isActive('contact');
+
     return (
     <div id="main-container" className="container">
 
@@ -122,7 +124,7 @@ var App = React.createClass({
         <RouteHandler />
       </div>
 
-      <div className="footer row">
+      <div className={ "footer row" + (hideFooter ? " hidden" : "") }>
 
         <div className="social col-sm-3">
           <h4>FOLLOW US</h4>

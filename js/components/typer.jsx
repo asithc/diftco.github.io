@@ -24,8 +24,14 @@ var Typer = React.createClass({
     return this.t || typish(node);
   },
 
+  //shouldComponentUpdate: function() {
+  //  return false;
+  //},
+
   start: function() {
     var self = this;
+
+    console.log('start');
 
     if (this.running) {
       return;
@@ -38,22 +44,31 @@ var Typer = React.createClass({
      .wait(30)
      .clear()
      .then(function() {
-       self.running = false;
-       self.props.onEnd();
-     });
+        self.running = false;
+        self.onTypeEnd();
+      });
+  },
+
+  onTypeEnd: function() {
+    this.props.onEnd();
   },
 
   componentDidMount: function() {
+    console.log('Typer did mount - running: ', this.running);
     this.t = this.build();
   },
 
-  componentDidUpdate: function() {
-    console.log('update');
+  componentWillUnmount: function() {
+    console.log('Typer will unmount');
+  },
 
+  componentDidUpdate: function() {
+    console.log('Typer did update');
     this.start();
   },
 
   render: function() {
+
     return (
       <span>
         <span className="typer" ref="typer"></span> 

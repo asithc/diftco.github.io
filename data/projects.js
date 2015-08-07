@@ -37,9 +37,9 @@ module.exports = [
   type: 'product',
   title: "Dift.io",
   twitter: {
-    username: "diftcollective",
-    widgetId: "627160340053295108",
-    widgetUrl: "https://twitter.com/ingameio/favorites"
+    username: "diftcollective"
+    //widgetId: "627160340053295108",
+    //widgetUrl: "https://twitter.com/ingameio/favorites"
   },
   desc: {
     short: {

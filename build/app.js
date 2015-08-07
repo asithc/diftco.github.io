@@ -158,9 +158,9 @@ module.exports = [
   type: 'product',
   title: "Dift.io",
   twitter: {
-    username: "diftcollective",
-    widgetId: "627160340053295108",
-    widgetUrl: "https://twitter.com/ingameio/favorites"
+    username: "diftcollective"
+    //widgetId: "627160340053295108",
+    //widgetUrl: "https://twitter.com/ingameio/favorites"
   },
   desc: {
     short: {
@@ -427,6 +427,8 @@ var App = React.createClass({displayName: "App",
     var contentActiveClass = this.state.contentActive ? 
       'active' : null;
 
+    var hideFooter = this.isActive('contact');
+
     return (
     React.createElement("div", {id: "main-container", className: "container"}, 
 
@@ -471,7 +473,7 @@ var App = React.createClass({displayName: "App",
         React.createElement(RouteHandler, null)
       ), 
 
-      React.createElement("div", {className: "footer row"}, 
+      React.createElement("div", {className:  "footer row" + (hideFooter ? " hidden" : "") }, 
 
         React.createElement("div", {className: "social col-sm-3"}, 
           React.createElement("h4", null, "FOLLOW US"), 
@@ -1015,8 +1017,14 @@ var Typer = React.createClass({displayName: "Typer",
     return this.t || typish(node);
   },
 
+  //shouldComponentUpdate: function() {
+  //  return false;
+  //},
+
   start: function() {
     var self = this;
+
+    console.log('start');
 
     if (this.running) {
       return;
@@ -1029,22 +1037,31 @@ var Typer = React.createClass({displayName: "Typer",
      .wait(30)
      .clear()
      .then(function() {
-       self.running = false;
-       self.props.onEnd();
-     });
+        self.running = false;
+        self.onTypeEnd();
+      });
+  },
+
+  onTypeEnd: function() {
+    this.props.onEnd();
   },
 
   componentDidMount: function() {
+    console.log('Typer did mount - running: ', this.running);
     this.t = this.build();
   },
 
-  componentDidUpdate: function() {
-    console.log('update');
+  componentWillUnmount: function() {
+    console.log('Typer will unmount');
+  },
 
+  componentDidUpdate: function() {
+    console.log('Typer did update');
     this.start();
   },
 
   render: function() {
+
     return (
       React.createElement("span", null, 
         React.createElement("span", {className: "typer", ref: "typer"}), 
@@ -1412,13 +1429,11 @@ var TwitterWidget = React.createClass({displayName: "TwitterWidget",
       window.twttr.widgets.load();
   },
 
-  shouldComponentUpdate: function() {
-    return false;
-  },
-
   render: function() {
-    var url = "https://twitter.com/" + this.props.widgetUrl;
-    var text = "Tweets by @" + this.props.username;
+    var url = this.props.widgetUrl || 
+      ('https://twitter.com/' + this.props.username);
+
+    var text = 'Tweets by @' + this.props.username;
 
     return (
       React.createElement("div", null, 
@@ -1435,6 +1450,7 @@ var TwitterWidget = React.createClass({displayName: "TwitterWidget",
   },
 
   componentDidMount: function() {
+    console.log('TwitterWidget.didMount');
     this.loadTwitter();
   }
 });
@@ -1476,6 +1492,10 @@ var DetailsView = React.createClass({displayName: "DetailsView",
     };
   },
 
+  shouldComponentUpdate: function() {
+    return true;
+  },
+
   componentDidMount: function() {
 
   },
@@ -1491,12 +1511,14 @@ var DetailsView = React.createClass({displayName: "DetailsView",
     var project = ProjectStore.getProject(this.props.params.name);
     var className = "details-view " + project.name;
 
+    var timestamp = new Date() + '';
+
     var createLink = function(link, i) {
       return (React.createElement("li", {key: i}, React.createElement("a", {href: link.url, target: "_blank"}, link.url)));
     };
 
     return (
-      React.createElement("div", {className: className}, 
+      React.createElement("div", {key: timestamp, className: className}, 
 
         React.createElement("nav", {className: "navbar"}, 
           React.createElement("div", {className: "container"}, 
@@ -1534,8 +1556,7 @@ var DetailsView = React.createClass({displayName: "DetailsView",
           ), 
           React.createElement("div", {className: "tweets col-sm-6"}, 
             React.createElement("h4", null, "Tweets"), 
-            React.createElement(TwitterWidget, React.__spread({},  
-              project.twitter))
+            React.createElement(TwitterWidget, React.__spread({},  project.twitter))
           )
         )
       )
@@ -1599,12 +1620,12 @@ var HomeView = React.createClass({displayName: "HomeView",
 
   onTypeEnd: function() {
     var text = this.getNextTextToType();
-    console.log('type end', text);
 
     this.setState({ textToType: text });
   },
 
   render: function() {
+    var key = +new Date() + "";
 
     return (
       React.createElement("div", {id: "home"}, 
@@ -1618,13 +1639,7 @@ var HomeView = React.createClass({displayName: "HomeView",
               React.createElement(Typer, {
                 content: this.state.textToType, 
                 onEnd: this.onTypeEnd})
-
             )
-
-            /**
-               
-                {this.state.content.p2.variations[1]}
-            **/
           )
         )
       )

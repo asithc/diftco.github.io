@@ -50,12 +50,12 @@ var HomeView = React.createClass({
 
   onTypeEnd: function() {
     var text = this.getNextTextToType();
-    console.log('type end', text);
 
     this.setState({ textToType: text });
   },
 
   render: function() {
+    var key = +new Date() + "";
 
     return (
       <div id="home">
@@ -69,13 +69,7 @@ var HomeView = React.createClass({
               <Typer 
                 content={this.state.textToType} 
                 onEnd={this.onTypeEnd} />
-
             </span>
-
-            {/**
-               
-                {this.state.content.p2.variations[1]}
-            **/}
           </p>
         </div>
       </div>
