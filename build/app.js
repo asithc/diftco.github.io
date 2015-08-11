@@ -1910,7 +1910,7 @@ var TeamView = React.createClass({displayName: "TeamView",
               React.createElement("h4", null, item.fullName), 
               React.createElement("ul", null, 
                 React.createElement("li", null, item.roles), 
-                React.createElement("li", null, React.createElement("a", {href: twitterUrl, target: "_blank"}, "@", item.twitter), " |",  
+                React.createElement("li", null, React.createElement("a", {href: twitterUrl, target: "_blank"}, "@", item.twitter), " | ",  
                 React.createElement("a", {href: item.linkedin, target: "_blank"}, "linkedin")), 
                 React.createElement("li", null)
               )

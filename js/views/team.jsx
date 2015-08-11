@@ -45,7 +45,7 @@ var TeamView = React.createClass({
               <h4>{item.fullName}</h4>
               <ul>
                 <li>{item.roles}</li>
-                <li><a href={twitterUrl} target="_blank">@{item.twitter}</a> | 
+                <li><a href={twitterUrl} target="_blank">@{item.twitter}</a>&nbsp;|&nbsp; 
                 <a href={item.linkedin} target="_blank">linkedin</a></li>
                 <li></li>
               </ul>
