@@ -23,7 +23,7 @@ h4 {
 }
 
 p {
-  line-height: 1.6em;
+  line-height: 2em;
   font-size: .8em;
   margin: 0 0 25px;
 }
@@ -572,7 +572,7 @@ a, a:active, a:hover, a:focus {
 
 .projects-grid .grid-item {
   position: relative;
-  margin-bottom: 10%;
+  margin-bottom: 9.7%;
   cursor: pointer;
 }
 
@@ -615,7 +615,6 @@ a, a:active, a:hover, a:focus {
 .projects-grid p {
   color: #FFF;
   font-weight: bold;
-  width: 50%;
   line-height: 1.5em;
 }
 
