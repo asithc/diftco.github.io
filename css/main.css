@@ -499,7 +499,7 @@ a, a:active, a:hover, a:focus {
 }
 
 .details-view ul.events li {
-  float: left;
+  display: inline-block; 
   width: 40%;
 }
 
