@@ -29,7 +29,8 @@ module.exports = [
     { url: 'https://www.ingame.io' },
     { url: 'https://brands.ingame.io/' },
     { url: 'https://goo.gl/W5Slbg/' }
-  ]
+  ],
+  events: [ 'techcrunch', 'sxsw' ]
 },
 
 {
@@ -60,7 +61,8 @@ module.exports = [
   href: "/products/dift/",
   links: [
     { url: 'http://dift.io' }
-  ]
+  ],
+  events: [ 'techcrunch' ]
 },
 
 {
@@ -92,6 +94,7 @@ module.exports = [
   href: "/products/alantu/",
   links: [
     { url: 'http://alantu.io' }
-  ]
+  ],
+  events: [ 'websummit', 'techcrunch' ]
 }
 ];

@@ -223,7 +223,7 @@ a, a:active, a:hover, a:focus {
  **********************/
 
 #header {
-  padding-top: 20px;
+  padding-top: 60px;
 }
 
 #header h1 {
@@ -491,6 +491,16 @@ a, a:active, a:hover, a:focus {
 
 .details-view .info p:first-child {
   margin-top: -0.3em;
+}
+
+.details-view ul.events {
+  padding-left: 0;
+  list-style: none;
+}
+
+.details-view ul.events li {
+  float: left;
+  width: 40%;
 }
 
 @media only screen and (max-width : 768px) {

@@ -6,9 +6,9 @@ var _ = require('lodash');
  */
 
 var data = {
-  // HACK : para que vengan mezclados siempre igual
-  team: _.shuffle(require('./team')),
+  team: _.shuffle(require('./team')),     // HACK : para que vengan mezclados siempre igual
   projects: require('./projects'),
+  events: require('./events'),
   nav: require('./nav'),
   content: require('./content')
 };
@@ -18,6 +18,10 @@ function getByLang(o, lang) {
 
   if (o.i18n) {
     return o[lang];
+  }
+
+  if (typeof o === 'string') {
+    return o;
   }
 
   for (var key in o) {

@@ -89,7 +89,7 @@ var DetailsView = React.createClass({
   },
 
   componentDidMount: function() {
-
+    console.log(this.state);
   },
 
   componentWillMount: function() {
@@ -107,6 +107,10 @@ var DetailsView = React.createClass({
 
     var createLink = function(link, i) {
       return (<li key={i}><a href={link.url} target="_blank">{link.url}</a></li>);
+    };
+
+    var createEventItem = function(ev, i) {
+      return (<li key={i}><img src={ev.img} /></li>);
     };
 
     return (
@@ -143,6 +147,11 @@ var DetailsView = React.createClass({
             <h4>Product Info</h4>
             <ul className="links">
               {project.links.map(createLink)}
+            </ul>
+
+            <h4>As Seen On</h4>
+            <ul className="events">
+              {project.eventData.map(createEventItem)}
             </ul>
 
           </div>

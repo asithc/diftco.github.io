@@ -1,5 +1,4 @@
 
-
 /**
  * Module dependencies
  */
@@ -35,6 +34,18 @@ module.exports = Reflux.createStore({
     this.trigger({ project: this.getProject() });
   },
 
+  getEvents: function(name) {
+    var d = data[this.lang];
+  
+    var events = {};
+
+    d.events.forEach(function(ev) {
+      events[ev.name] = ev;
+    });
+
+    return events;
+  },
+
   getProject: function(name) {
     var n = name || this.itemName;
     var d = data[this.lang];
@@ -42,6 +53,12 @@ module.exports = Reflux.createStore({
     var project = d.projects.filter(function(p) {
       return p.name == n;
     })[0];
+
+    var events = this.getEvents(n);
+
+    project.eventData = project.events.map(function(name) {
+      return events[name];
+    });
 
     return project;
   }
