@@ -1687,7 +1687,7 @@ var HomeView = React.createClass({displayName: "HomeView",
       React.createElement("div", {id: "home"}, 
         React.createElement("div", {className: "wrapper"}, 
           React.createElement("p", null, this.state.content.p1), 
-          React.createElement("p", null, 
+          React.createElement("p", {className: "typed-content"}, 
             this.state.content.p2.main, 
 
             React.createElement("span", {className: "typed-text"}, 
