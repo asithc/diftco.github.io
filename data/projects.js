@@ -28,7 +28,7 @@ module.exports = [
   links: [
     { url: 'https://www.ingame.io' },
     { url: 'https://brands.ingame.io/' },
-    { url: 'https://goo.gl/W5Slbg/' }
+    { url: 'https://www.youtube.com/watch?v=WxToTlcX88A&list=PLn4Zv3Y8GwzLyHiLecIWmPQ446CURCU5t' }
   ],
   events: [ 'techcrunch', 'sxsw' ]
 },
