@@ -176,7 +176,11 @@ module.exports = [
   links: [
     { url: 'https://www.ingame.io' },
     { url: 'https://brands.ingame.io/' },
-    { url: 'https://www.youtube.com/watch?v=WxToTlcX88A&list=PLn4Zv3Y8GwzLyHiLecIWmPQ446CURCU5t' }
+    { title: { 
+      i18n: true,
+      en: 'Vorterix use case',
+      es: 'Caso de uso Vorterix'
+    }, url: 'https://www.youtube.com/watch?v=WxToTlcX88A&list=PLn4Zv3Y8GwzLyHiLecIWmPQ446CURCU5t' }
   ],
   events: [ 'techcrunch', 'sxsw' ]
 },
@@ -1556,12 +1560,12 @@ var DetailsView = React.createClass({displayName: "DetailsView",
     //var project = this.state.project;
     // HACK : ver como cambiar el state con la ruta!!
     var project = ProjectStore.getProject(this.props.params.name);
-    var className = "details-view " + project.name;
+    var className = 'details-view ' + project.name;
 
     var timestamp = new Date() + '';
 
     var createLink = function(link, i) {
-      return (React.createElement("li", {key: i}, React.createElement("a", {href: link.url, target: "_blank"}, link.url)));
+      return (React.createElement("li", {key: i}, React.createElement("a", {href: link.url, target: "_blank"}, link.title || link.url)));
     };
 
     var createEventItem = function(ev, i) {

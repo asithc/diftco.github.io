@@ -28,7 +28,11 @@ module.exports = [
   links: [
     { url: 'https://www.ingame.io' },
     { url: 'https://brands.ingame.io/' },
-    { url: 'https://www.youtube.com/watch?v=WxToTlcX88A&list=PLn4Zv3Y8GwzLyHiLecIWmPQ446CURCU5t' }
+    { title: { 
+      i18n: true,
+      en: 'Vorterix use case',
+      es: 'Caso de uso Vorterix'
+    }, url: 'https://www.youtube.com/watch?v=WxToTlcX88A&list=PLn4Zv3Y8GwzLyHiLecIWmPQ446CURCU5t' }
   ],
   events: [ 'techcrunch', 'sxsw' ]
 },

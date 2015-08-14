@@ -101,12 +101,12 @@ var DetailsView = React.createClass({
     //var project = this.state.project;
     // HACK : ver como cambiar el state con la ruta!!
     var project = ProjectStore.getProject(this.props.params.name);
-    var className = "details-view " + project.name;
+    var className = 'details-view ' + project.name;
 
     var timestamp = new Date() + '';
 
     var createLink = function(link, i) {
-      return (<li key={i}><a href={link.url} target="_blank">{link.url}</a></li>);
+      return (<li key={i}><a href={link.url} target="_blank">{link.title || link.url}</a></li>);
     };
 
     var createEventItem = function(ev, i) {
