@@ -4,7 +4,7 @@ module.exports = {
     title: "COLLECTIVE DIGITAL CRAFT",
     p1: {
       i18n: true,
-      es: "Dift Collective es un equipo multidisciplinario liderado por Estrategas, Disenadores, Tecnologos y Productores que creen en el trabajo basado en la innovacion.",
+      es: "Dift Collective es un equipo multidisciplinario liderado por Estrategas, Diseñadores, Tecnólogos y Productores que creen en el trabajo basado en la innovación.",
       en: "Dift Collective it’s a multidisciplinary team led by Strategists, Designers, Technologists and Producers that believe in innovation-led work."
     },
     p2: {
