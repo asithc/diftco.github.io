@@ -229,7 +229,7 @@ module.exports = [
   desc: {
     short: {
       i18n: true,
-      en: "Alantu it’s a mobile volunteer computing platform, a mission oriented game that pursues building the world's largest supercomputer.",
+      en: "Alantu is a mobile volunteer computing platform, a mission oriented game that pursues building the world's largest supercomputer.",
       es: "Alantu es una plataforma mobile de computación voluntaria, un juego basado en misiones que persigue construir la computadora más grande del mundo."
     },
     long: {
