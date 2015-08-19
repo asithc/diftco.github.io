@@ -107,8 +107,6 @@ var TopNavBar = React.createClass({
   },
 
   handleMenuClick: function() {
-    console.log('hahahaha', this.props);
-
     if (this.props.onMenuClick) {
       this.props.onMenuClick();
     }
