@@ -155,7 +155,7 @@ img {
   display: -webkit-flex;     /* NEW - Chrome */
   display: flex;
 
-  min-height: 120vh;
+  min-height: 125vh;
 
  -webkit-flex-direction: column;
   -ms-flex-direction: column;
