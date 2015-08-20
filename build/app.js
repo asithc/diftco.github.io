@@ -5,7 +5,7 @@ module.exports = {
     p1: {
       i18n: true,
       es: "Dift Collective es un equipo multidisciplinario liderado por Estrategas, Diseñadores, Tecnólogos y Productores que creen en el trabajo basado en la innovación.",
-      en: "Dift Collective it’s a multidisciplinary team led by Strategists, Designers, Technologists and Producers that believe in innovation-led work."
+      en: "Dift Collective is a multidisciplinary team led by Strategists, Designers, Technologists and Producers that believe in innovation-led work."
     },
     p2: {
       main: {
@@ -951,8 +951,6 @@ var TopNavBar = React.createClass({displayName: "TopNavBar",
   },
 
   handleMenuClick: function() {
-    console.log('hahahaha', this.props);
-
     if (this.props.onMenuClick) {
       this.props.onMenuClick();
     }
