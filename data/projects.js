@@ -21,8 +21,8 @@ module.exports = [
     }
   },
   img: {
-    low: "/img/projects/ingame-low.png",
-    high: "/img/projects/ingame.png"
+    low: "/img/projects/ingame-low.jpg",
+    high: "/img/projects/ingame.jpg"
   },
   href: "/products/ingame/",
   links: [

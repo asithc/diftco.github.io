@@ -552,13 +552,14 @@ a, a:active, a:hover, a:focus {
  **********************/
 
 .projects-grid {
-  -moz-column-count: 2;
-  -webkit-column-count: 2;
-  column-count: 2;
+  -moz-column-count: 1;
+  -webkit-column-count: 1;
+  column-count: 1;
   -moz-column-gap: 0;
   -webkit-column-gap: 0;
   column-gap: 0;
   width: 100%;
+
 }
 
 .projects-grid .wrapper {
@@ -566,7 +567,9 @@ a, a:active, a:hover, a:focus {
 }
 
 .projects-grid .grid-item.alantu {
+  /**
   margin-left: 10%;
+  **/
 }
 
 .projects-grid .grid-item {
@@ -575,7 +578,7 @@ a, a:active, a:hover, a:focus {
 
 .projects-grid .grid-item {
   position: relative;
-  margin-bottom: 9.7%;
+  margin-bottom: 5%;
   cursor: pointer;
 }
 
@@ -583,7 +586,7 @@ a, a:active, a:hover, a:focus {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 10%;
+  padding: 4%;
   padding-top: 7%;
   height: 100%;
   visibility: hidden;
@@ -619,10 +622,13 @@ a, a:active, a:hover, a:focus {
   color: #FFF;
   font-weight: bold;
   line-height: 1.5em;
+  width: 150px;
 }
 
 .projects-grid .grid-item.alantu .grid-item-content  p {
+  /**
   width: 80%;
+  **/
 }
 
 

@@ -149,12 +149,6 @@ gulp.task('build:img-projects', function () {
           width: w,
           rename: 'ingame-low.jpg'
         },
-      ],
-      'ingame.png': [
-        {
-          width: w,
-          rename: 'ingame-low.png'
-        }
       ]
     }))
     .pipe(gulp.dest('img/projects'));
