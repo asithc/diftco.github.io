@@ -552,24 +552,11 @@ a, a:active, a:hover, a:focus {
  **********************/
 
 .projects-grid {
-  -moz-column-count: 1;
-  -webkit-column-count: 1;
-  column-count: 1;
-  -moz-column-gap: 0;
-  -webkit-column-gap: 0;
-  column-gap: 0;
   width: 100%;
-
 }
 
 .projects-grid .wrapper {
   position: relative;
-}
-
-.projects-grid .grid-item.alantu {
-  /**
-  margin-left: 10%;
-  **/
 }
 
 .projects-grid .grid-item {
@@ -602,7 +589,7 @@ a, a:active, a:hover, a:focus {
 }
 
 .projects-grid .grid-item.dift:hover .grid-item-content {
-  background-color: #31A69B;
+  background-color: #AAA;
 }
 
 .projects-grid .grid-item:hover .grid-item-content {
@@ -624,13 +611,6 @@ a, a:active, a:hover, a:focus {
   line-height: 1.5em;
   width: 150px;
 }
-
-.projects-grid .grid-item.alantu .grid-item-content  p {
-  /**
-  width: 80%;
-  **/
-}
-
 
 .projects-grid h3 a:hover {
   text-decoration: none;
@@ -656,16 +636,6 @@ a, a:active, a:hover, a:focus {
 }
 
 @media only screen and (max-width : 560px) {
-
-  .projects-grid {
-    -moz-column-count: 1;
-    -webkit-column-count: 1;
-    column-count: 1;
-  }
-
-  .projects-grid .grid-item.alantu {
-    padding-left: 0;
-  }
 
   .projects-grid .grid-item-content {
     visibility: hidden;
