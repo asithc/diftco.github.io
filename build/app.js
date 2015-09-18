@@ -159,12 +159,12 @@ module.exports = [
   desc: {
     short: {
       i18n: true,
-      en: "Ingame is a marketing tool that works as a mobile game, enabling users to engage with their favorite brands in a more personal way.",
+      en: "Ingame is a simple gamification tool that enables anyone to send missions directly to a certain audience through a mobile app.",
       es: "Ingame es una herramienta de marketing que funciona como un juego mobile, permitiendo a los usuarios interactuar de una forma más personalizada con sus marcas favoritas."
     },
     long: {
       i18n: true,
-      en: "Through Ingame, brands and media shows can send 'missions' to users. Missions can vary from answering quick trivias/surveys, generating content for the brand's social channels, or even rating material that other users have uploaded . This enables advertisers the possibility of engaging with consumers, generating great content at a low cost and testing it before defining if it should be broadcasted to the rest of the brand's audience.",
+      en: "Missions may vary from answering quick trivias/surveys, generating content such as photos and audios, or even rating materials that other users have uploaded.  This enables the possibility of fostering engagement with a certain user base (which may be either 'private' or 'public') while gaining access to content and information in real-time.",
       es: "A través de Ingame, marcas y medios pueden enviar ‘misiones’ a sus usuarios. Las misiones pueden estar relacionadas a contestar trivias y encuestas, generar contenido para los canales de la marca o inclusive calificar el que otros usuarios compartieron. Esto permite a los publicadores la posibilidad de interactuar con consumidores, generar contenido de calidad a bajo costo y calificarlo para definir si debe ser transmitido al resto de la audiencia de la marca."
     }
   },
