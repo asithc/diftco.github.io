@@ -89,11 +89,6 @@ var App = React.createClass({
         lang={this.state.lang}
         onClose={this.handleMenuClose} />
 
-      <TopNavBar 
-        items={this.state.nav} 
-        lang={this.state.lang}
-        onMenuClick={this.handleMenuClick} />
-
       <div id="header" className="row">
         <div className="col-md-12">
 
@@ -105,21 +100,6 @@ var App = React.createClass({
 
         </div>
       </div>
-
-      <div className="row">
-        <div className="col-md-6">
-
-          <nav id="main-navbar" className="navbar">
-            <div className="container">
-              <Nav id="main-nav" 
-                extraClasses="navbar-nav"
-                items={this.state.nav} />
-            </div>
-          </nav>
-
-        </div>
-      </div>
-
       <div id="content" className={contentActiveClass}>
         <RouteHandler />
       </div>
