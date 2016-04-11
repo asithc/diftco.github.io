@@ -412,7 +412,7 @@ var App = React.createClass({displayName: "App",
         React.createElement("div", {className: "col-md-12"}, 
 
           React.createElement("div", {className: "pull-left"}, 
-            React.createElement("h1", {id: "main-logo"}, "COLLECTIVE ", React.createElement("br", null), " DIGITAL ", React.createElement("br", null), " CRAFT")
+            React.createElement("h1", {id: "main-logo"}, "collective ", React.createElement("br", null), " digital ", React.createElement("br", null), " craft")
           ), 
                      
           React.createElement(LangSelector, {lang: this.state.lang})
@@ -430,7 +430,8 @@ var App = React.createClass({displayName: "App",
           React.createElement("ul", null, 
             React.createElement("li", null, React.createElement("a", {href: "https://www.linkedin.com/company/dift-collective/", target: "_blank"}, "Linkedin")), 
             React.createElement("li", null, React.createElement("a", {href: "https://www.facebook.com/DiftCollective/", target: "_blank"}, "Facebook")), 
-            React.createElement("li", null, React.createElement("a", {href: "https://twitter.com/diftcollective", target: "_blank"}, "Twitter"))
+            React.createElement("li", null, React.createElement("a", {href: "https://twitter.com/diftcollective", target: "_blank"}, "Twitter")), 
+            React.createElement("li", null, React.createElement("a", {href: "http://diftcollective.tumblr.com", target: "_blank"}, "Tumblr"))
           )
         ), 
 

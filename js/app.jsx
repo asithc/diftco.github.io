@@ -93,7 +93,7 @@ var App = React.createClass({
         <div className="col-md-12">
 
           <div className="pull-left">
-            <h1 id="main-logo">COLLECTIVE <br /> DIGITAL <br /> CRAFT</h1>
+            <h1 id="main-logo">collective <br /> digital <br /> craft</h1>
           </div>
                      
           <LangSelector lang={this.state.lang} />
@@ -112,6 +112,7 @@ var App = React.createClass({
             <li><a href="https://www.linkedin.com/company/dift-collective/" target="_blank">Linkedin</a></li>
             <li><a href="https://www.facebook.com/DiftCollective/" target="_blank">Facebook</a></li>
             <li><a href="https://twitter.com/diftcollective" target="_blank">Twitter</a></li>
+            <li><a href="http://diftcollective.tumblr.com" target="_blank">Tumblr</a></li>
           </ul>
         </div>
 
