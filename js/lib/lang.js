@@ -6,5 +6,5 @@
 var defaultLanguage = 'es';
 
 module.exports = function() {
-  return (localStorage.getItem('lang') || navigator.userLanguage || navigator.language).split('-')[0] || defaultLanguage;
+  return (defaultLanguage || localStorage.getItem('lang') || navigator.userLanguage || navigator.language).split('-')[0] || defaultLanguage;
 };
