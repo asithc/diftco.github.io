@@ -90,13 +90,13 @@ var App = React.createClass({
         onClose={this.handleMenuClose} />
 
       <div id="header" className="row">
-        <div className="col-md-12">
+        <div className="col-md-12 no-padding">
 
           <div className="pull-left">
-            <h1 id="main-logo">collective <br /> digital <br /> craft</h1>
+            <img src="img/collective_digital_craft.svg" alt="Collective Digital Craft" className="pull-left logo-text"/>
           </div>
                      
-          <LangSelector lang={this.state.lang} />
+          <img src="img/Dco.svg" alt="Dco" className="logo-icon"/>
 
         </div>
       </div>
@@ -107,7 +107,6 @@ var App = React.createClass({
       <div className={ "footer row" + (hideFooter ? " hidden" : "") }>
 
         <div className="social col-sm-3">
-          <h4>FOLLOW US</h4>
           <ul>
             <li><a href="https://www.linkedin.com/company/dift-collective/" target="_blank">Linkedin</a></li>
             <li><a href="https://www.facebook.com/DiftCollective/" target="_blank">Facebook</a></li>
@@ -116,27 +115,23 @@ var App = React.createClass({
           </ul>
         </div>
 
-        <div className="col-sm-3">
-          <h4>BUENOS AIRES</h4>
+        <div className="col-sm-3 address">
           <ul>
             <li>Conesa 1051</li>
             <li>Buenos Aires, CP 4020</li>
             <li><a href="tel:+541139623000">Tel. +5411.3962.3000</a></li>
           </ul>
         </div>
-
-        <div className="col-sm-3">
-          <h4>CONTACT</h4>
+        <div className="col-sm-3 footer-li3">
           <ul>
             <li><a href="mailto:newbiz@dift.co">newbiz@dift.co</a></li>
+            <li><a href="mailto:joinus@dift.co">joinus@dift.co</a></li>
           </ul>
         </div>
 
         <div className="col-sm-3">
-          <h4>©</h4>
           <ul>
-            <li>Copyright Dift.co</li>
-            <li>2014-2015</li>
+            <li className="copy-text">© Copyright Dift.co 2016</li>
           </ul>
         </div>
 

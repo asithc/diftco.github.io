@@ -12,7 +12,7 @@ var Typer = React.createClass({
   getDefaultProps: function() {
 
     return {
-      content: '',
+      content: 'cursorChar: ',
       onEnd: function() {},
     };
   
@@ -72,7 +72,7 @@ var Typer = React.createClass({
     return (
       <span>
         <span className="typer" ref="typer"></span> 
-        <span className="typer-cursor">|</span>
+        <span className="typer-cursor">◼︎</span>
       </span>
     );
   }

@@ -409,13 +409,13 @@ var App = React.createClass({displayName: "App",
         onClose: this.handleMenuClose}), 
 
       React.createElement("div", {id: "header", className: "row"}, 
-        React.createElement("div", {className: "col-md-12"}, 
+        React.createElement("div", {className: "col-md-12 no-padding"}, 
 
           React.createElement("div", {className: "pull-left"}, 
-            React.createElement("h1", {id: "main-logo"}, "collective ", React.createElement("br", null), " digital ", React.createElement("br", null), " craft")
+            React.createElement("img", {src: "img/collective_digital_craft.svg", alt: "Collective Digital Craft", className: "pull-left logo-text"})
           ), 
                      
-          React.createElement(LangSelector, {lang: this.state.lang})
+          React.createElement("img", {src: "img/Dco.svg", alt: "Dco", className: "logo-icon"})
 
         )
       ), 
@@ -426,7 +426,6 @@ var App = React.createClass({displayName: "App",
       React.createElement("div", {className:  "footer row" + (hideFooter ? " hidden" : "") }, 
 
         React.createElement("div", {className: "social col-sm-3"}, 
-          React.createElement("h4", null, "FOLLOW US"), 
           React.createElement("ul", null, 
             React.createElement("li", null, React.createElement("a", {href: "https://www.linkedin.com/company/dift-collective/", target: "_blank"}, "Linkedin")), 
             React.createElement("li", null, React.createElement("a", {href: "https://www.facebook.com/DiftCollective/", target: "_blank"}, "Facebook")), 
@@ -435,27 +434,23 @@ var App = React.createClass({displayName: "App",
           )
         ), 
 
-        React.createElement("div", {className: "col-sm-3"}, 
-          React.createElement("h4", null, "BUENOS AIRES"), 
+        React.createElement("div", {className: "col-sm-3 address"}, 
           React.createElement("ul", null, 
             React.createElement("li", null, "Conesa 1051"), 
             React.createElement("li", null, "Buenos Aires, CP 4020"), 
             React.createElement("li", null, React.createElement("a", {href: "tel:+541139623000"}, "Tel. +5411.3962.3000"))
           )
         ), 
-
-        React.createElement("div", {className: "col-sm-3"}, 
-          React.createElement("h4", null, "CONTACT"), 
+        React.createElement("div", {className: "col-sm-3 footer-li3"}, 
           React.createElement("ul", null, 
-            React.createElement("li", null, React.createElement("a", {href: "mailto:newbiz@dift.co"}, "newbiz@dift.co"))
+            React.createElement("li", null, React.createElement("a", {href: "mailto:newbiz@dift.co"}, "newbiz@dift.co")), 
+            React.createElement("li", null, React.createElement("a", {href: "mailto:joinus@dift.co"}, "joinus@dift.co"))
           )
         ), 
 
         React.createElement("div", {className: "col-sm-3"}, 
-          React.createElement("h4", null, "©"), 
           React.createElement("ul", null, 
-            React.createElement("li", null, "Copyright Dift.co"), 
-            React.createElement("li", null, "2014-2015")
+            React.createElement("li", {className: "copy-text"}, "© Copyright Dift.co 2016")
           )
         )
 
@@ -954,7 +949,7 @@ var Typer = React.createClass({displayName: "Typer",
   getDefaultProps: function() {
 
     return {
-      content: '',
+      content: 'cursorChar: ',
       onEnd: function() {},
     };
   
@@ -1014,7 +1009,7 @@ var Typer = React.createClass({displayName: "Typer",
     return (
       React.createElement("span", null, 
         React.createElement("span", {className: "typer", ref: "typer"}), 
-        React.createElement("span", {className: "typer-cursor"}, "|")
+        React.createElement("span", {className: "typer-cursor"}, "◼︎")
       )
     );
   }
