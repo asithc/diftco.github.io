@@ -18,7 +18,6 @@ var LangSelector = React.createClass({
     e.stopPropagation();
 
     var lang = e.target.innerHTML.toLowerCase();
-
     actions.changeLang(lang);
   },
 
