@@ -368,9 +368,16 @@ a, a:active, a:hover, a:focus {
 
 @media only screen and (max-width : 768px) {
 
-  #header .logo-icon {
+  #header .pull-left {
     display: none;
   }
+
+  #header .logo-icon {
+    float: none;
+    max-width: 120px;
+  }
+
+
 
   .pull-left {
     padding-left: 3px;
@@ -974,17 +981,29 @@ a, a:active, a:hover, a:focus {
 
 @media only screen and (max-width: 768px) {
 
+  #home > .wrapper p {
+      line-height: 1.4em;
+      min-height: 0;
+  }
+
   .footer .social.col-sm-3 {
-    display: none;
+    margin-bottom: 33px;
   }
 
   .footer .footer-li3 {
     display: none;
   }
-
+  .footer .address {
+    display: none;
+  }
   .footer .col-sm-3.address {
     margin: 10px 0 20px;
   }
+
+  .footer .copy-text {
+      float: none;
+      font-size: .8em;
+  }  
 
   #content {
     padding-bottom: 0;

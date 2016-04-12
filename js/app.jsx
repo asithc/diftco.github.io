@@ -108,10 +108,10 @@ var App = React.createClass({
 
         <div className="social col-sm-3">
           <ul>
-            <li><a href="https://www.linkedin.com/company/dift-collective/" target="_blank">Linkedin</a></li>
-            <li><a href="https://www.facebook.com/DiftCollective/" target="_blank">Facebook</a></li>
             <li><a href="https://twitter.com/diftcollective" target="_blank">Twitter</a></li>
             <li><a href="http://diftcollective.tumblr.com" target="_blank">Tumblr</a></li>
+            <li><a href="https://www.facebook.com/DiftCollective/" target="_blank">Facebook</a></li>
+            <li><a href="https://www.linkedin.com/company/dift-collective/" target="_blank">Linkedin</a></li>
           </ul>
         </div>
 
