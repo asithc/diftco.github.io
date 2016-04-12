@@ -517,7 +517,6 @@ var LangSelector = React.createClass({displayName: "LangSelector",
     e.stopPropagation();
 
     var lang = e.target.innerHTML.toLowerCase();
-
     actions.changeLang(lang);
   },
 
@@ -1027,7 +1026,7 @@ module.exports = Typer;
 var defaultLanguage = 'en';
 
 module.exports = function() {
-  return (localStorage.getItem('lang') || navigator.userLanguage || navigator.language).split('-')[0] || defaultLanguage;
+  return (defaultLanguage || localStorage.getItem('lang') || navigator.userLanguage || navigator.language).split('-')[0] || defaultLanguage;
 };
 
 },{}],17:[function(require,module,exports){
