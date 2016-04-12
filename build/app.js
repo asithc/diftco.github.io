@@ -1009,7 +1009,7 @@ var Typer = React.createClass({displayName: "Typer",
     return (
       React.createElement("span", null, 
         React.createElement("span", {className: "typer", ref: "typer"}), 
-        React.createElement("span", {className: "typer-cursor"}, "◼︎")
+        React.createElement("span", {className: "typer-cursor"}, "█")
       )
     );
   }

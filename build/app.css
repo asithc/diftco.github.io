@@ -239,10 +239,12 @@ img {
   position: absolute;
   bottom: 40%;
   **/
-  width: 60%;
+  width: 70%;
 }
 #home > .wrapper p {
-
+  font-size: 1.04em;
+  line-height: 1.2em;
+  margin: 0;
 }
 
 #home .typed-text {
@@ -953,7 +955,8 @@ a, a:active, a:hover, a:focus {
 .footer {
   clear: both;
   padding: 20px 0;
-  font-size: .9em;
+  font-size: 1em;
+  line-height: 1.4em;
 }
 
 .footer a {
@@ -978,6 +981,10 @@ a, a:active, a:hover, a:focus {
   margin-left: 0;
 }
 
+.footer .copy-text {
+  font-size: 0.8em;
+  font-weight: normal;
+}
 
 @media only screen and (max-width: 768px) {
 
@@ -1030,6 +1037,8 @@ a, a:active, a:hover, a:focus {
     -webkit-animation: blink 0.7s infinite;
     -moz-animation: blink 0.7s infinite;
     animation: blink 0.7s infinite;
+    font-family: Arial;
+    font-size: 0.82em;
 }
 @keyframes blink{
     0% { opacity:1; }
