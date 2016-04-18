@@ -145,6 +145,7 @@ var App = React.createClass({
 
     setTimeout(function() {
       self.setState({ contentActive: true });
+      console.log('PASO');
     }, 300);
   }
 });

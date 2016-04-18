@@ -464,6 +464,7 @@ var App = React.createClass({displayName: "App",
 
     setTimeout(function() {
       self.setState({ contentActive: true });
+      console.log('PASO');
     }, 300);
   }
 });
