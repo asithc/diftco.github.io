@@ -248,6 +248,10 @@ img {
   width: 70%;
 }
 
+#home > .wrapper p.first-p {
+  width: 60%;
+}
+
 #home > .wrapper p.typed-content {
   width:100%;
 }

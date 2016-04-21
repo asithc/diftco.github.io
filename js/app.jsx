@@ -110,6 +110,7 @@ var App = React.createClass({
           <ul>
             <li><a href="https://twitter.com/diftcollective" target="_blank">Twitter</a></li>
             <li><a href="http://diftcollective.tumblr.com" target="_blank">Tumblr</a></li>
+            <li><a href="https://www.instagram.com/diftco/" target="_blank">Instagram</a></li>
             <li><a href="https://www.facebook.com/DiftCollective/" target="_blank">Facebook</a></li>
             <li><a href="https://www.linkedin.com/company/dift-collective/" target="_blank">Linkedin</a></li>
           </ul>
@@ -118,14 +119,13 @@ var App = React.createClass({
         <div className="col-sm-3 address">
           <ul>
             <li>Conesa 1051</li>
-            <li>Buenos Aires, CP 4020</li>
+            <li>Buenos Aires, CP 1426</li>
             <li><a href="tel:+541139623000">Tel. +5411.3962.3000</a></li>
           </ul>
         </div>
         <div className="col-sm-3 footer-li3">
           <ul>
             <li><a href="mailto:newbiz@dift.co">newbiz@dift.co</a></li>
-            <li><a href="mailto:joinus@dift.co">joinus@dift.co</a></li>
           </ul>
         </div>
 

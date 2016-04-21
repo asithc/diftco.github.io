@@ -5,7 +5,7 @@ module.exports = {
     p1: {
       i18n: true,
       es: "Dift Collective es un equipo multidisciplinario liderado por Estrategas, Diseñadores, Tecnólogos y Productores que creen en el trabajo basado en la innovación.",
-      en: "Dift Collective is a multidisciplinary team led by Strategists, Designers, Technologists and Producers that believe in innovation-led work."
+      en: "Dift Collective is an independent digital studio founded by a multidisciplinary team that believes in innovation-led work."
     },
     p2: {
       main: {
@@ -429,6 +429,7 @@ var App = React.createClass({displayName: "App",
           React.createElement("ul", null, 
             React.createElement("li", null, React.createElement("a", {href: "https://twitter.com/diftcollective", target: "_blank"}, "Twitter")), 
             React.createElement("li", null, React.createElement("a", {href: "http://diftcollective.tumblr.com", target: "_blank"}, "Tumblr")), 
+            React.createElement("li", null, React.createElement("a", {href: "https://www.instagram.com/diftco/", target: "_blank"}, "Instagram")), 
             React.createElement("li", null, React.createElement("a", {href: "https://www.facebook.com/DiftCollective/", target: "_blank"}, "Facebook")), 
             React.createElement("li", null, React.createElement("a", {href: "https://www.linkedin.com/company/dift-collective/", target: "_blank"}, "Linkedin"))
           )
@@ -437,14 +438,13 @@ var App = React.createClass({displayName: "App",
         React.createElement("div", {className: "col-sm-3 address"}, 
           React.createElement("ul", null, 
             React.createElement("li", null, "Conesa 1051"), 
-            React.createElement("li", null, "Buenos Aires, CP 4020"), 
+            React.createElement("li", null, "Buenos Aires, CP 1426"), 
             React.createElement("li", null, React.createElement("a", {href: "tel:+541139623000"}, "Tel. +5411.3962.3000"))
           )
         ), 
         React.createElement("div", {className: "col-sm-3 footer-li3"}, 
           React.createElement("ul", null, 
-            React.createElement("li", null, React.createElement("a", {href: "mailto:newbiz@dift.co"}, "newbiz@dift.co")), 
-            React.createElement("li", null, React.createElement("a", {href: "mailto:joinus@dift.co"}, "joinus@dift.co"))
+            React.createElement("li", null, React.createElement("a", {href: "mailto:newbiz@dift.co"}, "newbiz@dift.co"))
           )
         ), 
 
@@ -1338,7 +1338,7 @@ var ContactView = React.createClass({displayName: "ContactView",
             React.createElement("h4", null, "BUENOS AIRES"), 
             React.createElement("ul", null, 
               React.createElement("li", null, "Conesa 1051"), 
-              React.createElement("li", null, "Buenos Aires, CP 4020"), 
+              React.createElement("li", null, "Buenos Aires, CP 1426"), 
               React.createElement("li", null, React.createElement("a", {href: "tel:+541139623000"}, "Tel. +5411.3962.3000"))
             )
           ), 
@@ -1600,7 +1600,7 @@ var HomeView = React.createClass({displayName: "HomeView",
     return (
       React.createElement("div", {id: "home"}, 
         React.createElement("div", {className: "wrapper"}, 
-          React.createElement("p", null, this.state.content.p1), 
+          React.createElement("p", {className: "first-p"}, this.state.content.p1), 
           React.createElement("p", {className: "typed-content"}, 
             this.state.content.p2.main, 
 

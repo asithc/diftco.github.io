@@ -27,7 +27,7 @@ var ContactView = React.createClass({
             <h4>BUENOS AIRES</h4>
             <ul>
               <li>Conesa 1051</li>
-              <li>Buenos Aires, CP 4020</li>
+              <li>Buenos Aires, CP 1426</li>
               <li><a href="tel:+541139623000">Tel. +5411.3962.3000</a></li>
             </ul>
           </div>

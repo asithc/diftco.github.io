@@ -60,7 +60,7 @@ var HomeView = React.createClass({
     return (
       <div id="home">
         <div className="wrapper">
-          <p>{this.state.content.p1}</p>
+          <p className="first-p">{this.state.content.p1}</p>
           <p className="typed-content">
             {this.state.content.p2.main}
 
