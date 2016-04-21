@@ -278,6 +278,10 @@ img {
     width: 100%;
   }
 
+  #home > .wrapper p.first-p {
+      width: 100%;
+  }
+
 }
 
 /*****************************
@@ -1025,6 +1029,7 @@ a, a:active, a:hover, a:focus {
 
   #content {
     padding-bottom: 0;
+    font-size: 0.8em;
   }
 
 }
